@@ -82,7 +82,7 @@
         <span class="cs-hero__label">Self-initiated · not affiliated with Moniepoint</span>
         <h1 class="cs-hero__title">Moniepoint: getting locked-out customers back to their money</h1>
         <p class="cs-hero__desc">
-          I read 520 Google Play reviews of Moniepoint's personal banking app. One in five of this year's negative reviews came from people who couldn't get into the app at all: forced updates, failed face checks, and lockouts that last days. I redesigned the three moments where people get stuck.
+          I read 520 Google Play reviews of Moniepoint's personal banking app. About one in five of this year's negative reviews came from people who couldn't get into the app at all. Not all of that is a design problem, so I separated what design can fix from what belongs to engineering and risk, redesigned the parts design owns, and added three smaller fixes that are pure design.
         </p>
         <div class="cs-hero__meta">
           <div class="cs-hero__meta-item"><span class="cs-meta-label">Role</span><span class="cs-meta-value">Research and design, solo</span></div>
@@ -102,8 +102,9 @@
         <ul class="cs-col__list cs-tldr">
           <li><strong>The problem:</strong> 35 of the 158 one to three star reviews from 2026 in my sample are from people who couldn't get into the app. Several say they moved to OPay or PalmPay.</li>
           <li><strong>Why it matters to Moniepoint:</strong> a customer who can't get in can't make transfers, and every transfer carries a fee. Lockouts also flood customer support, the second most common complaint.</li>
-          <li><strong>What I designed:</strong> updates that never block your money unless security demands it, a face check that coaches you instead of failing you, and a lockout screen that tells you when and how you get back in.</li>
-          <li><strong>Honest status:</strong> self-initiated and untested. Below is what I'd measure, and how I'd test it first.</li>
+          <li><strong>What design can't fix:</strong> the face-check software, failed installs and backend bugs. Those belong to engineering, and what fallbacks are allowed belongs to risk and the regulator. I say where that line is instead of pretending screens solve everything.</li>
+          <li><strong>What I designed:</strong> updates that only block your money when security demands it, a face check that coaches you before the photo, and a lockout screen that tells you when and how you get back in. Plus three quick wins design fully owns: one-tap balance hiding, fingerprint approval for transfers, and receipts that don't expose your balance.</li>
+          <li><strong>Honest status:</strong> self-initiated and untested, built only on public reviews. Below are the questions I'd answer with Moniepoint's own data first, and how I'd measure the result.</li>
         </ul>
       </div>
     </section>
@@ -115,15 +116,36 @@
         <p class="cs-body">I loaded 520 reviews from Google Play and kept the 158 rated one to three stars and written in 2026. I tagged each one by what it complained about; a review can carry more than one tag. Tap a bar to see what people said, in my words.</p>
         <div class="mp-chart" id="mpChart"></div>
         <div class="mp-chart__note" id="mpNote" aria-live="polite"></div>
-        <p class="cs-body">Fees and missing money get more mentions, but they're mostly pricing and operations problems. Getting in is a design problem, and it's the one that stops everything else: you can't pay a fee, or chase a refund, from outside the app.</p>
+        <p class="cs-body"><strong>How far this evidence goes:</strong> these are the reviews Google Play shows as most relevant, not a random sample, and I tagged them by keyword. Reviews tell you what people felt, not what caused it. They're good for finding where to look, not for sizing the problem.</p>
+        <p class="cs-body">Fees and missing money get more mentions, but they're mostly pricing and operations problems. Getting in is partly a design problem, and it's the one that stops everything else: you can't pay a fee, or chase a refund, from outside the app. So that's where I looked next.</p>
       </div>
     </section>
 
     <section class="cs-section">
       <div class="container">
-        <span class="cs-section__label">The redesign</span>
-        <h2 class="cs-section__title">Three moments,<br /><em>three ways back in.</em></h2>
-        <p class="cs-body">Pick a moment to see the redesign and the reasoning behind it.</p>
+        <span class="cs-section__label">Whose problem is it?</span>
+        <h2 class="cs-section__title">Design can fix part of this.<br /><em>Here's where the line is.</em></h2>
+        <p class="cs-body">Each access problem has a part design owns and a part it doesn't. A designer who pitches screens for an engineering bug loses credibility fast, so I drew the line first.</p>
+        <div class="mp-table" role="table" aria-label="What design can and can't fix">
+          <div class="mp-table__row mp-table__head" role="row"><span role="columnheader">Problem</span><span role="columnheader">Likely cause, not design</span><span role="columnheader">The part design owns</span></div>
+          <div class="mp-table__row" role="row"><span role="cell"><strong>Forced updates</strong></span><span role="cell">The oldest app version engineering still supports, and installs that fail on some phones.</span><span role="cell">How an update is explained, what keeps working during it, and making background updates the default.</span></div>
+          <div class="mp-table__row" role="row"><span role="cell"><strong>Face check failing</strong></span><span role="cell">The face-check software's accuracy, phone cameras, and what fallbacks the regulator and risk team allow.</span><span role="cell">Coaching before the photo, so fewer checks fail from bad light or distance, and replacing dead ends with clear options.</span></div>
+          <div class="mp-table__row" role="row"><span role="cell"><strong>Locked out</strong></span><span role="cell">Security policy, plus backend bugs and support delays in the worst cases. No screen fixes a two-month lockout.</span><span role="cell">Clear messages, an exact unlock time, and a recovery path that doesn't send everyone to support.</span></div>
+        </div>
+        <h3 class="mp-subhead">Questions I'd answer with Moniepoint's data first</h3>
+        <ul class="cs-col__list qr-list">
+          <li>Of failed face checks, how many fail on photo quality (too dark, too far) and how many on the software itself? Coaching only helps the first group.</li>
+          <li>Of all update blocks in the last 90 days, how many were security releases that had to block?</li>
+          <li>How long do lockouts last, and how many end in a support chat rather than a PIN reset?</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cs-section">
+      <div class="container">
+        <span class="cs-section__label">The redesign: a proposal for design, engineering and risk</span>
+        <h2 class="cs-section__title">The parts design owns,<br /><em>in three moments.</em></h2>
+        <p class="cs-body">These screens only work if engineering and risk agree to the policy behind them, so I'd bring them as a proposal to all three teams, not a finished answer. Pick a moment to see the redesign and the reasoning.</p>
         <div class="qr-tabs" role="tablist" aria-label="Moments">
           <button class="qr-tab is-active" role="tab" aria-selected="true" data-m="0">App updates</button>
           <button class="qr-tab" role="tab" aria-selected="false" data-m="1">Face check</button>
@@ -135,13 +157,35 @@
 
     <section class="cs-section">
       <div class="container">
-        <span class="cs-section__label">Constraints I designed around</span>
-        <h2 class="cs-section__title">A bank can't just<br /><em>remove the friction.</em></h2>
-        <ul class="cs-col__list qr-list">
-          <li><strong>Face checks are required.</strong> Nigerian banking rules require banks to confirm identity, so the face check stays. The fix is helping people pass it, and giving a safe fallback where the rules allow one.</li>
-          <li><strong>Some updates really are urgent.</strong> A security fix may have to block transfers. The redesign keeps that, but makes it rare, explains it, and keeps everything else working.</li>
-          <li><strong>Lockouts protect people.</strong> Pausing sign-in after wrong PINs stops fraud. The redesign keeps the pause and adds a countdown and a faster way out: reset the PIN.</li>
-        </ul>
+        <span class="cs-section__label">Quick wins</span>
+        <h2 class="cs-section__title">Three fixes design owns<br /><em>from start to finish.</em></h2>
+        <p class="cs-body">Smaller stakes than getting locked out, but no engineering mystery behind them. Each one comes straight from reviews.</p>
+        <div class="mp-wins">
+          <figure class="mp-win">
+            <img src="images/mp-f.webp" alt="Home screen with balance hidden by one tap" loading="lazy" />
+            <figcaption>
+              <h3>Hide your balance in one tap</h3>
+              <p><strong>What people said:</strong> hiding and showing the balance means a trip into Settings every time. That review has 456 people marking it helpful.</p>
+              <p><strong>The fix:</strong> an eye toggle on the balance itself, and the app remembers the choice.</p>
+            </figcaption>
+          </figure>
+          <figure class="mp-win">
+            <img src="images/mp-g.webp" alt="Transfer approval with fingerprint and a PIN fallback" loading="lazy" />
+            <figcaption>
+              <h3>Approve transfers with a fingerprint</h3>
+              <p><strong>What people said:</strong> biometrics work for login but not for transfers, so people type their PIN in public. The top review on this has 524 helpful votes, and the complaint is still coming in 2026.</p>
+              <p><strong>The fix:</strong> fingerprint as the default, PIN one tap away. The amount above which a PIN is still needed is the risk team's call; ₦100,000 is a placeholder.</p>
+            </figcaption>
+          </figure>
+          <figure class="mp-win">
+            <img src="images/mp-h.webp" alt="Share receipt screen with balance hidden by default" loading="lazy" />
+            <figcaption>
+              <h3>Receipts that don't expose your balance</h3>
+              <p><strong>What people said:</strong> shared receipts show the sender's account balance, so showing someone proof of payment also shows them how much you have.</p>
+              <p><strong>The fix:</strong> balance off by default, with a switch if you really want it. The emailed receipt matches the in-app one, which another reviewer asked for.</p>
+            </figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
@@ -154,7 +198,7 @@
           <div class="cs-metric"><span class="cs-metric__value">1st try</span><span class="cs-metric__label">Face checks passed on the first attempt, and how many people need a fallback.</span></div>
           <div class="cs-metric"><span class="cs-metric__value">Back in</span><span class="cs-metric__label">Time from a lockout to a successful sign-in, and support chats about access.</span></div>
         </div>
-        <p class="cs-body" style="margin-top:32px">What I'd test first: the face check coaching. I'd put a clickable prototype in front of 8 people with mid-range Android phones in normal indoor light and compare first-try success with the current flow.</p>
+        <p class="cs-body" style="margin-top:32px">What I'd test first: the face check coaching, after the data question above tells us how many failures come from the photo. I'd put a clickable prototype in front of 8 people with mid-range Android phones in normal indoor light and compare first-try success with the current flow.</p>
       </div>
     </section>
 
