@@ -753,6 +753,10 @@ body::before {
   filter: saturate(1);
 }
 
+video.project__img {
+  display: block;
+}
+
 .project__overlay {
   position: absolute;
   inset: 0;
