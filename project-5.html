@@ -4,19 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quote Request — Case Study · Promise Olaifa</title>
-  <meta name="description" content="How I designed Quote Request, ConnectNigeria's services marketplace, end to end: customer and vendor sides, mobile and web. Live since November 2025." />
+  <meta name="description" content="How I designed Quote Request, ConnectNigeria's services marketplace, end to end: customer and vendor sides, mobile and web. Live since November 2025, with a product film and interactive tour." />
   <meta name="author" content="Promise Olaifa" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="article" />
   <meta property="og:title" content="Quote Request — Case Study · Promise Olaifa" />
-  <meta property="og:description" content="How I designed Quote Request, ConnectNigeria's services marketplace, end to end: customer and vendor sides, mobile and web. Live since November 2025." />
+  <meta property="og:description" content="How I designed Quote Request, ConnectNigeria's services marketplace, end to end: customer and vendor sides, mobile and web. Live since November 2025, with a product film and interactive tour." />
   <meta property="og:image" content="images/qr-cover.webp" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Quote Request — Case Study · Promise Olaifa" />
-  <meta name="twitter:description" content="How I designed Quote Request, ConnectNigeria's services marketplace, end to end: customer and vendor sides, mobile and web. Live since November 2025." />
+  <meta name="twitter:description" content="How I designed Quote Request, ConnectNigeria's services marketplace, end to end: customer and vendor sides, mobile and web. Live since November 2025, with a product film and interactive tour." />
   <meta name="twitter:image" content="images/qr-cover.webp" />
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
@@ -25,6 +25,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="case-study.css" />
+  <link rel="stylesheet" href="qr.css" />
 </head>
 <body>
 
@@ -65,7 +66,7 @@
     </ul>
   </div>
 
-  <main>
+  <main class="qr">
 
     <!-- Hero -->
     <section class="cs-hero">
@@ -79,14 +80,14 @@
 
         <div class="cs-tags">
           <span class="tag">Marketplace</span>
-          <span class="tag">Mobile · Web</span>
-          <span class="tag tag--status">Shipped</span>
+          <span class="tag">iOS · Android · Web</span>
+          <span class="tag tag--status">Live · real users</span>
         </div>
 
         <span class="cs-hero__label">Case Study — 01</span>
         <h1 class="cs-hero__title">Quote Request: describe a job once, get competing quotes</h1>
         <p class="cs-hero__desc">
-          I designed ConnectNigeria's services marketplace end to end: the customer side and the vendor side, on mobile and web, in two weeks. It launched in November 2025 and has been revised many times since, based on feedback from users and the sales team.
+          I was the only designer on Quote Request, ConnectNigeria's services marketplace. I designed both sides of it, customers and vendors, on mobile and web, in two weeks. It went live in November 2025, people use it every day, and I've kept improving it since with feedback from users and the sales team.
         </p>
 
         <div class="cs-hero__meta">
@@ -96,27 +97,33 @@
           </div>
           <div class="cs-hero__meta-item">
             <span class="cs-meta-label">Team</span>
-            <span class="cs-meta-value">PM, mobile, front-end and back-end engineers</span>
+            <span class="cs-meta-value">1 PM · 3 engineers</span>
           </div>
           <div class="cs-hero__meta-item">
             <span class="cs-meta-label">Timeline</span>
-            <span class="cs-meta-value">2 weeks to v1, iterated since</span>
+            <span class="cs-meta-value">2 weeks to v1</span>
           </div>
           <div class="cs-hero__meta-item">
-            <span class="cs-meta-label">Platform</span>
+            <span class="cs-meta-label">Platforms</span>
             <span class="cs-meta-value">iOS · Android · Web</span>
           </div>
           <div class="cs-hero__meta-item">
             <span class="cs-meta-label">Status</span>
-            <span class="cs-meta-value">Live since Nov 2025</span>
+            <span class="cs-meta-value"><a href="https://www.quoterequest.com/" target="_blank" rel="noopener">Live at quoterequest.com ↗</a></span>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="cs-cover">
-      <img src="images/qr-cover.webp" alt="Quote Request home screen, the first step of a request, and the sign-up prompt that keeps a guest's request" />
-    </div>
+    <!-- Launch film -->
+    <section class="qr-film">
+      <div class="container">
+        <div class="qr-film__frame">
+          <video id="qrFilm" src="images/qr-launch.mp4" poster="images/qr-launch-poster.webp" controls playsinline preload="metadata" aria-label="57-second product film of Quote Request, made from real recordings of the live product"></video>
+        </div>
+        <p class="qr-film__caption">The product in 57 seconds. Every shot is a real recording of the live app, not a mock-up.</p>
+      </div>
+    </section>
 
     <!-- TL;DR -->
     <section class="cs-section">
@@ -124,10 +131,10 @@
         <span class="cs-section__label">In short</span>
         <h2 class="cs-section__title">Hiring a plumber in Lagos<br /><em>shouldn't take ten phone calls.</em></h2>
         <ul class="cs-col__list cs-tldr">
-          <li><strong>Problem:</strong> in Nigeria, finding someone to fix a leak, cater an event or install solar usually means asking around on WhatsApp and calling for prices one by one. There is no easy way to compare prices or check who you can trust.</li>
-          <li><strong>My part:</strong> I was the only designer. I designed the customer app, the vendor app and the web app, working with a PM and three engineers.</li>
-          <li><strong>Key decisions:</strong> let people write their whole request before asking them to sign up; break the request into four short steps so every vendor quotes on the same facts; make vendor trust visible with a confirmed badge and reviews.</li>
-          <li><strong>Result:</strong> live on Android, iOS and web since November 2025, with 1,000+ Android installs and a 4.6 rating on Google Play. I'm now running a usability test to get numbers on the request flow itself.</li>
+          <li><strong>The problem:</strong> in Nigeria, finding someone to fix a leak, cater a wedding or install solar usually means asking around on WhatsApp and calling for prices one by one. You can't compare prices, and you can't tell who to trust.</li>
+          <li><strong>What I did:</strong> designed the whole product as the only designer: the customer app, the vendor app and the web app, working with a PM and three engineers.</li>
+          <li><strong>The calls that mattered:</strong> let people describe their job before asking them to sign up; four short questions so every vendor quotes on the same facts; tell customers exactly what happens after they submit; make trust something vendors earn and customers can see.</li>
+          <li><strong>Where it is now:</strong> live on Android, iOS and the web since November 2025, with 1,000+ Android installs and a 4.6 rating on Google Play. I'm running usability tests on the request flow to put hard numbers on it.</li>
         </ul>
       </div>
     </section>
@@ -136,16 +143,66 @@
     <section class="cs-section">
       <div class="container">
         <span class="cs-section__label">Context</span>
-        <h2 class="cs-section__title">A directory of businesses,<br /><em>turned into a marketplace.</em></h2>
+        <h2 class="cs-section__title">Nigeria's business directory<br /><em>becomes a marketplace.</em></h2>
         <p class="cs-body">
-          ConnectNigeria runs one of Nigeria's largest business directories. Quote Request is its newer product: a customer describes a job once, the request goes to confirmed vendors who cover that service and area, and they compete by sending quotes. The customer compares price, timeline and reviews, then picks one.
+          ConnectNigeria is one of the country's best-known business information platforms. Quote Request turns that directory into a two-sided marketplace. A customer describes a job once. ConnectNigeria's team checks the request, then it goes to confirmed vendors who cover that service and area. They send quotes, and the customer compares them on price, timeline and reviews before choosing one.
         </p>
         <p class="cs-body">
-          It's free for customers. Vendors pay for a plan that gives them a number of matched requests per month. Pricing was set by management and the sales lead; I designed how vendors choose a plan, add it to a cart and pay by card or bank transfer, which many small businesses here prefer.
+          Customers never pay. Vendors buy a monthly plan that gives them a set number of matched requests. Management and the sales lead set the prices; I designed everything around them, from how a vendor picks a plan to how they pay.
         </p>
         <p class="cs-body">
-          Most of my two weeks went into the mobile app. The web app came second and deliberately mirrors it, so someone who won't install an app (or is on a work laptop) gets the same product in a browser.
+          I had two weeks. Most of it went into the mobile app, because that's where most customers are. The web app followed, deliberately mirroring the app, so anyone who won't install it, or is at a work laptop, gets the same product in a browser.
         </p>
+      </div>
+    </section>
+
+    <!-- Interactive tour -->
+    <section class="cs-section qr-tour" id="tour">
+      <div class="container">
+        <span class="cs-section__label">Try it</span>
+        <h2 class="cs-section__title">Walk through the product<br /><em>the way users do.</em></h2>
+        <p class="cs-body">Pick a side of the marketplace, then tap any step to jump to it. These are screen recordings of the live product.</p>
+
+        <div class="qr-tabs" role="tablist" aria-label="Product tour">
+          <button class="qr-tab is-active" role="tab" aria-selected="true" data-tour="request">Customer app</button>
+          <button class="qr-tab" role="tab" aria-selected="false" data-tour="webapp">Web app</button>
+          <button class="qr-tab" role="tab" aria-selected="false" data-tour="plans">Vendor checkout</button>
+        </div>
+
+        <div class="qr-tour__stage">
+          <div class="qr-tour__device" id="tourDevice">
+            <video id="tourVideo" src="images/qr-tour-request.mp4" poster="images/qr-tour-request-poster.webp" muted playsinline loop preload="metadata"></video>
+          </div>
+          <ol class="qr-chapters" id="tourChapters" aria-label="Steps"></ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Landing page -->
+    <section class="cs-section">
+      <div class="container">
+        <span class="cs-section__label">The front door</span>
+        <h2 class="cs-section__title">One box to start,<br /><em>on any screen.</em></h2>
+        <p class="cs-body">
+          The landing page has one job: get someone typing their problem. The first thing you see is a single field, "Describe your project or problem", with your city already filled in and one button. Everything else on the page, the screens, the vendor plans, the cities covered, is there to answer the questions people have before they trust a new service.
+        </p>
+        <div class="qr-switch" role="tablist" aria-label="Screen size">
+          <button class="qr-switch__btn is-active" role="tab" aria-selected="true" data-view="desktop">Desktop</button>
+          <button class="qr-switch__btn" role="tab" aria-selected="false" data-view="mobile">Mobile</button>
+        </div>
+        <div class="qr-views">
+          <figure class="qr-view qr-view--desktop is-active" data-view="desktop">
+            <div class="qr-browser"><span></span><span></span><span></span><em>quoterequest.com</em></div>
+            <img src="images/qr-d-home.webp" alt="Quote Request desktop landing page with a single request box over a hero video" loading="lazy" />
+          </figure>
+          <figure class="qr-view qr-view--mobile" data-view="mobile">
+            <img src="images/qr-m-home.webp" alt="Quote Request mobile landing page" loading="lazy" />
+          </figure>
+        </div>
+        <div class="qr-gallery">
+          <figure><img src="images/qr-d-screens.webp" alt="Landing page section showing the app, the web app and vendor plans" loading="lazy" /><figcaption>The same product on phone and laptop, and the vendor side, explained in three blocks.</figcaption></figure>
+          <figure><img src="images/qr-d-role.webp" alt="Role selector: Find Services or List My Business" loading="lazy" /><figcaption>Sign-up asks one question first: are you here to hire, or to get hired?</figcaption></figure>
+        </div>
       </div>
     </section>
 
@@ -156,30 +213,30 @@
         <span class="cs-section__label">Decision — when to ask for an account</span>
         <h2 class="cs-section__title">Let people ask first.<br /><em>Ask who they are last.</em></h2>
         <p class="cs-body">
-          The business needs an account for every request, to notify vendors and to let them reply. But asking a first-time visitor to sign up before they've typed anything means asking for commitment before they've seen whether the product is worth it.
+          Every request needs an account behind it, so vendors can be notified and reply. The easy design is a sign-up wall at the front door. But that asks a stranger to commit before they've seen whether the product can help them, and most people leave.
         </p>
         <p class="cs-body">
-          So guests can go through the whole request. The account question comes only when they tap Submit, and the request is kept: sign up or log in and it is sent straight away. The trade-off is that a guest still can't get quotes without an account, but by that point they have already described their problem, which is the hard part.
+          So a guest can go through the whole request. The account question only appears when they tap Submit, and it promises their request is saved and will be sent the moment they sign up. By then they've already done the hard part, describing their problem, and they have a reason to finish.
         </p>
         <div class="cs-compare cs-compare--after-only">
           <div>
-            <div class="cs-compare__img"><img src="images/qr-step4.webp" alt="Last step of the request: location with Nigerian city suggestions" /></div>
-            <p class="cs-compare__caption">A guest reaches the last step without an account. City suggestions keep locations consistent for matching.</p>
+            <div class="cs-compare__img"><img src="images/qr-app-describe.webp" alt="Describing the job in the first step" loading="lazy" /></div>
+            <p class="cs-compare__caption">No account needed to start. The first thing a visitor does is describe their problem.</p>
           </div>
           <div>
-            <div class="cs-compare__img"><img src="images/qr-guest-signup.webp" alt="Sign in to submit your request, with details saved" /></div>
-            <p class="cs-compare__caption">The account ask comes at Submit, and it promises the request is saved and sent right after sign-up.</p>
+            <div class="cs-compare__img"><img src="images/qr-guest-signup.webp" alt="Sign in to submit your request, details saved" loading="lazy" /></div>
+            <p class="cs-compare__caption">The account ask comes at Submit, with a promise: your request is saved and goes out right after you sign up.</p>
           </div>
         </div>
         <div class="cs-impact">
           <div class="cs-impact__row">
             <div>
-              <span class="cs-impact__label">How I'll know it works</span>
-              <span class="cs-impact__text">Share of guest requests that get submitted after sign-up, against sign-ups that start from the Sign up button.</span>
+              <span class="cs-impact__label">What I gave up</span>
+              <span class="cs-impact__text">Some guests will still close the app at the sign-up prompt. I chose to lose people late, after they've invested, rather than at the door.</span>
             </div>
             <div>
-              <span class="cs-impact__label">What I gave up</span>
-              <span class="cs-impact__text">Some people will still close the app at the sign-up prompt. I chose to lose them late rather than early.</span>
+              <span class="cs-impact__label">How I'll know it works</span>
+              <span class="cs-impact__text">The share of guest requests that get submitted after sign-up, compared with sign-ups that start from the Sign up button.</span>
             </div>
           </div>
         </div>
@@ -193,16 +250,16 @@
         <span class="cs-section__label">Decision — what a request needs</span>
         <h2 class="cs-section__title">Four small questions,<br /><em>so every vendor quotes on the same facts.</em></h2>
         <p class="cs-body">
-          A vague request gets vague replies, or vendors who just say "call me". A long form gets abandoned on a phone. I split the request into four screens, one question each: what you need, when, your budget in naira, and where. A progress bar shows how close you are, and a line under the first question explains why it matters: it tells vendors what they're being asked to do.
+          A vague request gets vague replies, or vendors who just say "call me". A long form gets abandoned on a phone. So the request is four screens, one question each: what you need, when, your budget in naira, and where. The progress bar shows how close you are. A line under the first question tells you why it matters: it's what vendors read before they price your job.
         </p>
         <p class="cs-body">
-          Because every vendor sees the same date, budget and location, their quotes can be compared side by side. Four screens means more taps than one long form, but each one is quick to answer with a thumb.
+          Every input fits the thumb. Dates and times use the phone's own pickers, the budget opens the number pad, and location suggests real places as you type, so requests match the right vendors. Because every vendor sees the same date, budget and location, their quotes can be compared side by side.
         </p>
-        <div class="cs-screen-row">
-          <div class="cs-screen-row__item"><img src="images/qr-step1.webp" alt="Step 1: describe the job" /><p class="cs-screen-row__caption">1 · Describe the job, with a hint on why</p></div>
-          <div class="cs-screen-row__item"><img src="images/qr-step2.webp" alt="Step 2: date and time" /><p class="cs-screen-row__caption">2 · When you need it</p></div>
-          <div class="cs-screen-row__item"><img src="images/qr-step3.webp" alt="Step 3: budget in naira" /><p class="cs-screen-row__caption">3 · Budget in naira</p></div>
-          <div class="cs-screen-row__item"><img src="images/qr-step4.webp" alt="Step 4: location" /><p class="cs-screen-row__caption">4 · Location, with suggestions</p></div>
+        <div class="cs-screen-row qr-steps">
+          <div class="cs-screen-row__item"><img src="images/qr-app-describe.webp" alt="Step 1: describe the job" loading="lazy" /><p class="cs-screen-row__caption">1 · What you need, and why it matters</p></div>
+          <div class="cs-screen-row__item"><img src="images/qr-app-datetime.webp" alt="Step 2: date and time pickers" loading="lazy" /><p class="cs-screen-row__caption">2 · When, with native pickers</p></div>
+          <div class="cs-screen-row__item"><img src="images/qr-app-budget.webp" alt="Step 3: budget in naira with number pad" loading="lazy" /><p class="cs-screen-row__caption">3 · Budget in naira, number pad</p></div>
+          <div class="cs-screen-row__item"><img src="images/qr-app-location.webp" alt="Step 4: location with suggestions" loading="lazy" /><p class="cs-screen-row__caption">4 · Where, with suggestions</p></div>
         </div>
       </div>
     </section>
@@ -211,14 +268,24 @@
     <section class="cs-improvement">
       <div class="container">
         <div class="cs-improvement__num">03</div>
-        <span class="cs-section__label">Decision — trust</span>
-        <h2 class="cs-section__title">You're letting a stranger into your home.<br /><em>Trust has to be visible.</em></h2>
+        <span class="cs-section__label">Decision — after Submit</span>
+        <h2 class="cs-section__title">Quotes take time.<br /><em>Silence feels like failure.</em></h2>
         <p class="cs-body">
-          Every vendor on Quote Request is confirmed, and that confirmation shows as a badge on their listing. A registered business confirms with its CAC number (the Corporate Affairs Commission is Nigeria's company registry), a single field. A business without one can upload its certificate and a director's ID instead. After a job, the customer rates the vendor, and those reviews sit on the vendor's profile next to the quote.
+          Quotes don't arrive instantly. ConnectNigeria's team reviews each request, then vendors need time to reply. Without an explanation, a customer who submits and sees nothing assumes the app is broken.
         </p>
         <p class="cs-body">
-          Confirmation adds a step to vendor sign-up, and some vendors will drop out there. That's the right trade: a marketplace where customers don't trust the sellers has no customers for the sellers to reach.
+          So the confirmation screen tells them exactly what happens next, in four plain steps: our team reviews your request, vendors in your area are notified, they send quotes, you compare and choose. After that, every request on the customer's list carries a status (Active, In progress, Confirm needed, Completed, Expired), and anything waiting on them is flagged, so they always know whose move it is.
         </p>
+        <div class="cs-compare qr-compare-mixed">
+          <div>
+            <div class="cs-compare__img"><img src="images/qr-app-submitted.webp" alt="Request submitted, with what happens next" loading="lazy" /></div>
+            <p class="cs-compare__caption">The four steps after Submit, so waiting feels like progress.</p>
+          </div>
+          <div>
+            <div class="cs-compare__img"><img src="images/qr-web-quotes.webp" alt="My Requests list with statuses and a 1 need attention flag" loading="lazy" /></div>
+            <p class="cs-compare__caption">Every request shows its status. "1 need attention" points to the request waiting on you.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -226,11 +293,49 @@
     <section class="cs-improvement">
       <div class="container">
         <div class="cs-improvement__num">04</div>
-        <span class="cs-section__label">Decision — where vendors work</span>
-        <h2 class="cs-section__title">Coverage that matches<br /><em>how Nigerians describe places.</em></h2>
+        <span class="cs-section__label">Decision — trust</span>
+        <h2 class="cs-section__title">You're letting a stranger into your home.<br /><em>Trust has to be earned, and visible.</em></h2>
         <p class="cs-body">
-          A cleaner in Lekki and a solar installer who travels across the South West need very different reach. Vendors set coverage zones at the level that fits them: a city or neighbourhood, a whole state, one of Nigeria's six geopolitical regions, or all 36 states and Abuja. One vendor account can also run several businesses and switch between them.
+          Every vendor is confirmed before they can quote, and the badge shows on their listing. A registered business confirms with its CAC number (the Corporate Affairs Commission is Nigeria's company registry), which is a single field. A business without one can upload its certificate and a director's ID instead.
         </p>
+        <p class="cs-body">
+          Reviews close the loop. When a vendor marks a job done, the customer is asked to confirm it and leave a rating, so a review only ever comes from a finished job. Completed jobs show the rating and a one-tap "Rebook vendor", which rewards good vendors with repeat work.
+        </p>
+        <div class="cs-impact">
+          <div class="cs-impact__row">
+            <div>
+              <span class="cs-impact__label">What I gave up</span>
+              <span class="cs-impact__text">Confirmation adds a step to vendor sign-up, and some vendors will drop out there. A marketplace customers don't trust has nothing to offer the vendors who stay.</span>
+            </div>
+            <div>
+              <span class="cs-impact__label">How I'll know it works</span>
+              <span class="cs-impact__text">The share of completed jobs that get confirmed and reviewed, and how often customers rebook a vendor.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Decision 5 -->
+    <section class="cs-improvement">
+      <div class="container">
+        <div class="cs-improvement__num">05</div>
+        <span class="cs-section__label">Decision — the vendor side</span>
+        <h2 class="cs-section__title">Built for how Nigerian businesses<br /><em>actually work.</em></h2>
+        <p class="cs-body">
+          Vendors are small business owners running everything from a phone. Three details matter to them:
+        </p>
+        <ul class="cs-col__list qr-list">
+          <li><strong>Pay the way they pay.</strong> Checkout takes card through Paystack or a plain bank transfer, which many small businesses here prefer, with discount codes, referrals and loyalty points built into the payment summary.</li>
+          <li><strong>Cover the area they actually serve.</strong> A cleaner in Lekki and a solar installer who travels across the South West need different reach, so coverage can be a city, a state, one of Nigeria's six geopolitical regions, or all 36 states and Abuja.</li>
+          <li><strong>One person, two roles.</strong> Plenty of vendors also hire. One account can switch between customer and vendor, and one vendor can run several businesses.</li>
+        </ul>
+        <div class="cs-screen-row qr-steps">
+          <div class="cs-screen-row__item"><img src="images/qr-app-plan-plans.webp" alt="Vendor plans" loading="lazy" /><p class="cs-screen-row__caption">Plans</p></div>
+          <div class="cs-screen-row__item"><img src="images/qr-app-plan-cart.webp" alt="Cart with card and bank transfer" loading="lazy" /><p class="cs-screen-row__caption">Card or bank transfer</p></div>
+          <div class="cs-screen-row__item"><img src="images/qr-app-plan-breakdown.webp" alt="Payment breakdown with discount and referral" loading="lazy" /><p class="cs-screen-row__caption">Codes, referrals, points</p></div>
+          <div class="cs-screen-row__item"><img src="images/qr-app-plan-paid.webp" alt="Payment successful" loading="lazy" /><p class="cs-screen-row__caption">Straight to receiving requests</p></div>
+        </div>
       </div>
     </section>
 
@@ -238,24 +343,41 @@
     <section class="cs-section">
       <div class="container">
         <span class="cs-section__label">After launch</span>
-        <h2 class="cs-section__title">Shipping was the start.<br /><em>Users and sales did the rest.</em></h2>
+        <h2 class="cs-section__title">Shipping was the start.<br /><em>Real users shaped the rest.</em></h2>
         <p class="cs-body">
-          ConnectNigeria backed the launch with billboards, an agency and a sales team, and the sales team became one of my best sources of feedback: they talk to vendors every day. Since launch I've revised the product many times based on what users and sales reported. Recent releases improved quote tracking for vendors who run several businesses, made chat more reliable with retries and saved drafts when a message fails, and fixed requests wrongly showing as already answered.
+          ConnectNigeria put real weight behind the launch: billboards, an agency and a sales team on the ground. The sales team became one of my best sources of feedback, because they talk to vendors every day. Since launch I've revised the product many times based on what users and sales reported, and the app keeps shipping updates: better quote tracking for vendors who run several businesses, more reliable chat, and messages that are kept when sending fails.
         </p>
         <div class="cs-metrics">
           <div class="cs-metric">
             <span class="cs-metric__value">2 weeks</span>
-            <span class="cs-metric__label">From brief to a complete v1 design for both sides of the marketplace, on mobile and web</span>
+            <span class="cs-metric__label">From brief to a complete v1 for both sides of the marketplace, on mobile and web</span>
           </div>
           <div class="cs-metric">
             <span class="cs-metric__value">1,000+</span>
-            <span class="cs-metric__label">Android installs, Google Play, October 2026</span>
+            <span class="cs-metric__label">Android installs on Google Play, October 2026</span>
           </div>
           <div class="cs-metric">
             <span class="cs-metric__value">4.6★</span>
-            <span class="cs-metric__label">Google Play rating from 15 reviews; reviewers mention how easy it is to find and compare providers</span>
+            <span class="cs-metric__label">Google Play rating from 15 reviews; reviewers single out how easy it is to find and compare providers</span>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Funnel -->
+    <section class="cs-section">
+      <div class="container">
+        <span class="cs-section__label">What I'm measuring next</span>
+        <h2 class="cs-section__title">Every step has a number.<br /><em>Here's where I'm putting them.</em></h2>
+        <p class="cs-body">Tap a step to see what I designed there and the metric that tells us if it's working.</p>
+        <div class="qr-funnel" id="qrFunnel">
+          <button class="qr-funnel__step is-active" data-i="0"><span>1</span>Request started</button>
+          <button class="qr-funnel__step" data-i="1"><span>2</span>Submitted</button>
+          <button class="qr-funnel__step" data-i="2"><span>3</span>First quote</button>
+          <button class="qr-funnel__step" data-i="3"><span>4</span>Vendor hired</button>
+          <button class="qr-funnel__step" data-i="4"><span>5</span>Reviewed</button>
+        </div>
+        <div class="qr-funnel__panel" id="qrFunnelPanel" aria-live="polite"></div>
       </div>
     </section>
 
@@ -265,7 +387,7 @@
         <span class="cs-section__label">Reflection</span>
         <h2 class="cs-section__title">What I'd do differently</h2>
         <p class="cs-body">
-          We launched without agreeing which numbers would tell us the product was working, so most of what I knew about growth came from stakeholder meetings. Next time I'd sit with the PM before launch and define the funnel (request started, submitted, first quote received, vendor hired) and the events to track it. I'm now testing the request flow with first-time users to put real numbers on the first half of that funnel.
+          We launched without agreeing which numbers would tell us the product was working, so most of what I knew about growth came from stakeholder meetings. Next time, before launch, I'd sit with the PM and define the funnel above and the events that track it. I'm fixing that now: I'm running usability tests on the request flow with first-time users to put real numbers on the first half of it.
         </p>
       </div>
     </section>
@@ -286,6 +408,7 @@
   </div>
 
 
+
   <footer class="footer">
     <div class="container">
       <p class="footer__text">© 2026 Promise Olaifa. Designed and built by me.</p>
@@ -293,5 +416,6 @@
   </footer>
 
   <script src="script.js" defer></script>
+  <script src="qr.js" defer></script>
 </body>
 </html>

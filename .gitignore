@@ -6,3 +6,4 @@ package-lock.json
 .vercel
 images/*.mp4
 !images/*-card.mp4
+!images/qr-*.mp4
