@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moniepoint: getting locked-out customers back to their money · Promise Olaifa</title>
+  <meta name="description" content="A self-initiated redesign based on 520 Google Play reviews: forced updates, failed face checks and lockouts in Moniepoint personal banking." />
+  <meta name="author" content="Promise Olaifa" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Moniepoint: getting locked-out customers back to their money · Promise Olaifa" />
+  <meta property="og:description" content="A self-initiated redesign based on 520 Google Play reviews: forced updates, failed face checks and lockouts in Moniepoint personal banking." />
+  <meta property="og:image" content="images/mp-cover.webp" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Moniepoint: getting locked-out customers back to their money · Promise Olaifa" />
+  <meta name="twitter:description" content="A self-initiated redesign based on 520 Google Play reviews: forced updates, failed face checks and lockouts in Moniepoint personal banking." />
+  <meta name="twitter:image" content="images/mp-cover.webp" />
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="case-study.css" />
+  <link rel="stylesheet" href="qr.css" />
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">PO</a>
+      <div class="nav__right">
+        <ul class="nav__links">
+          <li><a href="index.html#work" class="nav__link">Work</a></li>
+          <li><a href="ui-gallery.html" class="nav__link">UI</a></li>
+          <li><a href="about.html" class="nav__link">About</a></li>
+          <li><a href="index.html#contact" class="nav__link">Contact</a></li>
+        </ul>
+        <button class="nav__theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <svg class="icon icon--sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+          </svg>
+          <svg class="icon icon--moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+        <button class="nav__hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="nav__overlay" id="navOverlay" aria-hidden="true">
+    <ul class="nav__overlay-links">
+      <li><a href="index.html#work" class="nav__overlay-link">Work</a></li>
+      <li><a href="ui-gallery.html" class="nav__overlay-link">UI</a></li>
+      <li><a href="about.html" class="nav__overlay-link">About</a></li>
+      <li><a href="index.html#contact" class="nav__overlay-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <main class="qr mp">
+
+    <section class="cs-hero">
+      <div class="container">
+        <a href="index.html#work" class="cs-back">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+          Back to Work
+        </a>
+        <div class="cs-tags">
+          <span class="tag">Fintech</span>
+          <span class="tag">Research from reviews</span>
+          <span class="tag tag--status">Self-initiated</span>
+        </div>
+        <span class="cs-hero__label">Self-initiated · not affiliated with Moniepoint</span>
+        <h1 class="cs-hero__title">Moniepoint: getting locked-out customers back to their money</h1>
+        <p class="cs-hero__desc">
+          I read 520 Google Play reviews of Moniepoint's personal banking app. One in five of this year's negative reviews came from people who couldn't get into the app at all: forced updates, failed face checks, and lockouts that last days. I redesigned the three moments where people get stuck.
+        </p>
+        <div class="cs-hero__meta">
+          <div class="cs-hero__meta-item"><span class="cs-meta-label">Role</span><span class="cs-meta-value">Research and design, solo</span></div>
+          <div class="cs-hero__meta-item"><span class="cs-meta-label">Evidence</span><span class="cs-meta-value">520 Play Store reviews</span></div>
+          <div class="cs-hero__meta-item"><span class="cs-meta-label">Platform</span><span class="cs-meta-value">Android · iOS</span></div>
+          <div class="cs-hero__meta-item"><span class="cs-meta-label">Status</span><span class="cs-meta-value">Concept, not shipped</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="cs-cover"><img src="images/mp-cover.webp" alt="Three redesigned Moniepoint screens: home with a background update, a coached face check, and a clear lockout screen" /></div>
+
+    <section class="cs-section">
+      <div class="container">
+        <span class="cs-section__label">In short</span>
+        <h2 class="cs-section__title">The worst bank app moment:<br /><em>your money is there, and you can't reach it.</em></h2>
+        <ul class="cs-col__list cs-tldr">
+          <li><strong>The problem:</strong> 35 of the 158 one to three star reviews from 2026 in my sample are from people who couldn't get into the app. Several say they moved to OPay or PalmPay.</li>
+          <li><strong>Why it matters to Moniepoint:</strong> a customer who can't get in can't make transfers, and every transfer carries a fee. Lockouts also flood customer support, the second most common complaint.</li>
+          <li><strong>What I designed:</strong> updates that never block your money unless security demands it, a face check that coaches you instead of failing you, and a lockout screen that tells you when and how you get back in.</li>
+          <li><strong>Honest status:</strong> self-initiated and untested. Below is what I'd measure, and how I'd test it first.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cs-section">
+      <div class="container">
+        <span class="cs-section__label">The evidence</span>
+        <h2 class="cs-section__title">What 158 unhappy customers<br /><em>wrote about in 2026.</em></h2>
+        <p class="cs-body">I loaded 520 reviews from Google Play and kept the 158 rated one to three stars and written in 2026. I tagged each one by what it complained about; a review can carry more than one tag. Tap a bar to see what people said, in my words.</p>
+        <div class="mp-chart" id="mpChart"></div>
+        <div class="mp-chart__note" id="mpNote" aria-live="polite"></div>
+        <p class="cs-body">Fees and missing money get more mentions, but they're mostly pricing and operations problems. Getting in is a design problem, and it's the one that stops everything else: you can't pay a fee, or chase a refund, from outside the app.</p>
+      </div>
+    </section>
+
+    <section class="cs-section">
+      <div class="container">
+        <span class="cs-section__label">The redesign</span>
+        <h2 class="cs-section__title">Three moments,<br /><em>three ways back in.</em></h2>
+        <p class="cs-body">Pick a moment to see the redesign and the reasoning behind it.</p>
+        <div class="qr-tabs" role="tablist" aria-label="Moments">
+          <button class="qr-tab is-active" role="tab" aria-selected="true" data-m="0">App updates</button>
+          <button class="qr-tab" role="tab" aria-selected="false" data-m="1">Face check</button>
+          <button class="qr-tab" role="tab" aria-selected="false" data-m="2">Locked out</button>
+        </div>
+        <div class="mp-moment" id="mpMoment"></div>
+      </div>
+    </section>
+
+    <section class="cs-section">
+      <div class="container">
+        <span class="cs-section__label">Constraints I designed around</span>
+        <h2 class="cs-section__title">A bank can't just<br /><em>remove the friction.</em></h2>
+        <ul class="cs-col__list qr-list">
+          <li><strong>Face checks are required.</strong> Nigerian banking rules require banks to confirm identity, so the face check stays. The fix is helping people pass it, and giving a safe fallback where the rules allow one.</li>
+          <li><strong>Some updates really are urgent.</strong> A security fix may have to block transfers. The redesign keeps that, but makes it rare, explains it, and keeps everything else working.</li>
+          <li><strong>Lockouts protect people.</strong> Pausing sign-in after wrong PINs stops fraud. The redesign keeps the pause and adds a countdown and a faster way out: reset the PIN.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cs-section">
+      <div class="container">
+        <span class="cs-section__label">How I'd measure it</span>
+        <h2 class="cs-section__title">If Moniepoint shipped this,<br /><em>these numbers should move.</em></h2>
+        <div class="cs-metrics">
+          <div class="cs-metric"><span class="cs-metric__value">Blocked</span><span class="cs-metric__label">Share of app opens that hit a blocking update screen. Should fall to only security releases.</span></div>
+          <div class="cs-metric"><span class="cs-metric__value">1st try</span><span class="cs-metric__label">Face checks passed on the first attempt, and how many people need a fallback.</span></div>
+          <div class="cs-metric"><span class="cs-metric__value">Back in</span><span class="cs-metric__label">Time from a lockout to a successful sign-in, and support chats about access.</span></div>
+        </div>
+        <p class="cs-body" style="margin-top:32px">What I'd test first: the face check coaching. I'd put a clickable prototype in front of 8 people with mid-range Android phones in normal indoor light and compare first-try success with the current flow.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="cs-next">
+    <div class="container">
+      <a href="project-5.html" class="cs-next__link">
+        <div>
+          <span class="cs-next__label">Next Project</span>
+          <span class="cs-next__title">Quote Request</span>
+        </div>
+        <span class="cs-next__arrow">→</span>
+      </a>
+    </div>
+  </div>
+
+
+
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__text">© 2026 Promise Olaifa. Designed and built by me.</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+  <script src="mp.js" defer></script>
+</body>
+</html>

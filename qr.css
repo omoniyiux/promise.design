@@ -270,3 +270,33 @@
 .qr .qr-steps { max-width: 980px; }
 .qr .qr-compare-mixed { max-width: 100%; grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.6fr); align-items: center; }
 @media (max-width: 900px) { .qr .qr-compare-mixed { grid-template-columns: 1fr; } }
+
+/* Moniepoint case study */
+.mp-chart { display: grid; gap: 10px; margin: 32px 0 12px; }
+.mp-bar {
+  font: inherit; color: var(--color-text); background: transparent; border: 0; cursor: pointer;
+  display: grid; grid-template-columns: 220px 1fr 40px; gap: 16px; align-items: center; text-align: left;
+  padding: 8px 10px; border-radius: 10px;
+}
+.mp-bar:hover, .mp-bar.is-active { background: var(--color-surface); }
+.mp-bar__label { font-size: 14px; }
+.mp-bar__track { height: 12px; border-radius: 6px; background: var(--color-surface); overflow: hidden; }
+.mp-bar.is-active .mp-bar__track { background: var(--color-bg); }
+.mp-bar__fill { display: block; height: 100%; width: 0; border-radius: 6px; background: var(--color-text-muted); opacity: 0.45; transition: width 0.9s var(--ease-out); }
+.mp-chart.is-in .mp-bar__fill { width: var(--w); }
+.mp-bar.is-focus .mp-bar__fill { background: #0357ee; opacity: 1; }
+.mp-bar__n { font-size: 14px; font-weight: 600; font-variant-numeric: tabular-nums; text-align: right; }
+.mp-bar:focus-visible { outline: 2px solid var(--color-accent-warm); outline-offset: 2px; }
+.mp-chart__note { font-size: 15px; line-height: 1.6; color: var(--color-text-muted); padding: 16px 20px; border-left: 2px solid #0357ee; margin-bottom: 24px; }
+.mp-chart__note strong { color: var(--color-text); font-weight: 600; }
+.mp-moment { margin-top: 28px; animation: qrFade 0.4s var(--ease-out); }
+.mp-moment__title { font-size: 22px; font-weight: 500; margin-bottom: 12px; }
+.mp-shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 320px)); gap: 24px; margin: 28px 0; }
+.mp-shots figure { margin: 0; }
+.mp-shots img { width: 100%; display: block; border-radius: 28px; border: 1px solid var(--color-border); }
+.mp-shots figcaption { font-size: 13px; line-height: 1.5; color: var(--color-text-muted); margin-top: 12px; }
+@media (max-width: 700px) {
+  .mp-bar { grid-template-columns: 1fr 36px; }
+  .mp-bar__label { grid-column: 1 / -1; }
+}
+@media (prefers-reduced-motion: reduce) { .mp-bar__fill { transition: none; } }
