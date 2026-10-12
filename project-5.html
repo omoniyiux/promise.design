@@ -3,9 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ConnectNigeria — Case Study · Promise Olaifa</title>
-  <meta name="description" content="Product design work at ConnectNigeria — Nigeria's leading business information platform." />
+  <title>Quote Request — Case Study · Promise Olaifa</title>
+  <meta name="description" content="How I designed Quote Request, ConnectNigeria's services marketplace, end to end: customer and vendor sides, mobile and web. Live since November 2025." />
   <meta name="author" content="Promise Olaifa" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Quote Request — Case Study · Promise Olaifa" />
+  <meta property="og:description" content="How I designed Quote Request, ConnectNigeria's services marketplace, end to end: customer and vendor sides, mobile and web. Live since November 2025." />
+  <meta property="og:image" content="images/qr-cover.webp" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Quote Request — Case Study · Promise Olaifa" />
+  <meta name="twitter:description" content="How I designed Quote Request, ConnectNigeria's services marketplace, end to end: customer and vendor sides, mobile and web. Live since November 2025." />
+  <meta name="twitter:image" content="images/qr-cover.webp" />
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,44 +25,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="case-study.css" />
-  <style>
-    .empty-screen {
-      min-height: calc(100vh - 72px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .empty-screen__inner {
-      text-align: center;
-      max-width: 480px;
-      padding: 0 24px;
-    }
-    .empty-screen__label {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 20px;
-    }
-    .empty-screen__title {
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 600;
-      line-height: 1.15;
-      margin-bottom: 16px;
-    }
-    .empty-screen__title em {
-      font-style: italic;
-      font-weight: 300;
-    }
-    .empty-screen__sub {
-      font-size: 1rem;
-      color: var(--text-secondary);
-      line-height: 1.7;
-      margin-bottom: 40px;
-    }
-  </style>
 </head>
 <body>
 
@@ -92,19 +66,229 @@
   </div>
 
   <main>
-    <section class="empty-screen">
-      <div class="empty-screen__inner">
-        <span class="empty-screen__label">ConnectNigeria</span>
-        <h1 class="empty-screen__title">Case study<br /><em>coming soon.</em></h1>
-        <p class="empty-screen__sub">This write-up is in progress. Check back shortly — or reach out if you'd like to hear about this project directly.</p>
-        <a href="index.html#work" class="btn btn--ghost">← Back to Work</a>
+
+    <!-- Hero -->
+    <section class="cs-hero">
+      <div class="container">
+        <a href="index.html#work" class="cs-back">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 12H5M12 5l-7 7 7 7"/>
+          </svg>
+          Back to Work
+        </a>
+
+        <div class="cs-tags">
+          <span class="tag">Marketplace</span>
+          <span class="tag">Mobile · Web</span>
+          <span class="tag tag--status">Shipped</span>
+        </div>
+
+        <span class="cs-hero__label">Case Study — 01</span>
+        <h1 class="cs-hero__title">Quote Request: describe a job once, get competing quotes</h1>
+        <p class="cs-hero__desc">
+          I designed ConnectNigeria's services marketplace end to end: the customer side and the vendor side, on mobile and web, in two weeks. It launched in November 2025 and has been revised many times since, based on feedback from users and the sales team.
+        </p>
+
+        <div class="cs-hero__meta">
+          <div class="cs-hero__meta-item">
+            <span class="cs-meta-label">Role</span>
+            <span class="cs-meta-value">Sole product designer</span>
+          </div>
+          <div class="cs-hero__meta-item">
+            <span class="cs-meta-label">Team</span>
+            <span class="cs-meta-value">PM, mobile, front-end and back-end engineers</span>
+          </div>
+          <div class="cs-hero__meta-item">
+            <span class="cs-meta-label">Timeline</span>
+            <span class="cs-meta-value">2 weeks to v1, iterated since</span>
+          </div>
+          <div class="cs-hero__meta-item">
+            <span class="cs-meta-label">Platform</span>
+            <span class="cs-meta-value">iOS · Android · Web</span>
+          </div>
+          <div class="cs-hero__meta-item">
+            <span class="cs-meta-label">Status</span>
+            <span class="cs-meta-value">Live since Nov 2025</span>
+          </div>
+        </div>
       </div>
     </section>
+
+    <div class="cs-cover">
+      <img src="images/qr-cover.webp" alt="Quote Request home screen, the first step of a request, and the sign-up prompt that keeps a guest's request" />
+    </div>
+
+    <!-- TL;DR -->
+    <section class="cs-section">
+      <div class="container">
+        <span class="cs-section__label">In short</span>
+        <h2 class="cs-section__title">Hiring a plumber in Lagos<br /><em>shouldn't take ten phone calls.</em></h2>
+        <ul class="cs-col__list cs-tldr">
+          <li><strong>Problem:</strong> in Nigeria, finding someone to fix a leak, cater an event or install solar usually means asking around on WhatsApp and calling for prices one by one. There is no easy way to compare prices or check who you can trust.</li>
+          <li><strong>My part:</strong> I was the only designer. I designed the customer app, the vendor app and the web app, working with a PM and three engineers.</li>
+          <li><strong>Key decisions:</strong> let people write their whole request before asking them to sign up; break the request into four short steps so every vendor quotes on the same facts; make vendor trust visible with a confirmed badge and reviews.</li>
+          <li><strong>Result:</strong> live on Android, iOS and web since November 2025, with 1,000+ Android installs and a 4.6 rating on Google Play. I'm now running a usability test to get numbers on the request flow itself.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Context -->
+    <section class="cs-section">
+      <div class="container">
+        <span class="cs-section__label">Context</span>
+        <h2 class="cs-section__title">A directory of businesses,<br /><em>turned into a marketplace.</em></h2>
+        <p class="cs-body">
+          ConnectNigeria runs one of Nigeria's largest business directories. Quote Request is its newer product: a customer describes a job once, the request goes to confirmed vendors who cover that service and area, and they compete by sending quotes. The customer compares price, timeline and reviews, then picks one.
+        </p>
+        <p class="cs-body">
+          It's free for customers. Vendors pay for a plan that gives them a number of matched requests per month. Pricing was set by management and the sales lead; I designed how vendors choose a plan, add it to a cart and pay by card or bank transfer, which many small businesses here prefer.
+        </p>
+        <p class="cs-body">
+          Most of my two weeks went into the mobile app. The web app came second and deliberately mirrors it, so someone who won't install an app (or is on a work laptop) gets the same product in a browser.
+        </p>
+      </div>
+    </section>
+
+    <!-- Decision 1 -->
+    <section class="cs-improvement">
+      <div class="container">
+        <div class="cs-improvement__num">01</div>
+        <span class="cs-section__label">Decision — when to ask for an account</span>
+        <h2 class="cs-section__title">Let people ask first.<br /><em>Ask who they are last.</em></h2>
+        <p class="cs-body">
+          The business needs an account for every request, to notify vendors and to let them reply. But asking a first-time visitor to sign up before they've typed anything means asking for commitment before they've seen whether the product is worth it.
+        </p>
+        <p class="cs-body">
+          So guests can go through the whole request. The account question comes only when they tap Submit, and the request is kept: sign up or log in and it is sent straight away. The trade-off is that a guest still can't get quotes without an account, but by that point they have already described their problem, which is the hard part.
+        </p>
+        <div class="cs-compare cs-compare--after-only">
+          <div>
+            <div class="cs-compare__img"><img src="images/qr-step4.webp" alt="Last step of the request: location with Nigerian city suggestions" /></div>
+            <p class="cs-compare__caption">A guest reaches the last step without an account. City suggestions keep locations consistent for matching.</p>
+          </div>
+          <div>
+            <div class="cs-compare__img"><img src="images/qr-guest-signup.webp" alt="Sign in to submit your request, with details saved" /></div>
+            <p class="cs-compare__caption">The account ask comes at Submit, and it promises the request is saved and sent right after sign-up.</p>
+          </div>
+        </div>
+        <div class="cs-impact">
+          <div class="cs-impact__row">
+            <div>
+              <span class="cs-impact__label">How I'll know it works</span>
+              <span class="cs-impact__text">Share of guest requests that get submitted after sign-up, against sign-ups that start from the Sign up button.</span>
+            </div>
+            <div>
+              <span class="cs-impact__label">What I gave up</span>
+              <span class="cs-impact__text">Some people will still close the app at the sign-up prompt. I chose to lose them late rather than early.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Decision 2 -->
+    <section class="cs-improvement">
+      <div class="container">
+        <div class="cs-improvement__num">02</div>
+        <span class="cs-section__label">Decision — what a request needs</span>
+        <h2 class="cs-section__title">Four small questions,<br /><em>so every vendor quotes on the same facts.</em></h2>
+        <p class="cs-body">
+          A vague request gets vague replies, or vendors who just say "call me". A long form gets abandoned on a phone. I split the request into four screens, one question each: what you need, when, your budget in naira, and where. A progress bar shows how close you are, and a line under the first question explains why it matters: it tells vendors what they're being asked to do.
+        </p>
+        <p class="cs-body">
+          Because every vendor sees the same date, budget and location, their quotes can be compared side by side. Four screens means more taps than one long form, but each one is quick to answer with a thumb.
+        </p>
+        <div class="cs-screen-row">
+          <div class="cs-screen-row__item"><img src="images/qr-step1.webp" alt="Step 1: describe the job" /><p class="cs-screen-row__caption">1 · Describe the job, with a hint on why</p></div>
+          <div class="cs-screen-row__item"><img src="images/qr-step2.webp" alt="Step 2: date and time" /><p class="cs-screen-row__caption">2 · When you need it</p></div>
+          <div class="cs-screen-row__item"><img src="images/qr-step3.webp" alt="Step 3: budget in naira" /><p class="cs-screen-row__caption">3 · Budget in naira</p></div>
+          <div class="cs-screen-row__item"><img src="images/qr-step4.webp" alt="Step 4: location" /><p class="cs-screen-row__caption">4 · Location, with suggestions</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Decision 3 -->
+    <section class="cs-improvement">
+      <div class="container">
+        <div class="cs-improvement__num">03</div>
+        <span class="cs-section__label">Decision — trust</span>
+        <h2 class="cs-section__title">You're letting a stranger into your home.<br /><em>Trust has to be visible.</em></h2>
+        <p class="cs-body">
+          Every vendor on Quote Request is confirmed, and that confirmation shows as a badge on their listing. A registered business confirms with its CAC number (the Corporate Affairs Commission is Nigeria's company registry), a single field. A business without one can upload its certificate and a director's ID instead. After a job, the customer rates the vendor, and those reviews sit on the vendor's profile next to the quote.
+        </p>
+        <p class="cs-body">
+          Confirmation adds a step to vendor sign-up, and some vendors will drop out there. That's the right trade: a marketplace where customers don't trust the sellers has no customers for the sellers to reach.
+        </p>
+      </div>
+    </section>
+
+    <!-- Decision 4 -->
+    <section class="cs-improvement">
+      <div class="container">
+        <div class="cs-improvement__num">04</div>
+        <span class="cs-section__label">Decision — where vendors work</span>
+        <h2 class="cs-section__title">Coverage that matches<br /><em>how Nigerians describe places.</em></h2>
+        <p class="cs-body">
+          A cleaner in Lekki and a solar installer who travels across the South West need very different reach. Vendors set coverage zones at the level that fits them: a city or neighbourhood, a whole state, one of Nigeria's six geopolitical regions, or all 36 states and Abuja. One vendor account can also run several businesses and switch between them.
+        </p>
+      </div>
+    </section>
+
+    <!-- After launch -->
+    <section class="cs-section">
+      <div class="container">
+        <span class="cs-section__label">After launch</span>
+        <h2 class="cs-section__title">Shipping was the start.<br /><em>Users and sales did the rest.</em></h2>
+        <p class="cs-body">
+          ConnectNigeria backed the launch with billboards, an agency and a sales team, and the sales team became one of my best sources of feedback: they talk to vendors every day. Since launch I've revised the product many times based on what users and sales reported. Recent releases improved quote tracking for vendors who run several businesses, made chat more reliable with retries and saved drafts when a message fails, and fixed requests wrongly showing as already answered.
+        </p>
+        <div class="cs-metrics">
+          <div class="cs-metric">
+            <span class="cs-metric__value">2 weeks</span>
+            <span class="cs-metric__label">From brief to a complete v1 design for both sides of the marketplace, on mobile and web</span>
+          </div>
+          <div class="cs-metric">
+            <span class="cs-metric__value">1,000+</span>
+            <span class="cs-metric__label">Android installs, Google Play, October 2026</span>
+          </div>
+          <div class="cs-metric">
+            <span class="cs-metric__value">4.6★</span>
+            <span class="cs-metric__label">Google Play rating from 15 reviews; reviewers mention how easy it is to find and compare providers</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reflection -->
+    <section class="cs-section">
+      <div class="container">
+        <span class="cs-section__label">Reflection</span>
+        <h2 class="cs-section__title">What I'd do differently</h2>
+        <p class="cs-body">
+          We launched without agreeing which numbers would tell us the product was working, so most of what I knew about growth came from stakeholder meetings. Next time I'd sit with the PM before launch and define the funnel (request started, submitted, first quote received, vendor hired) and the events to track it. I'm now testing the request flow with first-time users to put real numbers on the first half of that funnel.
+        </p>
+      </div>
+    </section>
+
   </main>
+
+  <!-- Next Project -->
+  <div class="cs-next">
+    <div class="container">
+      <a href="project-1.html" class="cs-next__link">
+        <div>
+          <span class="cs-next__label">Next Project</span>
+          <span class="cs-next__title">Bayse: 10 fixes for a prediction market</span>
+        </div>
+        <span class="cs-next__arrow">→</span>
+      </a>
+    </div>
+  </div>
+
 
   <footer class="footer">
     <div class="container">
-      <p class="footer__text">© 2026 Promise Olaifa. Designed & built with care.</p>
+      <p class="footer__text">© 2026 Promise Olaifa. Designed and built by me.</p>
     </div>
   </footer>
 

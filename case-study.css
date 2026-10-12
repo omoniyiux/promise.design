@@ -529,3 +529,17 @@
 
   .cs-next__link { flex-direction: column; align-items: flex-start; padding: 44px 0; }
 }
+
+/* TL;DR summary list */
+.cs-tldr {
+  margin-top: 40px;
+  gap: 16px;
+}
+.cs-tldr li {
+  font-size: 17px;
+  line-height: 1.7;
+}
+.cs-tldr strong {
+  color: var(--color-text);
+  font-weight: 600;
+}

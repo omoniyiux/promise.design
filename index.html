@@ -26,7 +26,7 @@
   <!-- Reduced to 3 weights (was 6) — saves ~30% font payload -->
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600&display=swap" rel="stylesheet" />
   <!-- Preload LCP image so browser fetches it immediately -->
-  <link rel="preload" as="image" href="images/project-1.webp" fetchpriority="high" />
+  <link rel="preload" as="image" href="images/qr-cover.webp" fetchpriority="high" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -128,6 +128,7 @@
 
       <div class="work__ticker" aria-hidden="true">
         <div class="work__ticker-track">
+          <span>Quote Request</span><span class="ticker__dot">·</span>
           <span>Bayse</span><span class="ticker__dot">·</span>
           <span>Louisville</span><span class="ticker__dot">·</span>
           <span>Lumino</span><span class="ticker__dot">·</span>
@@ -136,6 +137,7 @@
           <span>Nomba</span><span class="ticker__dot">·</span>
           <span>234Photos</span><span class="ticker__dot">·</span>
           <!-- Duplicate for seamless loop -->
+          <span>Quote Request</span><span class="ticker__dot">·</span>
           <span>Bayse</span><span class="ticker__dot">·</span>
           <span>Louisville</span><span class="ticker__dot">·</span>
           <span>Lumino</span><span class="ticker__dot">·</span>
@@ -150,9 +152,30 @@
 
         <!-- Project 1 -->
         <article class="project reveal" data-index="01">
+          <a href="project-5.html" class="project__link">
+            <div class="project__image">
+              <img src="images/qr-cover.webp" alt="Quote Request: home screen, request step and sign-up prompt" class="project__img" fetchpriority="high" decoding="async" />
+              <div class="project__overlay">
+                <span class="project__cta-text">View Case Study →</span>
+              </div>
+            </div>
+            <div class="project__meta">
+              <div class="project__tags">
+                <span class="tag">Marketplace</span>
+                <span class="tag">Mobile · Web</span>
+                <span class="tag tag--status">Shipped</span>
+              </div>
+              <h3 class="project__title">Quote Request</h3>
+              <p class="project__desc">ConnectNigeria's services marketplace: describe a job once, confirmed vendors compete with quotes. I designed both sides, mobile and web, in two weeks. Live since November 2025.</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project reveal" data-index="02">
           <a href="project-1.html" class="project__link">
             <div class="project__image">
-              <img src="images/project-1.webp" alt="Bayse prediction market app" class="project__img" fetchpriority="high" decoding="sync" />
+              <img src="images/project-1.webp" alt="Bayse prediction market app" class="project__img" loading="lazy" decoding="async" />
               <div class="project__overlay">
                 <span class="project__cta-text">View Case Study →</span>
               </div>
@@ -169,8 +192,8 @@
           </a>
         </article>
 
-        <!-- Project 2 -->
-        <article class="project reveal" data-index="02">
+        <!-- Project 3 -->
+        <article class="project reveal" data-index="03">
           <a href="project-6.html" class="project__link">
             <div class="project__image">
               <img src="images/louisville-cover.webp" alt="Louisville — TEHCOOP Facility Management Dashboard" class="project__img" loading="lazy" decoding="async" />
@@ -191,8 +214,8 @@
           </a>
         </article>
 
-        <!-- Project 3 -->
-        <article class="project reveal" data-index="03">
+        <!-- Project 4 -->
+        <article class="project reveal" data-index="04">
           <a href="project-2.html" class="project__link">
             <div class="project__image">
               <img src="images/Smarthome cover.webp" alt="Lumino smart home lighting app" class="project__img" loading="lazy" decoding="async" />
@@ -213,8 +236,8 @@
           </a>
         </article>
 
-        <!-- Project 4 -->
-        <article class="project reveal" data-index="04">
+        <!-- Project 5 -->
+        <article class="project reveal" data-index="05">
           <a href="https://www.vigoride.net/" class="project__link" target="_blank" rel="noopener">
             <div class="project__image">
               <img src="images/Vigoride cover.webp" alt="Vigoride delivery platform" class="project__img" loading="lazy" decoding="async" />
@@ -235,8 +258,8 @@
           </a>
         </article>
 
-        <!-- Project 5 -->
-        <article class="project reveal" data-index="05">
+        <!-- Project 6 -->
+        <article class="project reveal" data-index="06">
           <a href="https://www.ordaeats.com/" class="project__link" target="_blank" rel="noopener">
             <div class="project__image">
               <img src="images/ordaeat cover.webp" alt="OrdaEats food delivery platform" class="project__img" loading="lazy" decoding="async" />
@@ -257,8 +280,8 @@
           </a>
         </article>
 
-        <!-- Project 6 -->
-        <article class="project reveal" data-index="06">
+        <!-- Project 7 -->
+        <article class="project reveal" data-index="07">
           <a href="https://nomba-jade.vercel.app/" class="project__link" target="_blank" rel="noopener">
             <div class="project__image">
               <video src="images/nomba-card.mp4" poster="images/nomba-card-poster.webp" class="project__img" autoplay muted loop playsinline preload="metadata" aria-label="Nomba website concept, scrolling through the homepage"></video>
@@ -278,8 +301,8 @@
           </a>
         </article>
 
-        <!-- Project 7 -->
-        <article class="project reveal" data-index="07">
+        <!-- Project 8 -->
+        <article class="project reveal" data-index="08">
           <a href="https://234photo.vercel.app/" class="project__link" target="_blank" rel="noopener">
             <div class="project__image">
               <video src="images/234photos-card.mp4" poster="images/234photos-card-poster.webp" class="project__img" autoplay muted loop playsinline preload="metadata" aria-label="234Photos stock media marketplace homepage"></video>
