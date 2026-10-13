@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Watu concept prototype · Promise Olaifa</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css">
+<link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-rounded/css/uicons-solid-rounded.css">
+<style>
+:root{--bg:#0A0B0D;--card:#17191D;--card2:#1F2227;--line:#2A2D33;--text:#F4F5F7;--muted:#9AA0AA;--teal:#18B4AB;--teal-2:#0E8C85;--lime1:#C9E93C;--lime2:#F4E641;--coral:#F26D5B;--orange:#F6A25A;--green:#48D18A;--green-bg:rgba(72,209,138,.12);--amber-bg:rgba(246,162,90,.13)}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:transparent;font-family:Poppins,system-ui,sans-serif;color:var(--text);-webkit-font-smoothing:antialiased}
+i.fi{display:inline-flex;line-height:1}
+.wrap{display:flex;flex-direction:column;align-items:center;gap:14px;padding:12px 8px 20px}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;max-width:440px}
+.chip{font:600 13px Poppins,sans-serif;border:0;background:#fff;color:#23262B;height:34px;padding:0 13px;border-radius:10px;cursor:pointer;box-shadow:0 1px 2px rgba(0,0,0,.1)}
+.chip.on{background:var(--teal);color:#fff}
+.hintline{font:500 13px Poppins,sans-serif;color:#8A909A;min-height:18px;text-align:center;max-width:420px}
+.shellbox{position:relative}
+.shell{width:390px;height:844px;border-radius:52px;background:#000;padding:11px;box-shadow:0 40px 80px -30px rgba(0,0,0,.6),0 0 0 1.5px #2A2D33;transform-origin:top left}
+.screenarea{position:relative;width:368px;height:822px;border-radius:42px;overflow:hidden;background:var(--bg)}
+.island{position:absolute;top:20px;left:50%;transform:translateX(-50%);width:108px;height:31px;border-radius:20px;background:#000;z-index:50}
+.scr{position:absolute;inset:0;width:390px;height:844px;transform:scale(.9436);transform-origin:top left;background:var(--bg);display:flex;flex-direction:column;opacity:0;pointer-events:none;transition:opacity .28s ease;overflow:hidden}
+.scr.show{opacity:1;pointer-events:auto}
+.sb{height:50px;display:flex;align-items:center;justify-content:space-between;padding:4px 30px 0 34px;font-size:15px;font-weight:600;flex-shrink:0}
+.sb .r{display:flex;gap:6px;align-items:center}.bat{width:25px;height:12px;border:1.5px solid currentColor;border-radius:4px;position:relative}.bat:after{content:"";position:absolute;inset:1.5px 5px 1.5px 1.5px;background:currentColor;border-radius:1.5px}
+.sig{display:flex;gap:2px;align-items:flex-end}.sig b{width:3px;background:currentColor;border-radius:1px}
+.px{padding-left:20px;padding-right:20px}
+.top{display:flex;justify-content:space-between;align-items:center;padding:6px 20px 0}
+.av{width:42px;height:42px;border-radius:50%;background:#fff;color:#111;display:grid;place-items:center;font-weight:600;font-size:14px}
+.hi small{display:block;font-size:12px;color:var(--muted)}.hi b{font-size:16px;font-weight:600}
+.ib{width:40px;height:40px;border-radius:12px;background:var(--card);display:grid;place-items:center;font-size:17px;color:var(--text)}
+.dev{display:flex;gap:8px;align-items:center;margin-top:16px}
+.dev .ic{width:42px;height:42px;border-radius:50%;border:1.5px solid #3A3D44;display:grid;place-items:center;font-size:17px}
+.pill{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 12px;border-radius:999px;font-size:12.5px;font-weight:600}
+.pill.g{background:#A8D96E;color:#14210A}.pill.d{background:var(--card2);color:var(--muted)}
+.card{background:var(--card);border-radius:20px;padding:16px}
+.timer{display:flex;align-items:center;justify-content:space-between}
+.timer .k{font-size:12.5px;color:var(--muted)}.timer .v{font-size:22px;font-weight:600;letter-spacing:-.01em;color:var(--lime1)}
+.sync{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--green);margin-top:8px}
+.sync .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px rgba(72,209,138,.18)}
+.limecard{border-radius:20px;padding:16px;background:linear-gradient(110deg,var(--lime1),var(--lime2));color:#16190A;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.limecard small{display:block;font-size:12px;font-weight:500;opacity:.75}.limecard b{font-size:22px;font-weight:700;letter-spacing:-.01em}
+.btn{height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;gap:10px;font-weight:600;font-size:15.5px;cursor:pointer;white-space:nowrap}
+.btn.teal{background:var(--teal);color:#fff}.btn.dark{background:#16190A;color:#fff;height:44px;padding:0 16px;font-size:14px}
+.btn.ghost{background:var(--card2);color:var(--text)}.btn.orange{background:var(--orange);color:#2A1400}.btn.t{color:var(--teal);height:42px;font-size:14.5px}
+.prog{margin-top:6px}.prog .bar{height:8px;border-radius:4px;background:var(--card2);overflow:hidden}.prog .bar b{display:block;height:100%;background:var(--teal);border-radius:4px;transition:width .6s ease}
+.kv{display:flex;justify-content:space-between;font-size:13px;padding:10px 0;border-top:1px solid var(--line)}.kv span:first-child{color:var(--muted)}.kv span:last-child{font-weight:600}
+.lbl{font-size:12px;color:var(--muted);font-weight:500}
+.tabs{position:absolute;left:0;right:0;bottom:0;height:82px;background:#0F1013;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(5,1fr);padding-top:10px;font-size:10.5px;color:#7D838D;z-index:5}
+.tabs div{display:flex;flex-direction:column;align-items:center;gap:4px}.tabs i{font-size:19px}.tabs .on{color:var(--text)}
+.tabs .mid i{width:40px;height:40px;border-radius:50%;background:#A8D96E;color:#14210A;display:grid;place-items:center;margin-top:-8px}
+h1{font-size:28px;line-height:1.15;font-weight:600;letter-spacing:-.02em}
+h2{font-size:22px;line-height:1.2;font-weight:600;letter-spacing:-.01em}
+.lead{font-size:14px;line-height:1.55;color:var(--muted);margin-top:8px}
+.stk{display:grid;place-items:center}.stk img{object-fit:contain;filter:drop-shadow(0 10px 20px rgba(0,0,0,.45))}
+.halo{position:relative;border-radius:24px;background:radial-gradient(70% 80% at 50% 45%,rgba(24,180,171,.22),rgba(24,180,171,0) 70%),var(--card);display:grid;place-items:center;overflow:hidden}
+.spark{position:absolute;width:16px;height:16px}.spark path{fill:var(--lime1)}.spark.t path{fill:var(--teal)}
+.opt{display:flex;gap:12px;align-items:center;padding:13px 0}.opt + .opt{border-top:1px solid var(--line)}
+.opt .k{width:40px;height:40px;border-radius:12px;background:var(--card2);display:grid;place-items:center;font-size:17px;flex-shrink:0}
+.opt .t{flex:1;font-size:14px;font-weight:600}.opt .t small{display:block;font-size:12px;color:var(--muted);font-weight:400;margin-top:2px;line-height:1.4}
+.code{font-weight:600;letter-spacing:.04em;color:var(--lime1)}
+.foot{margin-top:auto;padding:0 20px 30px;display:flex;flex-direction:column;gap:10px}
+/* lock screen */
+.lockbg{background:radial-gradient(90% 60% at 50% 0%,#14302E 0%,#0A0B0D 60%)}
+.clock{text-align:center;margin-top:6px}.clock b{font-size:64px;font-weight:600;letter-spacing:-.03em;display:block;line-height:1}.clock small{font-size:14px;color:var(--muted)}
+.locksheet{margin:20px 16px 0;background:rgba(23,25,29,.92);border:1px solid var(--line);border-radius:26px;padding:18px}
+/* M-Pesa prompt */
+.mpesa{position:absolute;left:24px;right:24px;top:230px;background:#fff;color:#111;border-radius:18px;padding:18px;box-shadow:0 30px 60px -20px rgba(0,0,0,.7);z-index:20;opacity:0;transform:scale(.96);transition:all .25s}
+.mpesa.on{opacity:1;transform:none}
+.mpesa .mh{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#2E7D32}
+.mpesa p{font-size:13.5px;line-height:1.5;margin-top:10px}
+.mpesa .pin{display:flex;gap:10px;justify-content:center;margin:14px 0}.mpesa .pin i{width:14px;height:14px;border-radius:50%;border:2px solid #BBB}.mpesa .pin i.f{background:#111;border-color:#111}
+.mpesa .row{display:flex;justify-content:flex-end;gap:18px;font-size:14px;font-weight:600;color:#2E7D32}
+.dim{position:absolute;inset:0;background:rgba(0,0,0,.6);z-index:15;opacity:0;pointer-events:none;transition:opacity .25s}.dim.on{opacity:1}
+/* tracker */
+.steps{margin-top:18px}
+.step{display:flex;gap:14px;position:relative;padding-bottom:22px}
+.step:not(:last-child):before{content:"";position:absolute;left:13px;top:30px;bottom:2px;width:2px;background:var(--line)}
+.step.done:not(:last-child):before{background:var(--teal)}
+.step .c{width:28px;height:28px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font-size:13px;flex-shrink:0;background:var(--bg)}
+.step.done .c{background:var(--teal);border-color:var(--teal);color:#fff}
+.step.now .c{border-color:var(--teal)}.step.now .c:after{content:"";width:10px;height:10px;border-radius:50%;background:var(--teal);animation:blink 1s infinite}
+@keyframes blink{50%{opacity:.25}}
+.step b{font-size:14.5px;font-weight:600;display:block}.step small{font-size:12.5px;color:var(--muted)}
+.note{display:flex;gap:10px;align-items:center;border-radius:14px;padding:12px 14px;font-size:12.5px;line-height:1.45}
+.note.amber{background:var(--amber-bg);color:#FFD1A6}.note.green{background:var(--green-bg);color:#A6F0C6}
+/* days */
+.dchips{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px}
+.dchip{height:64px;border-radius:14px;background:var(--card);border:1.5px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:13px;font-weight:600;cursor:pointer}
+.dchip small{font-size:11px;color:var(--muted);font-weight:500}
+.dchip.on{border-color:var(--teal);background:rgba(24,180,171,.12)}
+.big{font-size:40px;font-weight:600;letter-spacing:-.02em}
+/* done */
+.donebg .px,.donebg .foot,.donebg .sb{position:relative;z-index:1}
+.donebg{background:radial-gradient(80% 50% at 50% 18%,rgba(201,233,60,.18),transparent 70%),var(--bg)}
+.yours{font-size:52px;line-height:1;font-weight:700;letter-spacing:-.03em;color:var(--lime1)}
+.stat{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}.stat div{background:var(--card);border-radius:16px;padding:12px 14px}.stat small{font-size:11.5px;color:var(--muted)}.stat b{display:block;font-size:17px;font-weight:600;margin-top:2px}
+/* otp */
+.boxes{display:flex;gap:10px;margin-top:20px}.boxes i{flex:1;height:58px;border-radius:14px;background:var(--card);border:1.5px solid var(--line);display:grid;place-items:center;font-style:normal;font-size:22px;font-weight:600}
+.boxes i.on{border-color:var(--teal)}
+.hot{position:relative;cursor:pointer}.hot::after{content:"";position:absolute;inset:-6px;border-radius:18px;border:2.5px solid #FFB443;animation:pulse 1.3s ease-out infinite;pointer-events:none}
+@keyframes pulse{0%{opacity:1;transform:scale(.96)}100%{opacity:0;transform:scale(1.08)}}
+.tap{position:absolute;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;background:rgba(255,180,67,.5);border:2px solid #FFB443;z-index:60;pointer-events:none;animation:tapA .55s ease-out forwards}
+@keyframes tapA{0%{transform:scale(.4);opacity:1}100%{transform:scale(1.4);opacity:0}}
+.confetti{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.confetti span{position:absolute;width:8px;height:14px;border-radius:2px;opacity:.9;animation:fall 3.2s linear infinite}
+@keyframes fall{0%{transform:translateY(-40px) rotate(0)}100%{transform:translateY(880px) rotate(540deg)}}
+/* video + static shot modes */
+body.video{width:1920px;height:1080px;background:#0A0B0D;overflow:hidden}
+body.video .wrap{flex-direction:row;justify-content:center;gap:120px;padding:0;height:1080px;align-items:center}
+body.video .chips,body.video .hintline{display:none}
+.cap{display:none}
+body.video .cap{display:block;width:640px;color:#F4F5F7}
+.cap .num{font:600 22px Poppins;color:var(--teal);letter-spacing:.1em}.cap h1{font-size:62px;line-height:1.08;margin-top:18px}.cap h1 em{font-style:normal;color:var(--lime1)}
+.cap p{font:400 25px/1.5 Poppins;color:#AAB0BA;margin-top:22px}.cap .brand{font:600 17px Poppins;color:#6E747E;margin-top:44px;letter-spacing:.08em}
+body.video .shell{transform:scale(1.08);transform-origin:top center}
+body.shot{background:#111}body.shot .chips,body.shot .hintline{display:none}
+body.shot .shell{border-radius:0;padding:0;box-shadow:none;background:none}body.shot .screenarea{width:390px;height:844px;border-radius:0}body.shot .island{display:none}
+body.shot .scr{transform:none;transition:none}body.shot .wrap{padding:0}
+</style></head><body>
+<div class="wrap">
+  <div class="cap"><div class="num"></div><h1></h1><p></p><div class="brand">WATU CONCEPT · PROMISE OLAIFA</div></div>
+  <div class="chips">
+    <button class="chip" data-j="lock">Phone locked</button>
+    <button class="chip" data-j="days">Pay for days</button>
+    <button class="chip" data-j="code">Login code</button>
+    <button class="chip" data-j="done">Final payment</button>
+  </div>
+  <div class="shellbox"><div class="shell"><div class="screenarea"><div class="island"></div>
+
+<!-- HOME -->
+<div class="scr" data-s="home">
+  <div class="sb"><span>9:41</span><span class="r"><span class="sig"><b style="height:4px"></b><b style="height:6px"></b><b style="height:8px"></b><b style="height:10px"></b></span><span class="bat"></span></span></div>
+  <div class="top"><div style="display:flex;gap:10px;align-items:center"><div class="av">AW</div><div class="hi"><small>Hello</small><b>Achieng Wanjiru</b></div></div><div class="ib"><i class="fi fi-rr-bell"></i></div></div>
+  <div class="px">
+    <div class="dev"><div class="ic"><i class="fi fi-rr-mobile-notch"></i></div><span class="pill g">Samsung A16</span></div>
+    <div class="card" style="margin-top:14px">
+      <div class="timer"><span class="k">Your phone stays on until</span><span class="v" id="hUntil">Thu, 9:00 AM</span></div>
+      <div class="sync"><span class="dot"></span><span id="hSync">Last payment received 2 min ago</span></div>
+    </div>
+    <div class="limecard" style="margin-top:12px"><div><small>Today's payment</small><b>KSh 123</b></div><div class="btn dark" id="hPay"><i class="fi fi-sr-coins"></i>Pay now</div></div>
+    <div class="card" style="margin-top:12px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-weight:600;font-size:15px">Payment progress</span><span style="font-weight:600;color:var(--teal)" id="hPct">65%</span></div>
+      <div class="prog" style="margin-top:10px"><div class="bar"><b id="hBar" style="width:65%"></b></div></div>
+      <div class="kv" style="margin-top:12px"><span>Paid</span><span id="hPaid">KSh 9,420</span></div>
+      <div class="kv"><span>Left to own it</span><span id="hLeft">KSh 5,170</span></div>
+    </div>
+  </div>
+  <div class="tabs"><div class="on"><i class="fi fi-sr-home"></i>Home</div><div><i class="fi fi-rr-receipt"></i>Payments</div><div class="mid"><i class="fi fi-sr-coins"></i></div><div><i class="fi fi-rr-bell"></i>Alerts</div><div><i class="fi fi-rr-headset"></i>Support</div></div>
+</div>
+
+<!-- LOCKED PHONE -->
+<div class="scr lockbg" data-s="lock">
+  <div class="sb"><span>9:41</span><span class="r"><span class="sig"><b style="height:4px"></b><b style="height:6px"></b><b style="height:8px"></b><b style="height:10px"></b></span><span class="bat"></span></span></div>
+  <div class="clock"><b>9:41</b><small>Thursday, 9 October</small></div>
+  <div class="locksheet">
+    <div style="display:flex;gap:14px;align-items:center"><div class="stk"><img src="../images/stickers/lockout.png" style="width:64px;height:64px"></div><div><h2 style="font-size:19px">Your phone is paused</h2><p style="font-size:13px;color:var(--muted);margin-top:2px">Pay <b style="color:var(--text)">KSh 123</b> to switch it back on</p></div></div>
+    <div class="btn teal" id="lPay" style="margin-top:16px"><i class="fi fi-sr-smartphone"></i>Pay with M-Pesa from here</div>
+    <p style="font-size:12px;color:var(--muted);text-align:center;margin-top:8px">No app or data needed. We prompt your M-Pesa line.</p>
+    <div class="opt" style="margin-top:6px"><div class="k"><i class="fi fi-rr-hastag"></i></div><div class="t">Or pay by Paybill<small>Paybill <span class="code">650880</span> · Account: <span class="code">your ID number</span></small></div></div>
+    <div class="opt"><div class="k" style="color:var(--orange)"><i class="fi fi-rr-time-fast"></i></div><div class="t">Need it right now?<small>Temporary unlock for 1 hour, once a day</small></div><i class="fi fi-rr-angle-small-right" style="color:var(--muted)"></i></div>
+  </div>
+  <div class="foot"><div class="btn ghost"><i class="fi fi-rr-phone-call"></i>Emergency call</div></div>
+  <div class="dim" id="mDim"></div>
+  <div class="mpesa" id="mpesa"><div class="mh"><i class="fi fi-sr-smartphone"></i>M-PESA</div><p>Pay <b>KSh 123.00</b> to <b>WATU CREDIT</b>, account <b>2345••••</b>. Enter your M-PESA PIN.</p><div class="pin" id="mPin"><i></i><i></i><i></i><i></i></div><div class="row"><span>CANCEL</span><span id="mOk">SEND</span></div></div>
+</div>
+
+<!-- TRACKER -->
+<div class="scr" data-s="track">
+  <div class="sb"><span>9:41</span><span class="r"><span class="sig"><b style="height:4px"></b><b style="height:6px"></b><b style="height:8px"></b><b style="height:10px"></b></span><span class="bat"></span></span></div>
+  <div class="px" style="margin-top:14px">
+    <div class="halo" style="height:170px">
+      <svg class="spark" style="left:70px;top:30px" viewBox="0 0 24 24"><path d="M12 0C13 7 17 11 24 12 17 13 13 17 12 24 11 17 7 13 0 12 7 11 11 7 12 0Z"/></svg>
+      <svg class="spark t" style="right:76px;top:46px;width:12px;height:12px" viewBox="0 0 24 24"><path d="M12 0C13 7 17 11 24 12 17 13 13 17 12 24 11 17 7 13 0 12 7 11 11 7 12 0Z"/></svg>
+      <div class="stk"><img src="../images/stickers/sent.png" style="width:118px;height:118px"></div>
+    </div>
+    <h1 style="margin-top:20px" id="tTitle">We've got your KSh 123</h1>
+    <p class="lead" id="tLead">Please don't pay again. Your phone switches on by itself.</p>
+    <div class="steps">
+      <div class="step done" id="s1"><div class="c"><i class="fi fi-sr-check"></i></div><div><b>Received from M-Pesa</b><small id="s1t">9:41 AM · Ref QJK7X2LP4M</small></div></div>
+      <div class="step now" id="s2"><div class="c"></div><div><b>Added to your plan</b><small id="s2t">A few seconds</small></div></div>
+      <div class="step" id="s3"><div class="c"></div><div><b>Phone switches on</b><small id="s3t">Usually under 2 minutes</small></div></div>
+    </div>
+    <div class="note amber" id="tNote"><i class="fi fi-rr-info"></i>Still locked after 15 minutes? Report it and we'll check your M-Pesa reference.</div>
+  </div>
+  <div class="foot"><div class="btn teal" id="tDone" style="opacity:.4">Back to home</div></div>
+</div>
+
+<!-- PAY FOR DAYS -->
+<div class="scr" data-s="days">
+  <div class="sb"><span>9:41</span><span class="r"><span class="sig"><b style="height:4px"></b><b style="height:6px"></b><b style="height:8px"></b><b style="height:10px"></b></span><span class="bat"></span></span></div>
+  <div class="px" style="padding-top:6px"><div class="ib" id="dBack"><i class="fi fi-rr-angle-left"></i></div></div>
+  <div class="px" style="margin-top:12px">
+    <div style="display:flex;gap:14px;align-items:center"><div class="stk"><img src="../images/stickers/calendar.png" style="width:70px;height:70px"></div><div><h2>How many days?</h2><p style="font-size:13px;color:var(--muted)">KSh 123 a day. Pay ahead and relax.</p></div></div>
+    <div class="dchips" id="dChips">
+      <div class="dchip" data-d="1">1 day<small>KSh 123</small></div>
+      <div class="dchip on" data-d="2">2 days<small>KSh 246</small></div>
+      <div class="dchip" data-d="7">1 week<small>KSh 861</small></div>
+      <div class="dchip" data-d="30">Month<small>KSh 3,690</small></div>
+    </div>
+    <div class="card" style="margin-top:16px;text-align:center">
+      <span class="lbl">You pay</span>
+      <div class="big" id="dAmt">KSh 246</div>
+      <div style="margin-top:6px;font-size:13px;color:var(--muted)">Your phone stays on until <b style="color:var(--lime1)" id="dUntil">Sat, 9:00 AM</b></div>
+    </div>
+    <div class="note green" style="margin-top:12px"><i class="fi fi-rr-calendar-check"></i>Every day you pay ahead also counts toward owning the phone.</div>
+  </div>
+  <div class="foot"><div class="btn teal" id="dPay"><i class="fi fi-sr-smartphone"></i><span>Pay <span id="dBtnAmt">KSh 246</span> with M-Pesa</span></div></div>
+</div>
+
+<!-- LOGIN CODE -->
+<div class="scr" data-s="code">
+  <div class="sb"><span>9:41</span><span class="r"><span class="sig"><b style="height:4px"></b><b style="height:6px"></b><b style="height:8px"></b><b style="height:10px"></b></span><span class="bat"></span></span></div>
+  <div class="px" style="padding-top:6px"><div class="ib"><i class="fi fi-rr-angle-left"></i></div></div>
+  <div class="px" style="margin-top:18px">
+    <h1>Enter the code we sent</h1>
+    <p class="lead">To 0712 ••• 789 by SMS.</p>
+    <div class="boxes" id="cBoxes"><i class="on"></i><i></i><i></i><i></i></div>
+    <p style="font-size:13px;color:var(--muted);margin-top:14px" id="cResend">Resend SMS in <b style="color:var(--text)">0:24</b></p>
+    <div class="card" style="margin-top:20px;padding:6px 16px">
+      <div style="font-size:13px;color:var(--muted);padding:10px 0 2px">Didn't get it?</div>
+      <div class="opt" id="cCall"><div class="k" style="color:var(--teal)"><i class="fi fi-rr-phone-call"></i></div><div class="t">Call me with the code<small>An automated call reads it out. Works on any network.</small></div><i class="fi fi-rr-angle-small-right" style="color:var(--muted)"></i></div>
+      <div class="opt"><div class="k" style="color:#48D18A"><i class="fi fi-rr-comment"></i></div><div class="t">Send it on WhatsApp<small>If this number has WhatsApp.</small></div><i class="fi fi-rr-angle-small-right" style="color:var(--muted)"></i></div>
+    </div>
+  </div>
+  <div class="dim" id="callDim"></div>
+  <div class="mpesa" id="callCard" style="background:var(--card2);color:var(--text);text-align:center;top:250px">
+    <div class="stk"><img src="../images/stickers/call.png" style="width:90px;height:90px"></div>
+    <h2 style="margin-top:8px;font-size:19px">Calling you now</h2>
+    <p style="color:var(--muted)">Pick up and listen. We'll fill the code in for you.</p>
+  </div>
+</div>
+
+<!-- PAID OFF -->
+<div class="scr donebg" data-s="done">
+  <div class="confetti" id="conf"></div>
+  <div class="sb"><span>9:41</span><span class="r"><span class="sig"><b style="height:4px"></b><b style="height:6px"></b><b style="height:8px"></b><b style="height:10px"></b></span><span class="bat"></span></span></div>
+  <div class="px" style="margin-top:18px;text-align:center">
+    <div class="stk" style="position:relative;height:170px"><img src="../images/stickers/confetti.png" style="width:86px;height:86px;position:absolute;left:58px;top:20px;transform:rotate(-14deg)"><img src="../images/stickers/trophy.png" style="width:150px;height:150px"></div>
+    <div class="yours" style="margin-top:6px">It's yours.</div>
+    <p class="lead" style="font-size:15px">You've paid off your Samsung A16, Achieng. No more locks, no more daily payments.</p>
+    <div class="stat"><div style="text-align:left"><small>Paid in total</small><b>KSh 14,590</b></div><div style="text-align:left"><small>Paid over</small><b>61 weeks</b></div></div>
+    <div class="note green" style="margin-top:12px;text-align:left"><i class="fi fi-sr-check-circle"></i>Locks removed from your phone. You can delete the Watu app any time.</div>
+  </div>
+  <div class="foot">
+    <div class="btn teal"><i class="fi fi-rr-download"></i>Ownership certificate</div>
+    <div class="btn ghost" id="doneHome">Share the good news</div>
+  </div>
+</div>
+
+<div class="tapLayer"></div>
+  </div></div></div>
+  <div class="hintline"></div>
+</div>
+<script>
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const Q=new URLSearchParams(location.search); const isVideo=Q.has('video'), shot=Q.get('shot');
+if(isVideo) document.body.classList.add('video'); if(shot) document.body.classList.add('shot');
+if(window===window.top && !isVideo && !shot) document.body.style.background='#0E1013';
+const area=$('.screenarea'); let timers=[]; const later=(f,ms)=>{const t=setTimeout(f,ms);timers.push(t);return t}; const clearT=()=>{timers.forEach(clearTimeout);timers=[];};
+function show(s){$$('.scr').forEach(x=>x.classList.toggle('show',x.dataset.s===s));}
+function hot(el,t){$$('.hot').forEach(x=>x.classList.remove('hot')); if(el) el.classList.add('hot'); $('.hintline').textContent=t||'';}
+function tapFx(el){if(!el||shot)return;const r=el.getBoundingClientRect(),a=area.getBoundingClientRect();const s=area.offsetWidth/a.width;const d=document.createElement('div');d.className='tap';d.style.left=((r.left+r.width/2-a.left)*s)+'px';d.style.top=((r.top+r.height/2-a.top)*s)+'px';area.appendChild(d);setTimeout(()=>d.remove(),600);}
+function setCap(n,t,p){const c=$('.cap');c.querySelector('.num').textContent=n;c.querySelector('h1').innerHTML=t;c.querySelector('p').textContent=p;}
+let after='home', payAmt=123;
+function resetTrack(amt){ $('#tTitle').textContent='We\'ve got your KSh '+amt.toLocaleString(); ['#s1','#s2','#s3'].forEach((s,i)=>{$(s).className='step'+(i===0?' done':i===1?' now':'');}); $('#s2t').textContent='A few seconds'; $('#s3t').textContent='Usually under 2 minutes'; $('#tNote').className='note amber'; $('#tNote').innerHTML='<i class="fi fi-rr-info"></i>Still locked after 15 minutes? Report it and we\'ll check your M-Pesa reference.'; $('#tDone').style.opacity=.4; $('#tLead').textContent='Please don\'t pay again. Your phone switches on by itself.'; }
+function runTrack(final){ show('track'); later(()=>{$('#s2').className='step done'; $('#s2').querySelector('.c').innerHTML='<i class="fi fi-sr-check"></i>'; $('#s2t').textContent='9:41 AM'; $('#s3').className='step now';},1400);
+  later(()=>{$('#s3').className='step done'; $('#s3').querySelector('.c').innerHTML='<i class="fi fi-sr-check"></i>'; $('#s3t').textContent=final?'Paid in full':'9:42 AM · Phone on'; $('#tNote').className='note green'; $('#tNote').innerHTML=final?'<i class="fi fi-sr-check-circle"></i>That was your last payment.':'<i class="fi fi-sr-check-circle"></i>Your phone is on until '+$('#hUntil').textContent+'.'; $('#tDone').style.opacity=1; $('#tLead').textContent=final?'Everything is paid.':'All done. Nothing else to do.'; hot($('#tDone'),final?'Tap to see what happens next.':'The phone switched on by itself. Tap Back to home.');},3000); }
+$('#tDone').onclick=()=>{ if($('#tDone').style.opacity<1) return; tapFx($('#tDone')); if(after==='done'){ show('done'); burst(); hot(null,'The finish line: celebrate, remove the locks, prove ownership.'); } else { show('home'); hot(null,'Pick another journey above.'); } };
+// lock journey
+const J={};
+J.lock=()=>{ after='home'; resetTrack(123); $('#mpesa').classList.remove('on'); $('#mDim').classList.remove('on'); $$('#mPin i').forEach(i=>i.classList.remove('f')); show('lock'); hot($('#lPay'),'The phone is paused, but you can pay right from the lock screen. Tap Pay with M-Pesa.'); };
+$('#lPay').onclick=()=>{ tapFx($('#lPay')); $('#mDim').classList.add('on'); $('#mpesa').classList.add('on'); hot($('#mpesa'),'This is the normal M-Pesa prompt. Tap it to enter a PIN.'); };
+$('#mpesa').onclick=()=>{ const pins=$$('#mPin i'); if(pins.every(i=>i.classList.contains('f'))) return; tapFx($('#mOk')); pins.forEach((p,i)=>later(()=>p.classList.add('f'),i*220)); later(()=>{ $('#mpesa').classList.remove('on'); $('#mDim').classList.remove('on'); runTrack(false); hot(null,'Watch: received, added to the plan, phone on.'); },1100); };
+// days
+function setDays(d){ $$('.dchip').forEach(c=>c.classList.toggle('on',c.dataset.d==d)); const amt=123*d; payAmt=amt; $('#dAmt').textContent='KSh '+amt.toLocaleString(); $('#dBtnAmt').textContent='KSh '+amt.toLocaleString(); const days=['Fri','Sat','Sun','Mon','Tue','Wed','Thu']; $('#dUntil').textContent=d>=30?'8 Nov, 9:00 AM':d===7?'Thu 16 Oct, 9:00 AM':days[(d-1)%7]+', 9:00 AM'; }
+$$('.dchip').forEach(c=>c.onclick=()=>{tapFx(c); setDays(+c.dataset.d); hot($('#dPay'),'The date updates as you choose. Tap Pay.');});
+J.days=()=>{ after='home'; show('home'); $('#hUntil').textContent='Thu, 9:00 AM'; $('#hSync').textContent='Last payment received 2 min ago'; hot($('#hPay'),'No Refresh button: payments show up by themselves. Tap Pay now.'); };
+$('#hPay').onclick=()=>{ tapFx($('#hPay')); setDays(2); show('days'); hot($('[data-d="7"]'),'Pick how many days to pay for. Try 1 week.'); };
+$('#dBack').onclick=()=>{ show('home'); };
+$('#dPay').onclick=()=>{ tapFx($('#dPay')); resetTrack(payAmt); {const u=$('#dUntil').textContent; $('#hUntil').textContent=/Oct|Nov/.test(u)?u.replace(/,? 9:00 AM/,''):u;} $('#hSync').textContent='Last payment received just now'; runTrack(false); hot(null,'Same tracker, so people never pay twice.'); };
+// code
+J.code=()=>{ $$('#cBoxes i').forEach((b,i)=>{b.textContent='';b.className=i===0?'on':''}); $('#callCard').classList.remove('on'); $('#callDim').classList.remove('on'); show('code'); let s=24; $('#cResend').innerHTML='Resend SMS in <b style="color:var(--text)">0:24</b>'; const iv=setInterval(()=>{s--; if(s<0){clearInterval(iv);return;} $('#cResend').innerHTML='Resend SMS in <b style="color:var(--text)">0:'+String(s).padStart(2,'0')+'</b>';},1000); timers.push(iv); hot($('#cCall'),'The SMS code hasn\'t come. Tap Call me with the code.'); };
+$('#cCall').onclick=()=>{ tapFx($('#cCall')); $('#callDim').classList.add('on'); $('#callCard').classList.add('on'); hot(null,'An automated call reads the code out.'); const code='4729'; later(()=>{ $('#callCard').classList.remove('on'); $('#callDim').classList.remove('on'); [...code].forEach((n,i)=>later(()=>{const b=$$('#cBoxes i')[i]; b.textContent=n; b.className='on';},i*250)); later(()=>{show('home'); hot(null,'Signed in. Pick another journey above.');},1800); },1800); };
+// done
+J.done=()=>{ after='done'; resetTrack(123); show('home'); $('#hPct').textContent='99%'; $('#hBar').style.width='99%'; $('#hPaid').textContent='KSh 14,467'; $('#hLeft').textContent='KSh 123'; hot($('#hPay'),'One payment left. Tap Pay now.'); $('#hPay').onclick=()=>{ tapFx($('#hPay')); runTrack(true); $('#tTitle').textContent='We\'ve got your last KSh 123'; hot(null,'The last payment.'); }; };
+function burst(){ const c=$('#conf'); c.innerHTML=''; const cols=['#C9E93C','#18B4AB','#F6A25A','#F26D5B','#F4E641','#fff']; for(let i=0;i<46;i++){const s=document.createElement('span'); s.style.left=(Math.random()*390)+'px'; s.style.background=cols[i%cols.length]; s.style.animationDelay=(-Math.random()*3.2)+'s'; s.style.animationDuration=(2.4+Math.random()*1.6)+'s'; c.appendChild(s);} }
+$('#doneHome').onclick=()=>{ tapFx($('#doneHome')); hot(null,'Pick another journey above.'); };
+const chips=$$('.chip'); function resetHomeBtn(){ $('#hPay').onclick=()=>{ tapFx($('#hPay')); setDays(2); show('days'); hot($('[data-d="7"]'),'Pick how many days to pay for. Try 1 week.'); }; $('#hPct').textContent='65%'; $('#hBar').style.width='65%'; $('#hPaid').textContent='KSh 9,420'; $('#hLeft').textContent='KSh 5,170'; }
+chips.forEach(c=>c.onclick=()=>{ clearT(); resetHomeBtn(); chips.forEach(x=>x.classList.toggle('on',x===c)); J[c.dataset.j](); });
+function fit(){ if(isVideo||shot) return; const sc=Math.min(1,(window.innerWidth-16)/390); $('.shell').style.transform='scale('+sc+')'; $('.shellbox').style.height=(844*sc)+'px'; $('.shellbox').style.width=(390*sc)+'px'; }
+addEventListener('resize',fit); fit();
+// static shots for the case study
+if(shot){ const map={home:()=>{show('home')},lock:()=>{show('lock')},mpesa:()=>{show('lock');$('#mDim').classList.add('on');$('#mpesa').classList.add('on');},track:()=>{resetTrack(123);show('track')},trackdone:()=>{resetTrack(246);show('track');$('#s2').className='step done';$('#s2').querySelector('.c').innerHTML='<i class="fi fi-sr-check"></i>';$('#s2t').textContent='9:41 AM';$('#s3').className='step done';$('#s3').querySelector('.c').innerHTML='<i class="fi fi-sr-check"></i>';$('#s3t').textContent='9:42 AM · Phone on';$('#tNote').className='note green';$('#tNote').innerHTML='<i class="fi fi-sr-check-circle"></i>Your phone is on until Sat, 9:00 AM.';$('#tDone').style.opacity=1;$('#tLead').textContent='All done. Nothing else to do.';},days:()=>{setDays(2);show('days')},code:()=>{show('code')},done:()=>{show('done');burst()}}; (map[shot]||map.home)(); }
+const wait=ms=>new Promise(r=>setTimeout(r,ms));
+async function auto(){
+  setCap('01 · PHONE LOCKED','Pay from the <em>lock screen.</em>','No app, no data. An M-Pesa prompt, then the phone switches itself back on.');
+  J.lock(); await wait(1800); $('#lPay').click(); await wait(1500); $('#mpesa').click(); await wait(4600); $('#tDone').click(); await wait(900);
+  setCap('02 · PAY FOR DAYS','See exactly <em>what you are buying.</em>','Pick the days and the screen tells you the date your phone stays on until.');
+  chips.forEach(x=>x.classList.remove('on')); J.days(); await wait(1600); $('#hPay').click(); await wait(1300); $$('.dchip')[2].click(); await wait(1300); $('#dPay').click(); await wait(4400); $('#tDone').click(); await wait(800);
+  setCap('03 · LOGIN CODE','When the SMS <em>never comes.</em>','A call reads the code out, on any network.');
+  J.code(); await wait(1800); $('#cCall').click(); await wait(4400);
+  setCap('04 · THE FINISH LINE','<em>It\'s yours.</em>','The last payment ends with a celebration, locks removed, and proof of ownership.');
+  resetHomeBtn(); J.done(); await wait(1600); $('#hPay').click(); await wait(4200); $('#tDone').click(); await wait(3600);
+  document.body.dataset.done='1';
+}
+if(isVideo) addEventListener('load',()=>setTimeout(auto,1200)); else if(!shot) addEventListener('load',()=>chips[0].click());
+</script></body></html>

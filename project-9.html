@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Watu: pay, unlock, own it · Promise Olaifa</title>
+  <meta name="description" content="A self-initiated redesign of Watu’s pay-to-unlock journey, backed by 1,052 Play Store reviews across Kenya and Nigeria plus outside sources, with a working prototype." />
+  <meta name="author" content="Promise Olaifa" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Watu: pay, unlock, own it · Promise Olaifa" />
+  <meta property="og:description" content="A self-initiated redesign of Watu’s pay-to-unlock journey, backed by 1,052 Play Store reviews across Kenya and Nigeria plus outside sources, with a working prototype." />
+  <meta property="og:image" content="images/wt-film-poster.webp" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Watu: pay, unlock, own it · Promise Olaifa" />
+  <meta name="twitter:description" content="A self-initiated redesign of Watu’s pay-to-unlock journey, backed by 1,052 Play Store reviews across Kenya and Nigeria plus outside sources, with a working prototype." />
+  <meta name="twitter:image" content="images/wt-film-poster.webp" />
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="case-study.css" />
+  <link rel="stylesheet" href="qr.css" />
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">PO</a>
+      <div class="nav__right">
+        <ul class="nav__links">
+          <li><a href="index.html#work" class="nav__link">Work</a></li>
+          <li><a href="ui-gallery.html" class="nav__link">UI</a></li>
+          <li><a href="about.html" class="nav__link">About</a></li>
+          <li><a href="index.html#contact" class="nav__link">Contact</a></li>
+        </ul>
+        <button class="nav__theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <svg class="icon icon--sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+          </svg>
+          <svg class="icon icon--moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+        <button class="nav__hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="nav__overlay" id="navOverlay" aria-hidden="true">
+    <ul class="nav__overlay-links">
+      <li><a href="index.html#work" class="nav__overlay-link">Work</a></li>
+      <li><a href="ui-gallery.html" class="nav__overlay-link">UI</a></li>
+      <li><a href="about.html" class="nav__overlay-link">About</a></li>
+      <li><a href="index.html#contact" class="nav__overlay-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <main class="qr mp wt">
+
+    <section class="cs-hero">
+      <div class="container">
+        <a href="index.html#work" class="cs-back">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+          Back to Work
+        </a>
+        <div class="cs-tags">
+          <span class="tag">Asset finance</span>
+          <span class="tag">Kenya · Nigeria</span>
+          <span class="tag tag--status">Self-initiated</span>
+        </div>
+        <span class="cs-hero__label">Self-initiated · not affiliated with Watu</span>
+        <h1 class="cs-hero__title">Watu: pay, unlock, own it</h1>
+        <p class="cs-hero__desc">
+          Watu finances phones and motorbikes for people who can't pay upfront, and its whole model runs on one loop: pay, stay unlocked, own the asset. I read 1,052 Play Store reviews across Kenya and Nigeria, checked Watu's latest release, its help pages, TikTok and the press, and found the loop breaking at three moments. I designed and prototyped the fixes design owns, in Watu's own visual language.
+        </p>
+        <div class="cs-hero__meta">
+          <div class="cs-hero__meta-item"><span class="cs-meta-label">Role</span><span class="cs-meta-value">Research, design, prototype</span></div>
+          <div class="cs-hero__meta-item"><span class="cs-meta-label">Evidence</span><span class="cs-meta-value">1,052 reviews · 2 markets · 6 outside sources</span></div>
+          <div class="cs-hero__meta-item"><span class="cs-meta-label">Output</span><span class="cs-meta-value">8 screens, working prototype</span></div>
+          <div class="cs-hero__meta-item"><span class="cs-meta-label">Status</span><span class="cs-meta-value">Concept, testing with users</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="qr-film">
+      <div class="container">
+        <div class="qr-film__frame" style="background:#0A0B0D">
+          <video src="images/wt-film.mp4" poster="images/wt-film-poster.webp" autoplay muted loop playsinline preload="metadata" aria-label="41-second walkthrough of the Watu concept prototype"></video>
+        </div>
+        <p class="qr-film__caption">41 seconds, recorded from the working prototype below.</p>
+      </div>
+    </section>
+
+    <section class="cs-section" id="try">
+      <div class="container">
+        <span class="cs-section__label">Try it</span>
+        <h2 class="cs-section__title">Four moments,<br /><em>tap through each one.</em></h2>
+        <p class="cs-body">Pick a moment above the phone. The orange ring shows what to tap next.</p>
+        <div class="mp-proto wt-proto"><iframe src="proto/watu.html" title="Watu concept prototype" loading="lazy"></iframe></div>
+        <p class="mp-proto__link"><a href="proto/watu.html" target="_blank" rel="noopener">Open the prototype full screen ↗</a></p>
+      </div>
+    </section>
+
+    <section class="cs-section">
+      <div class="container">
+        <span class="cs-section__label">The evidence</span>
+        <h2 class="cs-section__title">337 unhappy reviews,<br /><em>two journeys that design can fix.</em></h2>
+        <p class="cs-body">I loaded 540 Kenyan and 512 Nigerian Google Play reviews, kept the 337 rated one to three stars, and tagged what each complained about. Tap a bar to read what people said, in my words.</p>
+        <div class="mp-chart" id="mpChart"></div>
+        <div class="mp-chart__note" id="mpNote" aria-live="polite"></div>
+        <p class="cs-body">Reviews show where to look, not how big each problem is: many low ratings are one word long, and Google lists them by relevance, not at random. So I checked every finding against what Watu and its customers say elsewhere.</p>
+        <h3 class="mp-subhead">Beyond the Play Store</h3>
+        <ul class="cs-col__list qr-list">
+          <li><strong>Still happening after the latest release.</strong> Watu's Kenya app was updated on 26 August 2026 (a resource centre, payment-reminder notifications). On 17 September a reviewer wrote that they still can't use the app while the phone is locked.</li>
+          <li><strong>Missing from Watu's own help.</strong> The Kenya support FAQ covers fees, paying from another number, logbooks and transaction history, but not locked devices, the problem customers raise most.</li>
+          <li><strong>So customers turn to TikTok.</strong> TikTok has topic pages such as "Procedure to unlock Watu credit phones", and Watu posts its own unlock walkthroughs there.</li>
+          <li><strong>Bikes wait overnight.</strong> A Kenyan payment guide says Watu unlocks financed motorbikes within two hours of payment during business hours, and the next morning outside them. For a boda rider, that is a lost shift.</li>
+          <li><strong>The stakes are public.</strong> Uganda's Daily Monitor (23 February 2026) reported riders' fear of abrupt repossessions; Watu Uganda's spokesperson said recovery is a last resort, after reminders and repayment schedules. Clear payment and unlock screens are how a lender proves that.</li>
+          <li><strong>The current app shows it.</strong> Watu's own store screenshots include a manual "Refresh" button on the home screen: payments don't appear by themselves.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cs-section">
+      <div class="container">
+        <span class="cs-section__label">Whose problem is it?</span>
+        <h2 class="cs-section__title">Design can fix part of this.<br /><em>Here's where the line is.</em></h2>
+        <div class="mp-table" role="table" aria-label="What design can and can't fix">
+          <div class="mp-table__row mp-table__head" role="row"><span role="columnheader">Problem</span><span role="columnheader">Likely cause, not design</span><span role="columnheader">The part design owns</span></div>
+          <div class="mp-table__row" role="row"><span role="cell"><strong>Can't pay while locked</strong></span><span role="cell">The device lock blocks apps, including M-Pesa and Watu's own.</span><span role="cell">Turning the lock screen into the payment screen, with a Paybill fallback and temporary unlock in view.</span></div>
+          <div class="mp-table__row" role="row"><span role="cell"><strong>Paid, still locked</strong></span><span role="cell">Payment matching and the time it takes the device to receive "unlock".</span><span role="cell">One tracker with the M-Pesa reference, an expected time, "don't pay again", and a report path.</span></div>
+          <div class="mp-table__row" role="row"><span role="cell"><strong>Locked with nothing owed</strong></span><span role="cell">Payment guides say a phone that stays offline too long can lock even when nothing is due.</span><span role="cell">Saying why it locked, and that reconnecting fixes it, on the lock screen itself.</span></div>
+          <div class="mp-table__row" role="row"><span role="cell"><strong>Finished, still restricted</strong></span><span role="cell">The account and device not being released when the balance hits zero.</span><span role="cell">A finish line: confirmation, locks removed, certificate, permission to delete the app.</span></div>
+          <div class="mp-table__row" role="row"><span role="cell"><strong>Login codes don't arrive</strong></span><span role="cell">SMS delivery on some networks.</span><span role="cell">A code by voice call or WhatsApp when the SMS doesn't come.</span></div>
+        </div>
+        <p class="cs-body" style="margin-top:28px"><strong>The four numbers I'd ask Watu's data team for first:</strong> median minutes from M-Pesa confirmation to unlock, by hour of day; the share of locks where nothing was owed; how many customers pay the same amount twice in an hour; and the login-code delivery rate by network.</p>
+      </div>
+    </section>
+
+    <section class="cs-section">
+      <div class="container">
+        <span class="cs-section__label">The decisions</span>
+        <h2 class="cs-section__title">Three decisions,<br /><em>each tied to the evidence.</em></h2>
+        <div class="qr-tabs" role="tablist" aria-label="Decisions">
+          <button class="qr-tab is-active" role="tab" aria-selected="true" data-m="0">Lock screen</button>
+          <button class="qr-tab" role="tab" aria-selected="false" data-m="1">Payment tracker</button>
+          <button class="qr-tab" role="tab" aria-selected="false" data-m="2">Finish line</button>
+        </div>
+        <div class="mp-moment" id="mpMoment"></div>
+      </div>
+    </section>
+
+    <section class="cs-section">
+      <div class="container">
+        <span class="cs-section__label">Quick wins</span>
+        <h2 class="cs-section__title">Three fixes design owns<br /><em>from start to finish.</em></h2>
+        <div class="mp-wins">
+          <figure class="mp-win">
+            <img src="images/wt-home.webp" alt="Home screen with automatic payment status" loading="lazy" />
+            <figcaption><h3>No more Refresh button</h3><p>Watu's home screen asks customers to refresh to see payments. The fix: payments appear on their own, with "Last payment received 2 min ago" and the exact time the phone stays on until.</p></figcaption>
+          </figure>
+          <figure class="mp-win">
+            <img src="images/wt-days.webp" alt="Pay for days with the date it buys" loading="lazy" />
+            <figcaption><h3>Show what the payment buys</h3><p>Watu already lets customers slide to pick days. The fix: name the date. "KSh 246 keeps your phone on until Sat, 9:00 AM" is a decision people can make in one look.</p></figcaption>
+          </figure>
+          <figure class="mp-win">
+            <img src="images/wt-code.webp" alt="Login code with call and WhatsApp fallback" loading="lazy" />
+            <figcaption><h3>A code that always arrives</h3><p>Trouble getting in, mostly login codes that never arrive, is the biggest cluster in Nigeria's reviews. The fix: after the SMS timer, offer a voice call that reads the code out, or WhatsApp.</p></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-section">
+      <div class="container">
+        <span class="cs-section__label">Craft</span>
+        <h2 class="cs-section__title">Designed in Watu's language,<br /><em>tightened with the best of fintech.</em></h2>
+        <p class="cs-body">I kept what Watu's customers already know from the real app: the dark theme, teal actions, the lime "today's payment" card, the centre Payments tab, and Poppins. Then I tightened it with references from Mobbin: the payment tracker follows <a href="https://mobbin.com/screens/f5692db8-3524-4280-a7d7-cc85875837de" target="_blank" rel="noopener">MoonPay</a> and <a href="https://mobbin.com/screens/acfd8d83-7da5-4fee-97ba-93f70147bde6" target="_blank" rel="noopener">Too Good To Go</a>, progress follows <a href="https://mobbin.com/screens/896a8f02-33b2-45e2-8d85-2d30cba028b8" target="_blank" rel="noopener">Afterpay</a>, and the finish line takes its dark, bold celebration from <a href="https://mobbin.com/screens/d2bd6044-3265-45d9-938d-ca469513598d" target="_blank" rel="noopener">Wise</a> and its sticker-and-confetti moment from <a href="https://mobbin.com/screens/f27bc928-e996-4df8-8465-9979e851e4ee" target="_blank" rel="noopener">Monzo</a>.</p>
+        <figure class="mp-system"><img src="images/wt-system.webp" alt="Watu concept system: colour jobs, Poppins type, and core components" loading="lazy" /></figure>
+      </div>
+    </section>
+
+    <section class="cs-section">
+      <div class="container">
+        <span class="cs-section__label">Evidence next</span>
+        <h2 class="cs-section__title">Testing it now,<br /><em>and what should move if it shipped.</em></h2>
+        <p class="cs-body">I'm testing the prototype with five people who pay for a phone or bike in instalments, asking one question per moment, such as "Has your payment landed? Should you pay again?" Results go here as soon as they're in.</p>
+        <div class="cs-metrics">
+          <div class="cs-metric"><span class="cs-metric__value">Minutes</span><span class="cs-metric__label">From M-Pesa confirmation to unlock, by hour of day. The headline number.</span></div>
+          <div class="cs-metric"><span class="cs-metric__value">Twice</span><span class="cs-metric__label">Duplicate payments within an hour, and the refunds they cause.</span></div>
+          <div class="cs-metric"><span class="cs-metric__value">Calls</span><span class="cs-metric__label">Support contacts about locked devices, per thousand customers.</span></div>
+        </div>
+        <p class="cs-body" style="font-size:13px;margin-top:28px">Sources: Google Play reviews of Watu Kenya and Watu Nigeria (loaded October 2026); Watu Kenya release notes and support FAQ; TikTok topic pages; paybillke.com payment guides; Daily Monitor, 23 February 2026. Paybill 650880 is Watu Kenya's published Paybill; names and amounts in the screens are samples. Stickers by <a href="https://www.flaticon.com/authors/vectorsmarket15" target="_blank" rel="noopener">vectorsmarket15</a> from Flaticon; icons: <a href="https://www.flaticon.com/uicons" target="_blank" rel="noopener">Uicons by Flaticon</a>. Watu is a trademark of its owner; this is an independent concept.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="cs-next">
+    <div class="container">
+      <a href="project-8.html" class="cs-next__link">
+        <div>
+          <span class="cs-next__label">Next Project</span>
+          <span class="cs-next__title">Moniepoint</span>
+        </div>
+        <span class="cs-next__arrow">→</span>
+      </a>
+    </div>
+  </div>
+
+
+
+
+
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__text">© 2026 Promise Olaifa. Designed and built by me.</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+  <script src="wt.js" defer></script>
+</body>
+</html>
