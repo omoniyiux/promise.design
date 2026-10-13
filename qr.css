@@ -317,3 +317,5 @@
   .mp-wins { grid-template-columns: 1fr; }
   .mp-win img { margin: 0 auto; }
 }
+.mp-system { margin: 32px 0 0; }
+.mp-system img { width: 100%; display: block; border-radius: 18px; border: 1px solid var(--color-border); background: #fff; }
