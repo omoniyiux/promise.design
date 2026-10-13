@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>FairMoney concept film</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Mulish:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fm-ui.css">
+<link rel="stylesheet" href="device.css">
+<style>
+  html,body{margin:0;background:#000}
+  #stage{width:1920px;height:1080px;position:relative;overflow:hidden;background:#F4F5F1;font-family:Inter,sans-serif;color:#1F1F27}
+  #stage *, #stage *::before, #stage *::after{animation:none!important;transition:none!important}
+  .sc{position:absolute;inset:0;opacity:0}
+  .logo{position:absolute;left:140px;top:84px;height:34px}
+  .kick{font-size:20px;font-weight:600;color:#028A5F;letter-spacing:.01em}
+  .hero{font-size:84px;line-height:92px;font-weight:800;letter-spacing:-.035em;margin:0}
+  .mid{font-size:54px;line-height:62px;font-weight:800;letter-spacing:-.03em;margin:0}
+  .lead{font-size:27px;line-height:40px;color:#45454F;margin:0}
+  .small{font-size:18px;line-height:26px;color:#6E6D73}
+  /* bars */
+  .bars{position:absolute;left:140px;right:140px;top:330px}
+  .br{display:grid;grid-template-columns:420px 1fr 90px;align-items:center;gap:24px;height:72px}
+  .br .l{font-size:26px;font-weight:600}
+  .br .tr{height:28px;border-radius:14px;background:#E6E8E3;overflow:hidden}
+  .br .f{height:100%;border-radius:14px;background:#C9CEC6}
+  .br.hi .f{background:#00A672}
+  .br .n{font-size:30px;font-weight:800;text-align:right;font-variant-numeric:tabular-nums}
+  .br.hi .l,.br.hi .n{color:#028A5F}
+  /* phone */
+  #phoneWrap{position:absolute;left:1180px;top:102px;opacity:0}
+  .phone{width:418px;height:872px;border-radius:62px;background:#0D0D10;padding:14px;box-shadow:0 50px 90px rgba(20,40,30,.20),0 0 0 1px rgba(0,0,0,.06)}
+  .screen{width:390px;height:844px;border-radius:48px;overflow:hidden;position:relative;background:#fff}
+  .lay{position:absolute;inset:0}
+  .notch{position:absolute;top:10px;left:50%;width:120px;height:34px;margin-left:-60px;border-radius:20px;background:#0D0D10;z-index:40}
+  .tap{position:absolute;width:56px;height:56px;margin:-28px 0 0 -28px;border-radius:50%;background:rgba(255,98,67,.28);box-shadow:0 0 0 3px #FF6243;z-index:60;opacity:0;pointer-events:none}
+  /* captions */
+  #cap{position:absolute;left:140px;top:250px;width:860px}
+  #cap .tag{display:inline-flex;height:36px;align-items:center;padding:0 16px;border-radius:999px;font-size:16px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+  .tag.b{background:#FFE8E3;color:#C2381E}.tag.a{background:#E2F4EB;color:#028A5F}.tag.l{background:#1F1F27;color:#fff}
+  #cap h2{font-size:62px;line-height:70px;font-weight:800;letter-spacing:-.03em;margin:26px 0 22px}
+  #cap p{font-size:28px;line-height:42px;color:#45454F;margin:0}
+  #chap{position:absolute;left:140px;top:150px;font-size:20px;font-weight:600;color:#028A5F;letter-spacing:.02em}
+  #prog{position:absolute;left:140px;right:140px;bottom:64px;height:4px;border-radius:2px;background:#E1E4DE}
+  #prog i{display:block;height:100%;border-radius:2px;background:#1F1F27;width:0}
+  .ffoot{position:absolute;left:140px;bottom:96px;font-size:17px;color:#9A9AA2}
+  /* quick wins */
+  .trio{position:absolute;top:236px;left:0;right:0;display:flex;justify-content:center;gap:70px}
+  .mini{width:280px;text-align:left}
+  .mini .ph{width:280px;height:583px;border-radius:46px;background:linear-gradient(140deg,#e4e4e8,#9d9da3 14%,#f2f2f5 30%,#88888e 52%,#d4d4d8 72%,#7b7b81 88%,#c9c9ce);padding:3px;box-shadow:0 34px 64px -14px rgba(20,40,30,.28)}
+  .mini .ph>.bz{width:274px;height:577px;border-radius:43px;background:#030303;padding:7px}
+  .mini .sv{width:260px;height:563px;border-radius:37px;overflow:hidden;position:relative;background:#fff}
+  .mini .sv .lay{width:390px;height:844px;transform:scale(.66667);transform-origin:0 0}
+  .mini b{display:block;font-size:24px;font-weight:800;margin-top:22px;letter-spacing:-.02em}
+  .mini span{display:block;font-size:18px;line-height:26px;color:#6E6D73;margin-top:6px}
+  /* metrics */
+  .mets{position:absolute;left:140px;right:140px;top:380px;display:grid;grid-template-columns:repeat(3,1fr);gap:56px}
+  .met{border-top:3px solid #1F1F27;padding-top:24px}
+  .met .k{font-size:22px;font-weight:700;color:#028A5F}
+  .met .v{font-size:34px;line-height:42px;font-weight:800;letter-spacing:-.02em;margin-top:10px}
+  .met .d{font-size:20px;line-height:30px;color:#6E6D73;margin-top:10px}
+  .quote{position:absolute;left:140px;top:520px;width:1200px;border-left:6px solid #00A672;padding:6px 0 6px 36px}
+  .quote q{font-size:46px;line-height:58px;font-weight:700;letter-spacing:-.02em;quotes:"\201C" "\201D"}
+  .quote div{font-size:20px;color:#6E6D73;margin-top:18px}
+</style>
+</head>
+<body>
+<div id="stage">
+  <!-- 0 title -->
+  <div class="sc" id="s0">
+    <img class="logo" src="img/fm-logo.png" alt="FairMoney">
+    <div style="position:absolute;left:140px;top:330px;width:1400px">
+      <div class="kick">A self-initiated product concept</div>
+      <p class="hero" style="margin-top:26px">They paid you back.<br>Now help them borrow again.</p>
+      <p class="lead" style="margin-top:36px">For FairMoney, by Promise Olaifa, product designer in Lagos.</p>
+    </div>
+    <div class="ffoot">Not affiliated with FairMoney. Screens rebuilt from the live app, October 2026. Customer data is made up.</div>
+  </div>
+  <!-- 1 data -->
+  <div class="sc" id="s1">
+    <div style="position:absolute;left:140px;top:120px;width:1500px">
+      <div class="kick">What customers are saying</div>
+      <p class="mid" style="margin-top:20px">The #1 complaint isn't interest.<br>It's "why can't I borrow again?"</p>
+    </div>
+    <div class="bars" id="bars"></div>
+    <div class="ffoot">277 Google Play reviews rated 1–3 stars, January to September 2026, each read and tagged by hand.</div>
+  </div>
+  <!-- 2 quote -->
+  <div class="sc" id="s2">
+    <div style="position:absolute;left:140px;top:220px;width:1500px">
+      <div class="kick">The people hitting this wall</div>
+      <p class="mid" style="margin-top:20px"><span style="color:#028A5F">22 of the 60</span> say they repaid on time or early.</p>
+    </div>
+    <div class="quote"><q>The 30 days have ended for 2 months now. Still stuck on 0 days remaining.</q><div>Google Play review, July 2026</div></div>
+  </div>
+  <!-- 6b duo -->
+  <div class="sc" id="s6">
+    <div style="position:absolute;left:140px;top:84px;width:1600px"><div class="kick">Ready for the iPhone Duo</div><p class="mid" style="margin-top:14px">One fold, two answers: where your loan is,<br>and how to make it bigger.</p></div>
+    <img id="duoA" src="img/duoWait.webp" style="position:absolute;left:494px;top:300px;width:932px;height:668px">
+    <img id="duoB" src="img/duoOffer.webp" style="position:absolute;left:494px;top:300px;width:932px;height:668px;opacity:0">
+  </div>
+  <!-- 7 quick wins -->
+  <div class="sc" id="s7">
+    <div style="position:absolute;left:140px;top:110px"><div class="kick">Three quick wins</div><p class="mid" style="margin-top:14px">Small fixes. Loud reviews.</p></div>
+    <div class="trio" id="trio"></div>
+  </div>
+  <!-- 8 metrics -->
+  <div class="sc" id="s8">
+    <div style="position:absolute;left:140px;top:150px;width:1500px"><div class="kick">How we'd know it worked</div><p class="mid" style="margin-top:20px">Half the waiting customers. Four weeks.<br>Numbers decide.</p></div>
+    <div class="mets">
+      <div class="met"><div class="k">Retention</div><div class="v">More repeat loans from people who repaid</div><div class="d">The money metric for a credit-led bank</div></div>
+      <div class="met"><div class="k">Support</div><div class="v">Fewer "why can't I borrow?" contacts</div><div class="d">And fewer 1-star reviews about it</div></div>
+      <div class="met"><div class="k">Guardrail</div><div class="v">Default rate stays flat</div><div class="d">Design changes the explanation, not who gets credit</div></div>
+    </div>
+  </div>
+  <!-- 9 end -->
+  <div class="sc" id="s9">
+    <img class="logo" src="img/fm-logo.png" alt="FairMoney">
+    <div style="position:absolute;left:140px;top:340px;width:1500px">
+      <p class="hero">Promise Olaifa</p>
+      <p class="lead" style="margin-top:22px;font-size:34px">Product designer. I design it, test it and build it in code.</p>
+      <p class="lead" style="margin-top:40px;font-size:34px;color:#028A5F;font-weight:700">omoniyiux.vercel.app/fairmoney</p>
+    </div>
+  </div>
+
+  <!-- phone scenes -->
+  <div id="chap"></div>
+  <div id="cap"><span class="tag" id="ctag"></span><h2 id="ct"></h2><p id="cb"></p></div>
+  <div id="phoneWrap"><div class="iph"><span class="btn-l b1"></span><span class="btn-l b2"></span><span class="btn-l b3"></span><span class="btn-r b4"></span><span class="btn-r b5"></span><div class="bez"><div class="scr-wrap fm nohints" id="scr"><div class="lay" id="L0"></div><div class="lay" id="L1"></div><div class="tap" id="tap"></div></div><div class="island"></div></div></div></div>
+  <div id="prog"><i></i></div>
+</div>
+<script src="fm-ui.js"></script>
+<script>
+const {S} = FM;
+const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const ease=x=>{x=clamp(x);return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2};
+const out=x=>1-Math.pow(1-clamp(x),3);
+const ph=(t,a,d)=>clamp((t-a)/d);
+
+// ---------- timeline ----------
+const T_END = 126;
+const SCENES = [ // non-phone full scenes
+  {id:'s0', a:0, b:5.2}, {id:'s1', a:5.2, b:14.5}, {id:'s2', a:14.5, b:20.5},
+  {id:'s6', a:95, b:103.5}, {id:'s7', a:103.5, b:113.5}, {id:'s8', a:113.5, b:121}, {id:'s9', a:121, b:T_END+1},
+];
+const PHONE = {a:20.5, b:95};
+// beats: screen changes, taps, scroll, captions
+const B = [
+  {at:20.5, s:'home', o:{before:1}, chap:'Today', cap:['b','Tap "Get loan"…', 'A customer who just repaid taps the same card every customer sees, whether they can borrow or not.']},
+  {at:23.6, tap:'.mcard'},
+  {at:24.0, s:'bwait', cap:['b','…and meet "0 days"', 'The countdown hits zero and stays there for weeks. FairMoney\'s own replies admit "0 days left" means "still under review".']},
+  {at:29.0, s:'home', o:{next:1}, chap:'The fix: waiting', cap:['a','Home tells the truth first', 'No ad for a loan they can\'t take. Just where their next one stands.']},
+  {at:31.6, tap:'.cc'},
+  {at:32.0, s:'wait', o:{}, cap:['a','A status, not a stopwatch', 'What happened, what\'s happening, and a real date. No fake timers.']},
+  {at:35.4, scroll:260, dur:1.4, cap:['a','Boosts, not guesswork', 'FairMoney\'s help centre already lists what helps. Now the app shows it, ticks it, and gives a button.']},
+  {at:40.6, tap:'[data-act="air"]'},
+  {at:41.0, s:'air', cap:['a','Waiting becomes using', 'Airtime with FairMoney\'s 3% discount counts toward the next offer. Revenue while they wait.']},
+  {at:43.8, tap:'.foot .btn'},
+  {at:44.2, s:'wait', o:{acts:2,toast:1}, sc:260, cap:['a','Progress they can feel', 'Every tap is a transaction FairMoney already wants.']},
+  {at:47.6, scroll:0, dur:0.9},
+  {at:48.8, tap:'[data-sheet="why"]'},
+  {at:49.2, s:'wait', o:{acts:2,sheet:'why'}, cap:['a','No black box', 'What a review checks, in plain words. Longer than 10 days? The screen says why.']},
+  {at:53.0, s:'push', cap:['a','They hear first', 'Offer ready? A push and an SMS. Nobody refreshes a timer again.']},
+  {at:55.6, s:'offer', o:{}, chap:'The fix: the offer', cap:['a','The full cost, up front', 'FairMoney\'s offer layout, plus the total to repay before they say yes. Clear terms, as the FCCPC\'s 2025 rules require.']},
+  {at:59.2, tap:'[data-sheet="explain"]'},
+  {at:59.6, s:'offer', o:{sheet:'explain'}, cap:['a','"Why is my offer lower?"', 'Answered before they ask: what helped, what held it back, and how to unlock more.']},
+  {at:65.0, tap:'.sheet .btn'},
+  {at:65.4, s:'offer', o:{}},
+  {at:66.2, tap:'.foot .btn'},
+  {at:66.6, s:'got', cap:['a','Money in. Nudges, not nags.', 'First due date up front, and reminders with no calls before it.']},
+  {at:70.0, s:'bdevice', chap:'The fix: a new phone', cap:['l','I hit this wall myself', 'My account was opened on Android. On my iPhone, Loans are locked. This is the live app, word for word.']},
+  {at:76.0, s:'device', o:{}, cap:['a','Same sheet. Now with a door.', 'Keep the one-phone rule. Move Loans to the new phone with checks FairMoney already runs.']},
+  {at:79.6, tap:'.sheet .btn'},
+  {at:80.0, s:'bvn', cap:['a','Step 1: BVN', 'Forgot it? The screen tells you how to find it.']},
+  {at:81.8, tap:'.foot .btn'},
+  {at:82.2, s:'selfie', vid:1, cap:['a','Step 2: a selfie that coaches', 'Backlit? It says so, and how to fix it. Then it captures on its own.']},
+  {at:88.8, s:'otp', live:1, cap:['a','Step 3: the code', 'Four digits to the number on the account.']},
+  {at:90.6, tap:'.foot .btn'},
+  {at:91.0, s:'moved', cap:['a','Two minutes. Back to borrowing.', 'Old phone signed out. Security kept. Customer kept.']},
+];
+B.forEach((b,i)=>b.i=i);
+
+// ---------- bars ----------
+const BARS=[['Can\'t get my next loan',60,1],['Getting in (login, location, new phone)',57],['Price and fees',40],['Transfers and restrictions',27],['KYC and tier upgrades',23],['Repayment not showing',21],['Calls and reminders',19]];
+document.getElementById('bars').innerHTML=BARS.map(([l,n,h],i)=>`<div class="br ${h?'hi':''}"><div class="l">${l}</div><div class="tr"><div class="f" id="bf${i}" style="width:0"></div></div><div class="n" id="bn${i}">0</div></div>`).join('');
+// ---------- trio ----------
+const TRIO=[['loc','Location only for loans','14 reviews: "unable to fetch location" blocks login, even to repay.'],['rem','Reminders they choose','FairMoney\'s help centre apologises for calls before the due date.'],['closed','Proof a loan is closed','21 reviews about repayments not showing or loans not closing.']];
+document.getElementById('trio').innerHTML=TRIO.map(([s,b,d])=>`<div class="mini"><div class="ph"><div class="bz"><div class="sv"><div class="lay fm nohints">${S[s]({})}</div></div></div></div><b>${b}</b><span>${d}</span></div>`).join('');
+
+// ---------- phone engine ----------
+const L=[document.getElementById('L0'),document.getElementById('L1')]; const keys=['',''];
+const tapEl=document.getElementById('tap');
+function setLayer(i,html,key){ if(keys[i]!==key){ L[i].innerHTML=html; keys[i]=key; } }
+function screenAt(t){ // last screen beat <= t, and the one before it
+  let cur=null, prev=null;
+  for(const b of B){ if(b.s && b.at<=t){ prev=cur; cur=b; } }
+  return {cur,prev};
+}
+function scrollAt(t,cur){
+  // scroll beats after the current screen beat
+  let y=cur.sc||0;
+  for(const b of B){ if(b.scroll!==undefined && b.at>=cur.at && b.at<=t){ const p=ease((t-b.at)/b.dur); y=y+(b.scroll-y)*p; } }
+  return y;
+}
+function liveOpts(b,t){
+  const lt=t-b.at;
+  if(b.s==='selfie') return {p:clamp(0.15+lt/2.6*0.85,0,1)};
+  if(b.s==='otp'){ const n=Math.floor(clamp((lt-0.3)/1.2)*4.999); return {v:'4829'.slice(0,n)}; }
+  return b.o||{};
+}
+function renderPhone(t){
+  const {cur,prev}=screenAt(t); if(!cur) return;
+  const o=cur.live?liveOpts(cur,t):(cur.o||{});
+  if(cur.vid){ const vt=clamp(t-cur.at,0,6.45); const so= vt<2.8?{phase:'dark'}:vt<5.9?{phase:'lit',p:clamp((vt-3)/2.7)}:{phase:'done',p:1};
+    setLayer(0,S.selfie({...so,film:1}),cur.i+'|vid');
+    const tmp=document.createElement('div'); tmp.innerHTML=S.selfie({...so,still:1});
+    ['.mask','.coach','.lmeter'].forEach(s=>{ const a=L[0].querySelector(s), b=tmp.querySelector(s); if(a&&b) a.replaceWith(b); });
+    window.__seek={v:L[0].querySelector('video.camv'),t:vt};
+  } else { window.__seek=null; const key=cur.i+'|'+JSON.stringify(o); setLayer(0,S[cur.s](o),key); }
+  const lt=t-cur.at;
+  const sameScreen = prev && prev.s===cur.s;
+  const sheetIn = cur.o && cur.o.sheet && !(prev && prev.o && prev.o.sheet===cur.o.sheet);
+  const sheetOut = prev && prev.o && prev.o.sheet && !(cur.o && cur.o.sheet) && sameScreen;
+  // body scroll
+  const bd=L[0].querySelector('.body'); if(bd) bd.scrollTop=scrollAt(t,cur);
+  // sheet animation
+  const sh=L[0].querySelector('.sheet'), sm=L[0].querySelector('.scrim');
+  if(sh && sheetIn){ const p=out(lt/0.45); sh.style.transform=`translateY(${(1-p)*100}%)`; if(sm) sm.style.opacity=p; }
+  // toast
+  const to=L[0].querySelector('.toast'); if(to){ const p=out(lt/0.4); const q=1-ph(lt,3.0,0.4); to.style.transform=`translateY(${(1-p)*-30}px)`; to.style.opacity=Math.min(p,q); }
+  // crossfade from previous screen
+  if(prev && !sameScreen && lt<0.45){
+    const pk=prev.i+'|prev'; setLayer(1,S[prev.s](prev.live?liveOpts(prev,cur.at):(prev.o||{})),pk);
+    const p=ease(lt/0.45); L[1].style.display='block'; L[1].style.opacity=1-p; L[1].style.zIndex=2;
+    L[0].style.transform=`translateX(${(1-p)*36}px)`; L[0].style.opacity=0.2+0.8*p;
+    const pb=L[1].querySelector('.body'); if(pb) pb.scrollTop=scrollAt(cur.at-0.001,prev);
+  } else if(sheetOut && lt<0.35){
+    const pk=prev.i+'|prev'; setLayer(1,S[prev.s](prev.o||{}),pk);
+    const p=ease(lt/0.35); L[1].style.display='block'; L[1].style.opacity=1; L[1].style.zIndex=2;
+    const s2=L[1].querySelector('.sheet'), m2=L[1].querySelector('.scrim'); if(s2) s2.style.transform=`translateY(${p*100}%)`; if(m2) m2.style.opacity=1-p;
+    L[1].querySelectorAll('.scr > :not(.sheet):not(.scrim)').forEach(e=>e.style.visibility='hidden'); L[1].querySelector('.scr').style.background='transparent';
+    L[0].style.transform='none'; L[0].style.opacity=1;
+  } else { L[1].style.display='none'; L[0].style.transform='none'; L[0].style.opacity=1; }
+  // tap ripple
+  let tb=null; for(const b of B){ if(b.tap && b.at<=t && t-b.at<0.7) tb=b; }
+  if(tb){ const el=L[0].querySelector(tb.tap); if(el){ const r=el.getBoundingClientRect(), sr=document.getElementById('scr').getBoundingClientRect(); const p=(t-tb.at)/0.7;
+      tapEl.style.left=(r.left-sr.left+r.width/2)+'px'; tapEl.style.top=(r.top-sr.top+r.height/2)+'px'; tapEl.style.opacity=p<.15?p/.15:1-ph(p,.5,.5); tapEl.style.transform=`scale(${0.7+0.5*out(p)})`; } }
+  else tapEl.style.opacity=0;
+}
+let lastCap=null, capAt=0;
+function renderCaps(t){
+  let c=null, ch=null; for(const b of B){ if(b.at<=t){ if(b.cap) c=b; if(b.chap) ch=b; } }
+  const show = t>=PHONE.a && t<PHONE.b;
+  const capEl=document.getElementById('cap'), chEl=document.getElementById('chap');
+  if(!show||!c){ capEl.style.opacity=0; chEl.style.opacity=0; return; }
+  if(c!==lastCap){ lastCap=c; const [tg,h,p]=c.cap; const tag=document.getElementById('ctag'); tag.className='tag '+tg; tag.textContent=tg==='b'?'Before':tg==='l'?'Before · live app':'After'; document.getElementById('ct').textContent=h; document.getElementById('cb').textContent=p; }
+  if(ch) chEl.textContent=ch.chap;
+  const p=out((t-c.at)/0.5), fo=1-ph(t,PHONE.b-0.4,0.4);
+  capEl.style.opacity=Math.min(p,fo); capEl.style.transform=`translateY(${(1-p)*18}px)`;
+  chEl.style.opacity=Math.min(out((t-PHONE.a)/0.5),fo);
+}
+function renderAt(t){
+  for(const s of SCENES){ const el=document.getElementById(s.id); const o=Math.min(out((t-s.a)/0.5), 1-ph(t,s.b-0.4,0.4)); el.style.opacity=(t>=s.a&&t<s.b)?o:0;
+    el.style.transform=`translateY(${(1-out((t-s.a)/0.6))*16}px)`; }
+  // bars
+  const bt=t-5.2; BARS.forEach(([l,n],i)=>{ const p=out((bt-0.9-i*0.18)/1.1); document.getElementById('bf'+i).style.width=(n/60*100*p)+'%'; document.getElementById('bn'+i).textContent=Math.round(n*p); });
+  // phone
+  const pw=document.getElementById('phoneWrap');
+  const po=Math.min(out((t-PHONE.a)/0.6),1-ph(t,PHONE.b-0.4,0.4)); pw.style.opacity=(t>=PHONE.a-0.01&&t<PHONE.b)?po:0;
+  pw.style.transform=`translateY(${(1-out((t-PHONE.a)/0.7))*40}px)`;
+  if(t>=PHONE.a-0.01 && t<PHONE.b) renderPhone(Math.max(t,PHONE.a));
+  renderCaps(t);
+  // duo scene
+  const dt=t-95; document.getElementById('duoB').style.opacity=clamp((dt-4)/0.6); document.getElementById('duoA').style.opacity=1-clamp((dt-4)/0.6);
+  document.querySelector('#prog i').style.width=(t/T_END*100)+'%';
+  const sk=window.__seek; if(sk&&sk.v){ return new Promise(res=>{ const v=sk.v; const go=()=>{ if(Math.abs(v.currentTime-sk.t)<0.02) return res(); v.onseeked=()=>res(); v.currentTime=sk.t; }; if(v.readyState>=1) go(); else v.onloadedmetadata=go; setTimeout(res,1500); }); }
+}
+window.renderAt=renderAt; window.T_END=T_END;
+const qs=new URLSearchParams(location.search);
+if(qs.has('t')) renderAt(+qs.get('t'));
+else if(!qs.has('capture')){ const t0=performance.now(); (function loop(){ const t=((performance.now()-t0)/1000)%T_END; renderAt(t); requestAnimationFrame(loop); })(); }
+</script>
+</body>
+</html>

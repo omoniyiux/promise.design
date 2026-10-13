@@ -272,3 +272,90 @@ Small samples are marked. The App Store skews toward iPhone users, so check the 
 
 Bench: Glo (Glo Café, 43 / 50, the 3.0.3 update broke login, but hard to reach), Sterling, ALAT, Trove.
 Left out: SportyBet (179 negative, but betting; your call), GTWorld (only 3 negative, not hurting).
+
+---
+
+## 10. People: FairMoney, PalmPay, Access Bank (13 Oct 2026)
+
+### FairMoney (start here)
+
+Hiring signals on their Workable board today (apply.workable.com/fairmoney):
+- **Experience Lead** (Lagos, posted 19 Aug). Owns the customer-experience agenda: journey maps, "the pain points customers keep raising", review of the in-app experience. It's measured on a **10% quarterly cut in repeat complaints** and **+5% CSAT**. The pitch is aimed straight at this.
+- **Engineering Manager, Identity** (posted 21 Sep). Identity, KYC and onboarding are getting investment.
+- **Head of Collections, Strategy & Analytics** (posted 6 Oct). Collections is being rethought.
+- A **Head of Design** role (Lagos and Abuja) was posted on 10 July and is no longer listed, so someone has probably just been hired. A new design head wants quick wins and a team. The post asked for "AI-first practices", design systems and motion.
+
+| # | Name | Role | Angle | Channel |
+|---|---|---|---|---|
+| 1 | Ìbùkún Adelekan ([LinkedIn](https://www.linkedin.com/in/artofibukun/)) | Lead Product Designer; Friends of Figma Lagos community lead | Peer and design lead. Active in the community, so most likely to reply | LinkedIn |
+| 2 | New Head of Design (find: LinkedIn People, "head of design") | Joined after July | Quick wins and a design system in a sprint | LinkedIn + email |
+| 3 | Ankit Gupta ([LinkedIn](https://in.linkedin.com/in/ankitgupta1309)) | Product / design at FairMoney (a search snippet says Head of Design; **verify**) | Design leadership | LinkedIn |
+| 4 | Nicolas Berthozat | Co-founder, Chief Product Officer | Product: repeat complaints, retention | LinkedIn + email |
+| 5 | Laurin Hainy ([X](https://x.com/LaurinHainy)) | Co-founder, CEO | Founder. Short. Last. | X reply, then email |
+| 6 | Matthieu Gendreau | Co-founder, CTO | Identity and device-switch engineering | LinkedIn + email |
+| 7 | Experience Lead hiring manager (find) | CX | Owns repeat complaints | LinkedIn |
+| 8 | Senior PM, Lending (find; posted June) | Product | Loan journey and reminders | LinkedIn |
+| 9 | Engineering Manager, Identity (once hired) or the identity squad PM | Identity | Device switch | LinkedIn |
+| 10 | Senior Recruiter / People Partner (find) | Talent | "I've applied for Experience Lead" | LinkedIn |
+
+### PalmPay
+
+| # | Name | Role | Channel |
+|---|---|---|---|
+| 1 | Chika Nwosu | Managing Director, PalmPay Nigeria | LinkedIn + email |
+| 2 | Samuel Oluyemi | COO (appointed July 2026, from NIBSS) | LinkedIn |
+| 3 | Olorunfemi Hanson ([LinkedIn](https://ng.linkedin.com/in/olorunfemi-hanson-1873b061)) | PalmPay (role to verify) | LinkedIn |
+| 4 | Chibuzor M. ([LinkedIn](https://ng.linkedin.com/in/chibuzor-m-561b5570)) | PalmPay (role to verify) | LinkedIn |
+| 5–10 | Find: LinkedIn People, search "product design", "product manager", "UX" | Design and product | LinkedIn |
+
+Public pages name very few PalmPay product or design people. The most reliable route is a Lagos-based product manager who can forward it internally.
+
+### Access Bank
+
+| # | Name | Role | Channel |
+|---|---|---|---|
+| 1 | Roosevelt Ogbonna | MD/CEO, Access Bank | Email only. Last. |
+| 2 | Esther Ubeng ([LinkedIn](https://www.linkedin.com/in/estherubeng/)) | Senior Product Manager | LinkedIn |
+| 3 | Prince Neville Akpobasah ([LinkedIn](https://www.linkedin.com/in/prince-neville-akpobasah-86747644/)) | UI/UX designer (since 2023) | LinkedIn: peer |
+| 4–10 | Find: LinkedIn People, "digital banking", "product owner", "UX", "mobile banking" | Digital channels | LinkedIn |
+
+Banks rarely hire from cold pitches to the top. Go in through a product owner or a designer, and expect a referral, not a reply from the CEO.
+
+---
+
+## 11. FairMoney messages (pitch: omoniyiux.vercel.app/fairmoney)
+
+Send the deck link, not the prototype. The deck opens on the 2-minute film.
+
+**Connection note, Ìbùkún Adelekan (Lead Product Designer)**
+> Hi Ìbùkún, fellow Lagos designer here. 60 of 277 unhappy FairMoney reviews this year say "I can't borrow again", and 22 of them repaid on time. I designed a fix in FairMoney's own UI, with a 2-minute film. Can I send it?
+
+**Connection note, new Head of Design**
+> Hi [Name], congrats on the new role at FairMoney. I made a pitch for you: the #1 complaint in this year's reviews, fixed in your app's language, plus a plan to get a design system live in code in one sprint. Want the link?
+
+**Connection note, Nicolas Berthozat (CPO)**
+> Hi Nicolas, the loudest FairMoney complaint in 2026 isn't interest. It's "why can't I borrow again?" (60 of 277 1–3 star reviews, 22 repaid on time). I designed and prototyped the fix. 2-minute film: worth a look?
+
+**X reply / DM, Laurin Hainy (CEO)**
+> Laurin, your best customers just repaid you, and the app tells them "try again in 0 days". I spent my own time designing the fix in FairMoney's UI: omoniyiux.vercel.app/fairmoney (2-min film up top).
+
+**Recruiter / Experience Lead hiring manager**
+> Hi [Name], I've applied for Experience Lead. Before I did, I mapped FairMoney's biggest repeat complaint from 1,760 reviews and designed the fix. The role is measured on a 10% cut in repeat complaints, and this is the biggest one. Link?
+
+**Email (any of the above, after they reply or if you find the email)**
+> Subject: They paid you back. Now help them borrow again.
+>
+> Hi [Name],
+>
+> I'm Promise, a product designer in Lagos. I read 1,760 FairMoney Play Store reviews and tagged every 1–3 star review from 2026 by hand. The #1 theme wasn't interest. It was "I can't get my next loan": 60 of 277, and 22 of those people say they repaid on time or early.
+>
+> I also hit a wall myself. My account was opened on Android, and on my iPhone Loans are locked ("please log in from that device").
+>
+> So I designed the fix inside FairMoney's own UI: a readiness status instead of a "0 days" countdown, an offer that explains itself, and a two-minute move-to-this-phone flow with a coached selfie. There's a working prototype, an iPhone Duo layout, and a plan to get a design system live in code in one sprint.
+>
+> 2-minute film and prototype: omoniyiux.vercel.app/fairmoney
+>
+> It's self-initiated and built from public data, so your numbers will sharpen it. If it's useful, I'd love 20 minutes.
+>
+> Promise Olaifa
+> Product Designer, Lagos · omoniyiux.vercel.app

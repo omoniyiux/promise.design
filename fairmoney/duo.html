@@ -1,0 +1,7 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FairMoney on iPhone Duo · concept</title><meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Mulish:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fm-ui.css"><link rel="stylesheet" href="device.css">
+<style>html,body{margin:0;background:transparent}body{display:grid;place-items:center;min-height:100vh}.duo .scr{position:absolute;inset:0}</style></head>
+<body><div class="duo"><span class="tb1"></span><span class="tb2"></span><span class="sbtn"></span><div class="bez"><div class="scr-wrap fm nohints" id="d"></div><span class="crease"></span></div></div>
+<script src="fm-ui.js"></script><script>document.getElementById('d').innerHTML=FM.S[new URLSearchParams(location.search).get('s')||'duoWait']();</script></body></html>

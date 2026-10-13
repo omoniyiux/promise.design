@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FairMoney concept prototype · Promise Olaifa</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700;800&family=Mulish:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fm-ui.css">
+<link rel="stylesheet" href="device.css">
+<style>
+  html,body{margin:0;background:#F3F4F1;font-family:Inter,sans-serif;color:#1F1F27}
+  .wrap{min-height:100vh;display:grid;grid-template-columns:minmax(300px,420px) auto;gap:56px;align-items:center;justify-content:center;padding:32px 24px}
+  .side h1{font-size:15px;font-weight:600;margin:0;color:#6E6D73;letter-spacing:-.01em}
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 26px}
+  .tabs button{font:600 13.5px Inter,sans-serif;height:36px;padding:0 14px;border-radius:999px;border:0;background:#fff;color:#1F1F27;box-shadow:inset 0 0 0 1px #E0E0E6;cursor:pointer}
+  .tabs button.on{background:#1F1F27;color:#fff;box-shadow:none}
+  .tag{display:inline-flex;height:24px;align-items:center;padding:0 10px;border-radius:999px;font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+  .tag.before{background:#FFE8E3;color:#C2381E}.tag.after{background:#E8F6EF;color:#028A5F}
+  .cap-t{font-size:26px;line-height:32px;font-weight:700;letter-spacing:-.025em;margin:12px 0 10px}
+  .cap-b{font-size:16px;line-height:25px;color:#45454F;margin:0;min-height:100px}
+  .nav{display:flex;gap:10px;align-items:center;margin-top:24px}
+  .nav button{font:600 14px Inter,sans-serif;height:42px;padding:0 18px;border-radius:999px;border:0;cursor:pointer}
+  .nav .n{background:#1F1F27;color:#fff}.nav .b{background:#fff;color:#1F1F27;box-shadow:inset 0 0 0 1px #E0E0E6}
+  .nav span{font-size:13px;color:#6E6D73;margin-left:6px}
+  .hint{font-size:13px;color:#6E6D73;margin-top:22px;display:flex;gap:8px;align-items:center}
+  .hint i{width:14px;height:14px;border-radius:50%;box-shadow:0 0 0 2px #FF6243;display:inline-block}
+  .fm [data-go],.fm [data-sheet],.fm [data-close]{cursor:pointer}
+  .credit{font-size:12px;color:#9A9AA2;margin-top:28px;line-height:18px}
+  .credit a{color:inherit}
+  @media (max-width:900px){.wrap{grid-template-columns:1fr;gap:24px;justify-items:center}.side{max-width:440px}.phone{transform:scale(.82);transform-origin:top center;margin-bottom:-150px}}
+  .scr-wrap{height:846px}
+  /* shot / embed modes */
+  body.shot{background:#fff}.shot .wrap{display:block;padding:0}.shot .side{display:none}.shot .phone{width:390px;height:844px;padding:0;border-radius:0;box-shadow:none;background:none;transform:none!important;margin:0!important}.shot .phone::before,.shot .btn-l,.shot .btn-r,.shot .island{display:none}.shot .bez{width:390px;height:844px;padding:0;border-radius:0;background:none}.shot .screen{border-radius:0;width:390px;height:844px}
+  body.embed{background:transparent}.embed .wrap{display:flex;flex-direction:column;align-items:center;padding:0;gap:14px;min-height:0}.embed .side{display:none}.embed .phone{margin:0}
+  .ebar{display:none}.embed .ebar{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;max-width:430px}
+  .ebar button{font:600 11.5px Inter,sans-serif;height:28px;padding:0 10px;border-radius:999px;border:0;background:#fff;color:#1F1F27;box-shadow:inset 0 0 0 1px #E0E0E6;cursor:pointer}
+  .ebar button.on{background:#1F1F27;color:#fff;box-shadow:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="side">
+    <h1>FairMoney concept · a self-initiated pitch by Promise Olaifa, not affiliated with FairMoney</h1>
+    <div class="tabs" id="tabs"></div>
+    <span class="tag" id="tag"></span>
+    <h2 class="cap-t" id="ct"></h2>
+    <p class="cap-b" id="cb"></p>
+    <div class="nav"><button class="b" id="prev">Back</button><button class="n" id="next">Next</button><span id="cnt"></span></div>
+    <div class="hint"><i></i>The coral ring shows what to tap. You can also use the arrow keys.</div>
+    <p class="credit">Screens rebuilt in FairMoney's current visual language from the live app (v1.143.1, October 2026), its store screenshots and fairmoney.io. The new-phone "before" is the live app's copy; the other "before" screens are rebuilt from customer reviews. All customer data is made up. Figures are illustrative. Illustrations drawn in FairMoney's style. Selfie footage: Pexels (free licence).</p>
+  </div>
+  <div>
+    <div class="iph phone"><span class="btn-l b1"></span><span class="btn-l b2"></span><span class="btn-l b3"></span><span class="btn-r b4"></span><span class="btn-r b5"></span><div class="bez"><div class="scr-wrap screen fm" id="screen"></div><div class="island"></div></div></div>
+    <div class="ebar" id="ebar"></div>
+  </div>
+</div>
+<script src="fm-ui.js"></script>
+<script>
+const {S} = FM;
+const J = [
+  {id:'wait', name:'Waiting for the next loan', steps:[
+    {s:'home', o:{before:1,hot:1}, b:1, t:'They repaid. Now they want the next loan.', c:'Today a returning customer taps "Get loan" on Home, the same card every customer sees, whether they can borrow or not.'},
+    {s:'bwait', b:1, t:'"Try again in 0 days"', c:'17 of the 60 "next loan" reviews this year describe a countdown like this. FairMoney\'s own replies explain that "0 days left" means the profile is still under review. The screen says one thing and the system means another. (Rebuilt from reviews.)'},
+    {s:'home', o:{next:1,hot:1}, t:'Home tells the truth first', c:'Instead of advertising a loan they can\'t take, Home shows where their next loan stands and when to expect it.'},
+    {s:'wait', o:{hot:'air'}, t:'A status, not a countdown', c:'What happened, what\'s happening now, and a realistic window. Below it are five things that help. They come straight from FairMoney\'s help centre and are now checked by the app.'},
+    {s:'air', t:'One tap does something useful', c:'FairMoney\'s help centre tells waiting customers to use the app for transactions. Now the screen gives them the button, with the 3% airtime discount FairMoney already offers.'},
+    {s:'wait', o:{acts:2,toast:1,hot:'why'}, t:'Progress they can see', c:'The waiting customer becomes an active one. Every one of these actions is also revenue and data FairMoney already wants.'},
+    {s:'wait', o:{acts:2,sheet:'why'}, t:'What a review actually checks', c:'In plain words, with an honest promise: if it takes longer than 10 days, the screen says why. No "send us a screen recording".'},
+    {s:'push', t:'They hear first', c:'When the offer is ready, a notification and an SMS go out. The customer never has to come back and check a timer.'},
+  ]},
+  {id:'offer', name:'Your offer, explained', steps:[
+    {s:'offer', o:{hot:'explain'}, t:'Same offer screen, two additions', c:'FairMoney\'s current layout, plus the full cost before they accept (the FCCPC\'s 2025 rules require clear terms) and a flag when the offer is lower than last time.'},
+    {s:'offer', o:{sheet:'explain'}, t:'"Why is my offer lower?"', c:'17 reviews this year say the offer shrank after they repaid on time. This shows what helped, what held it back and what raises it next time. Risk decides which reasons can be shown, like adverse-action notices in other markets.'},
+    {s:'got', t:'Money in, reminders their way', c:'The success screen confirms the first due date and the reminder plan, with no calls before the due date.'},
+  ]},
+  {id:'phone', name:'New phone', steps:[
+    {s:'bdevice', b:1, t:'"Please log in from that device"', c:'This is the live app (v1.143.1), word for word. I hit it myself while researching this pitch: my account was opened on Android, and on an iPhone Loans and FlexiCredit are locked. 9 of 50 recent App Store complaints say the same. FairMoney\'s own sheet says a fix is being worked on.'},
+    {s:'device', o:{hot:1}, t:'Same sheet, with a way forward', c:'Same illustration, same place, same safety rule (one phone at a time). The difference is a button that moves Loans to this phone, using the checks FairMoney already runs when someone changes their phone number: BVN, selfie, OTP.'},
+    {s:'bvn', t:'Step 1: BVN', c:'Something they know, with help for finding it (*565*0#).'},
+    {s:'selfie', t:'Step 2: a selfie that coaches', c:'Auto-capture with live feedback, and a manual check after a few failed tries. FairMoney\'s help centre today lists eight conditions for a selfie to pass.'},
+    {s:'otp', t:'Step 3: a code', c:'Sent to the number on the account.'},
+    {s:'moved', t:'Done, and the old phone is signed out', c:'Security is kept. The customer is back at their offer in about two minutes.'},
+  ]},
+  {id:'wins', name:'Quick wins', steps:[
+    {s:'blogin', b:1, t:'Location blocks login', c:'14 reviews this year (103 helpful votes): "unable to fetch location" stops people logging in, even to repay. (Rebuilt from reviews.)'},
+    {s:'loc', t:'Ask for location only when it matters', c:'Log in, send money and pay bills without it. Ask when someone takes a loan, and explain why.'},
+    {s:'rem', t:'Reminders the customer chooses', c:'FairMoney\'s help centre apologises for "calls and messages you received before your due date". Make that a setting: channels, quiet hours, and no calls before a missed due date.'},
+    {s:'closed', t:'Proof the loan is closed', c:'21 reviews are about repayments not showing or loans not closing. A closed loan gets a zero balance, a reference and the non-indebtedness letter customers already email to ask for.'},
+  ]},
+];
+const qs = new URLSearchParams(location.search);
+const el = document.getElementById('screen');
+if (qs.has('shot')) { document.body.classList.add('shot','nohints'); el.innerHTML = S[qs.get('shot')](JSON.parse(qs.get('o')||'{}')); }
+else {
+  if (qs.has('embed')) { document.body.classList.add('embed');
+    document.documentElement.style.background='transparent';
+    const fit=()=>{ const ph=document.querySelector('.phone'); const s=Math.min(1,(innerHeight-56)/880,(innerWidth-16)/424); ph.style.transform=`scale(${s})`; ph.style.transformOrigin='top center'; ph.style.marginBottom=`${-(1-s)*880}px`; };
+    addEventListener('resize',fit); addEventListener('load',fit); setTimeout(fit,0); setTimeout(fit,400); }
+  let ji = Math.max(0, J.findIndex(j=>j.id===qs.get('j'))), si = 0;
+  const tabs = document.getElementById('tabs'), ebar = document.getElementById('ebar');
+  [tabs, ebar].forEach(box => J.forEach((j,i)=>{ const b=document.createElement('button'); b.textContent=j.name; b.onclick=()=>{ji=i;si=0;draw()}; box.appendChild(b); }));
+  function draw(){
+    const j=J[ji], st=j.steps[si];
+    el.innerHTML = S[st.s](st.o||{});
+    [tabs,ebar].forEach(b=>[...b.children].forEach((x,i)=>x.classList.toggle('on',i===ji)));
+    const tag=document.getElementById('tag'); tag.className='tag '+(st.b?'before':'after'); tag.textContent=st.b?'Before':'After';
+    document.getElementById('ct').textContent=st.t; document.getElementById('cb').textContent=st.c;
+    document.getElementById('cnt').textContent=(si+1)+' of '+j.steps.length;
+    document.getElementById('next').textContent = si===j.steps.length-1 ? (ji<J.length-1?'Next journey':'Start again') : 'Next';
+    const v = el.querySelector('video.camv');
+    if (v) { v.muted = true; v.currentTime = 0; v.play().catch(()=>{});
+      v.ontimeupdate = () => { const vt=v.currentTime; const o = vt<2.8?{phase:'dark'}:vt<5.9?{phase:'lit',p:Math.min(1,(vt-3)/2.7)}:{phase:'done',p:1};
+        const tmp=document.createElement('div'); tmp.innerHTML=S.selfie({...o,still:1});
+        ['.mask','.coach','.lmeter'].forEach(s=>{ const a=el.querySelector(s), b=tmp.querySelector(s); if(a&&b) a.replaceWith(b); }); };
+    }
+  }
+  function next(){ const j=J[ji]; if(si<j.steps.length-1) si++; else { ji=(ji+1)%J.length; si=0; } draw(); }
+  function prev(){ if(si>0) si--; else if(ji>0){ ji--; si=J[ji].steps.length-1; } draw(); }
+  document.getElementById('next').onclick=next; document.getElementById('prev').onclick=prev;
+  el.addEventListener('click', e=>{ if(e.target.closest('[data-go],[data-sheet],[data-close]')) next(); });
+  addEventListener('keydown', e=>{ if(e.key==='ArrowRight') next(); if(e.key==='ArrowLeft') prev(); });
+  draw();
+}
+</script>
+</body>
+</html>
