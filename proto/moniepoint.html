@@ -1,0 +1,418 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Moniepoint concept prototype · Promise Olaifa</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@500,600,700&display=swap">
+<link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css">
+<link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-rounded/css/uicons-solid-rounded.css">
+<style>
+:root{
+  --blue:#0357EE;--blue-2:#3A7BFF;--sky:#E9F1FF;--sky-2:#D6E6FF;--sky-3:#BCD5FF;
+  --ink:#030B1D;--ink-2:#323A4D;--muted:#6A7285;--line:#E8ECF3;--page:#F4F7FD;
+  --green:#0A8754;--green-bg:#E6F6EE;--amber:#A85A00;--amber-bg:#FFF2DC;--amber-2:#FFB443;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+
+.gs{font-family:'General Sans',Inter,sans-serif}
+i.fi{display:inline-flex;line-height:1}
+.scr{width:390px;height:844px;background:var(--page);position:relative;overflow:hidden;display:flex;flex-direction:column}
+.sb{height:50px;display:flex;align-items:center;justify-content:space-between;padding:4px 30px 0 34px;font-size:16px;font-weight:600;flex-shrink:0;font-family:'General Sans',Inter,sans-serif}
+.sb .r{display:flex;gap:6px;align-items:center}
+.bat{width:25px;height:12px;border:1.5px solid currentColor;border-radius:4px;position:relative}
+.bat:after{content:"";position:absolute;inset:1.5px 5px 1.5px 1.5px;background:currentColor;border-radius:1.5px}
+.sig{display:flex;gap:2px;align-items:flex-end}.sig b{width:3px;background:currentColor;border-radius:1px}
+.px{padding-left:20px;padding-right:20px}
+/* home */
+.head{display:flex;justify-content:space-between;align-items:center;padding:8px 20px 0}
+.who{display:flex;gap:10px;align-items:center}
+.av{width:40px;height:40px;border-radius:12px;background:var(--sky-2);color:var(--blue);display:grid;place-items:center;font-family:'General Sans';font-weight:600;font-size:15px}
+.who b{font-family:'General Sans';font-size:17px;font-weight:600}
+.lvl{font-size:11px;font-weight:600;color:var(--amber);background:var(--amber-bg);padding:3px 7px;border-radius:6px;margin-left:6px;vertical-align:2px}
+.ib{width:40px;height:40px;border-radius:12px;background:#fff;display:grid;place-items:center;font-size:18px;color:var(--ink-2);position:relative;box-shadow:0 1px 2px rgba(3,11,29,.04)}
+.ib .dot{position:absolute;top:9px;right:10px;width:7px;height:7px;border-radius:50%;background:#F04438}
+.card{margin:18px 20px 0;border-radius:22px;color:#fff;background:var(--blue);position:relative;overflow:hidden;padding:18px 18px 0}
+.cl{display:flex;justify-content:space-between;align-items:center;font-size:13px;opacity:.92}
+.eye{width:32px;height:32px;border-radius:10px;background:rgba(255,255,255,.16);display:grid;place-items:center;font-size:15px}
+.bal{font-family:'General Sans';font-size:34px;font-weight:600;letter-spacing:-.02em;margin-top:6px;font-variant-numeric:tabular-nums}
+.bal .cur{font-size:22px;margin-right:2px}.bal small{font-size:20px;opacity:.65;font-weight:500}
+.acct{display:flex;gap:8px;align-items:center;font-size:13px;opacity:.88;margin-top:4px}
+.band{height:44px;margin:16px -18px 0;display:flex}
+.band svg{display:block}
+.acts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:16px 20px 0}
+.tile{background:#fff;border-radius:16px;height:78px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;font-size:12.5px;font-weight:500;color:var(--ink-2);box-shadow:0 1px 2px rgba(3,11,29,.04),0 6px 16px -10px rgba(3,11,29,.15)}
+.tile i{font-size:20px;color:var(--blue)}
+.note{margin:14px 20px 0;background:#fff;border-radius:16px;padding:12px 14px;display:flex;gap:12px;align-items:center;box-shadow:0 1px 2px rgba(3,11,29,.04)}
+.note .ic{width:38px;height:38px;border-radius:11px;background:var(--sky);color:var(--blue);display:grid;place-items:center;font-size:17px;flex-shrink:0}
+.note .t{flex:1;font-size:14px;font-weight:600}.note .t small{display:block;font-weight:400;color:var(--muted);font-size:12.5px;margin-top:2px}
+.note .go{font-size:13px;font-weight:600;color:var(--blue)}
+.list{margin:14px 20px 0;background:#fff;border-radius:18px;padding:4px 14px;box-shadow:0 1px 2px rgba(3,11,29,.04)}
+.lh{display:flex;justify-content:space-between;padding:14px 2px 6px;font-family:'General Sans';font-weight:600;font-size:16px}
+.lh a{font-family:Inter;font-size:13px;color:var(--blue);font-weight:600}
+.tx{display:flex;align-items:center;gap:12px;padding:10px 0}
+.tx + .tx{border-top:1px solid var(--line)}
+.tx .ini{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-family:'General Sans';font-weight:600;font-size:14px;flex-shrink:0;background:var(--page);color:var(--ink-2)}
+.tx .t{flex:1;font-size:14.5px;font-weight:600}.tx .t small{display:block;font-weight:400;font-size:12.5px;color:var(--muted);margin-top:2px}
+.tx em{font-style:normal;font-weight:600;font-size:14.5px;font-variant-numeric:tabular-nums}
+.tabs{position:absolute;left:0;right:0;bottom:0;height:84px;background:#fff;display:grid;grid-template-columns:repeat(4,1fr);padding-top:10px;z-index:5;box-shadow:0 -1px 0 var(--line)}
+.tabs div{display:flex;flex-direction:column;align-items:center;gap:5px;font-size:11px;font-weight:500;color:#9AA1B0}
+.tabs i{font-size:21px}.tabs .on{color:var(--blue);font-weight:600}
+/* spot illustration in Moniepoint style: blob with contour lines and floating UI */
+.spot{position:relative;width:100%;height:190px;display:grid;place-items:center}
+.blob{position:absolute;width:250px;height:178px;border-radius:44% 56% 47% 53% / 55% 45% 55% 45%;background:var(--sky)}
+.blob.c1{width:220px;height:152px;background:transparent;border:1.5px solid rgba(3,87,238,.12)}
+.blob.c2{width:186px;height:124px;background:transparent;border:1.5px solid rgba(3,87,238,.12)}
+.blob.c3{width:150px;height:96px;background:transparent;border:1.5px solid rgba(3,87,238,.12)}
+.fl{position:absolute;background:#fff;border-radius:14px;box-shadow:0 14px 30px -14px rgba(3,11,29,.35),0 1px 2px rgba(3,11,29,.05);display:flex;align-items:center;gap:10px;padding:10px 12px;font-size:12.5px;font-weight:600;white-space:nowrap}
+.fl .k{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;font-size:15px}
+.fl small{display:block;font-weight:400;color:var(--muted);font-size:11px}
+.badge{position:absolute;width:64px;height:64px;border-radius:20px;display:grid;place-items:center;font-size:30px;color:#fff;background:var(--blue);box-shadow:0 18px 30px -12px rgba(3,87,238,.6)}
+/* sheets */
+.dim{position:absolute;inset:0;background:rgba(3,11,29,.45);z-index:6}
+.sheet{position:absolute;left:0;right:0;bottom:0;background:#fff;border-radius:28px 28px 0 0;z-index:7;padding:10px 22px 30px}
+.grab{width:38px;height:5px;border-radius:3px;background:#D8DDE6;margin:0 auto 6px}
+h2{font-family:'General Sans';font-size:24px;line-height:1.2;letter-spacing:-.015em;font-weight:600}
+.lead{font-size:15px;line-height:1.5;color:var(--muted);margin-top:8px}
+.rows{margin-top:16px}
+.row{display:flex;gap:12px;align-items:center;padding:11px 0;font-size:14.5px;font-weight:500}
+.row + .row{border-top:1px solid var(--line)}
+.row .k{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;font-size:15px;background:var(--page);color:var(--ink-2)}
+.row em{margin-left:auto;font-style:normal;font-size:12.5px;font-weight:600;padding:4px 9px;border-radius:8px}
+.ok{color:var(--green);background:var(--green-bg)}.wait{color:var(--amber);background:var(--amber-bg)}
+.bar{height:6px;border-radius:3px;background:var(--line);margin-top:8px;overflow:hidden}.bar b{display:block;height:100%;width:66%;border-radius:3px;background:var(--blue)}
+.prog{margin-top:14px;font-size:12.5px;color:var(--muted);display:flex;justify-content:space-between}
+.btn{height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;gap:10px;font-weight:600;font-size:16px;white-space:nowrap}
+.btn.p{background:var(--blue);color:#fff}
+.btn.ghost{background:var(--sky);color:var(--blue)}
+.btn.t{color:var(--blue);height:42px;font-size:15px}
+/* face */
+.cam{background:#060A14;color:#fff}
+.camtop{display:flex;justify-content:space-between;align-items:center;padding:6px 20px}
+.round{width:40px;height:40px;border-radius:12px;background:rgba(255,255,255,.08);display:grid;place-items:center;font-size:17px}
+.light{display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 14px;border-radius:10px;background:rgba(52,211,153,.14);color:#6EE7B7;font-size:13px;font-weight:600}
+.stage{position:relative;width:300px;height:390px;margin:28px auto 0}
+.stage svg{position:absolute;inset:0}
+.say{position:absolute;left:50%;top:-10px;transform:translateX(-50%);background:#fff;color:var(--ink);font-family:'General Sans';font-weight:600;font-size:17px;height:46px;padding:0 18px;border-radius:14px;display:flex;gap:10px;align-items:center;white-space:nowrap}
+.say i{color:var(--blue);font-size:18px}
+.checks{display:flex;justify-content:center;gap:8px;margin-top:20px}
+.chk{display:inline-flex;gap:6px;align-items:center;height:32px;padding:0 12px;border-radius:10px;font-size:12.5px;font-weight:600;background:rgba(255,255,255,.07);color:rgba(255,255,255,.65)}
+.chk.on{background:rgba(52,211,153,.14);color:#6EE7B7}
+.camnote{text-align:center;font-size:14px;line-height:1.5;color:rgba(255,255,255,.7);padding:0 44px;margin-top:16px}
+.why{position:absolute;left:24px;right:24px;bottom:34px;display:flex;gap:10px;font-size:12px;line-height:1.5;color:rgba(255,255,255,.48)}
+.back{width:40px;height:40px;border-radius:12px;background:#fff;display:grid;place-items:center;font-size:16px;box-shadow:0 1px 2px rgba(3,11,29,.05)}
+.cause{display:inline-flex;gap:8px;align-items:center;height:30px;padding:0 10px;border-radius:9px;background:var(--amber-bg);color:var(--amber);font-size:13px;font-weight:600;margin-top:12px}
+.opts{margin-top:16px;background:#fff;border-radius:18px;padding:2px 14px;box-shadow:0 1px 2px rgba(3,11,29,.04)}
+.opt{display:flex;gap:12px;align-items:center;padding:13px 0}
+.opt + .opt{border-top:1px solid var(--line)}
+.opt .k{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-size:18px;flex-shrink:0;background:var(--page);color:var(--ink-2)}
+.opt.hl .k{background:var(--sky);color:var(--blue)}
+.opt .t{flex:1;font-size:14.5px;font-weight:600}.opt .t small{display:block;font-weight:400;font-size:12.5px;color:var(--muted);margin-top:3px;line-height:1.4}
+.opt .chev{color:#A6ADBB;font-size:15px}
+.tag{font-size:11px;font-weight:600;color:var(--blue);background:var(--sky);padding:2px 7px;border-radius:6px;margin-left:6px;vertical-align:1px}
+.safe{display:flex;gap:10px;align-items:center;background:var(--green-bg);color:#05603A;border-radius:14px;padding:12px 14px;font-size:13px;font-weight:500;line-height:1.4}
+.flip{display:flex;align-items:center;gap:6px}
+.dg{width:50px;height:64px;border-radius:12px;background:#fff;color:var(--ink);font-family:'General Sans';font-size:40px;font-weight:600;display:grid;place-items:center;position:relative;box-shadow:0 1px 2px rgba(3,11,29,.06),0 10px 20px -12px rgba(3,11,29,.3);font-variant-numeric:tabular-nums}
+.dg:after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:var(--line)}
+.colon{font-family:'General Sans';font-size:30px;font-weight:600;color:var(--muted)}
+.foot{margin-top:auto;padding:0 20px 32px;display:flex;flex-direction:column;gap:10px;width:100%}
+.foot.row2{flex-direction:row}.foot.row2 .btn{flex:1;min-width:0}
+.kv{display:flex;justify-content:space-between;align-items:center;padding:12px 0;font-size:14px;border-top:1px solid var(--line)}
+.kv span:first-child{color:var(--muted)}.kv span:last-child{font-weight:600;text-align:right}
+.status{display:inline-flex;gap:6px;align-items:center;height:28px;padding:0 10px;border-radius:8px;background:var(--green-bg);color:var(--green);font-size:12.5px;font-weight:600}
+.toast{position:absolute;left:20px;right:20px;bottom:100px;height:50px;border-radius:14px;background:var(--ink);color:#fff;display:flex;align-items:center;gap:10px;padding:0 16px;font-size:13.5px;font-weight:500;z-index:6}
+.toast b{margin-left:auto;color:#8FB6FF;font-weight:600}
+.fp{width:92px;height:92px;border-radius:28px;margin:18px auto 0;display:grid;place-items:center;background:var(--sky)}
+.fp i{font-size:42px;color:var(--blue)}
+.toggle{width:46px;height:28px;border-radius:14px;background:#D0D5DD;position:relative;flex-shrink:0}.toggle:after{content:"";position:absolute;left:3px;top:3px;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+.peer{display:flex;align-items:center;gap:12px;margin-top:14px;padding:12px;border-radius:14px;background:var(--page)}
+.peer .ini{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-family:'General Sans';font-weight:600;font-size:14px;background:#FFE8D6;color:#B24A00}
+.match{display:flex;gap:5px;align-items:center;font-size:12px;font-weight:600;color:var(--green);margin-top:4px}
+.amt{font-family:'General Sans';font-size:38px;font-weight:600;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.amt .cur{font-size:24px;margin-right:2px}.amt .dec{color:var(--muted);font-size:24px;font-weight:500}
+
+.band2{position:relative;border-radius:22px;background:var(--sky);display:grid;place-items:center;overflow:hidden}
+.band2 img{position:relative;object-fit:contain;filter:drop-shadow(0 10px 18px rgba(3,11,29,.12))}
+.spark{position:absolute;width:18px;height:18px}
+.spark path{fill:var(--blue)}
+.spark.am path{fill:var(--amber-2)}
+.xbtn{width:36px;height:36px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:15px;color:var(--ink-2);box-shadow:0 1px 3px rgba(3,11,29,.12)}
+.lbl{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:18px}
+.row2{display:flex;align-items:center;justify-content:space-between;padding:12px 0;font-size:15px;font-weight:500}
+.row2 + .row2{border-top:1px solid var(--line)}
+.btn.outline{background:#fff;color:var(--ink);box-shadow:inset 0 0 0 1.5px #D5DBE6}
+
+html,body{margin:0;background:transparent;font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;color:var(--ink)}
+.wrap{display:flex;flex-direction:column;align-items:center;gap:14px;padding:12px 8px 20px}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;max-width:440px}
+.chip{font:600 13px Inter,sans-serif;border:0;background:#fff;color:#323A4D;height:34px;padding:0 13px;border-radius:10px;cursor:pointer;box-shadow:0 1px 2px rgba(3,11,29,.08)}
+.chip.on{background:#0357EE;color:#fff}
+.hintline{font:500 13px Inter,sans-serif;color:#6A7285;min-height:18px;text-align:center}
+.shellbox{position:relative}
+.shell{width:390px;height:844px;border-radius:52px;background:#0B0F19;padding:11px;box-shadow:0 40px 80px -30px rgba(3,11,29,.45);transform-origin:top left}
+.screenarea{position:relative;width:368px;height:822px;border-radius:42px;overflow:hidden;background:#fff}
+.screenarea .pscr{position:absolute;inset:0;width:390px;height:844px;transform:scale(.9436);transform-origin:top left;opacity:0;pointer-events:none;transition:opacity .28s ease}
+.screenarea .pscr.show{opacity:1;pointer-events:auto}
+.island{position:absolute;top:22px;left:50%;transform:translateX(-50%);width:110px;height:32px;border-radius:20px;background:#0B0F19;z-index:50}
+.hot{position:relative;cursor:pointer}
+.hot::after{content:"";position:absolute;inset:-6px;border-radius:18px;border:2.5px solid #FFB443;animation:pulse 1.3s ease-out infinite;pointer-events:none}
+@keyframes pulse{0%{opacity:1;transform:scale(.96)}100%{opacity:0;transform:scale(1.08)}}
+.mini{height:5px;border-radius:3px;background:#D6E6FF;margin-top:7px;overflow:hidden;display:none}.mini b{display:block;height:100%;width:0;background:#0357EE;border-radius:3px;transition:width .3s linear}
+#upd.busy .mini{display:block}
+.prog-btn{position:relative;overflow:hidden}.prog-btn .fill{position:absolute;left:0;top:0;bottom:0;width:0;background:rgba(255,255,255,.22);transition:width .2s linear}.prog-btn .lbl2{position:relative}
+.vsheet{position:absolute;left:0;right:0;bottom:-420px;background:#fff;color:var(--ink);border-radius:28px 28px 0 0;padding:24px 22px 34px;text-align:center;transition:bottom .45s cubic-bezier(.2,.8,.2,1);z-index:20;display:flex;flex-direction:column;align-items:center}
+.vsheet.up{bottom:0}
+.say{transition:background .3s,color .3s}.say.done{background:#34D399;color:#04261A}.say.done i{color:#04261A}
+.dots{display:flex;gap:16px;justify-content:center;margin-top:30px}.dots i{width:16px;height:16px;border-radius:50%;border:2px solid #C9D2E1;display:block;transition:all .15s}.dots i.f{background:#0357EE;border-color:#0357EE}
+.pad{position:absolute;left:20px;right:20px;bottom:34px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.pad button{height:62px;border:0;border-radius:16px;background:#fff;font:600 24px 'General Sans',Inter,sans-serif;color:var(--ink);box-shadow:0 1px 2px rgba(3,11,29,.06);cursor:pointer}
+.pad button:active{background:var(--sky)}
+.dg.sm{width:42px;height:54px;font-size:32px}
+.toast2{position:absolute;left:20px;right:20px;bottom:100px;height:50px;border-radius:14px;background:var(--ink);color:#fff;display:flex;align-items:center;gap:10px;padding:0 16px;font-size:13.5px;font-weight:500;z-index:30;opacity:0;transform:translateY(10px);transition:all .3s}
+.toast2.on{opacity:1;transform:none}
+.tap{position:absolute;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;background:rgba(255,180,67,.55);border:2px solid #FFB443;z-index:60;pointer-events:none;animation:tapA .55s ease-out forwards}
+@keyframes tapA{0%{transform:scale(.4);opacity:1}100%{transform:scale(1.4);opacity:0}}
+/* video mode */
+body.video{width:1920px;height:1080px;background:#E9F1FF;overflow:hidden}
+body.video .wrap{flex-direction:row;justify-content:center;gap:120px;padding:0;height:1080px;align-items:center}
+body.video .chips,body.video .hintline{display:none}
+.cap{display:none}
+body.video .cap{display:block;width:640px;font-family:'General Sans',Inter,sans-serif;color:#030B1D}
+.cap .num{font:600 22px Inter;color:#0357EE;letter-spacing:.1em}
+.cap h1{font-size:64px;line-height:1.05;font-weight:600;letter-spacing:-.02em;margin:18px 0 0}
+.cap p{font:500 26px/1.45 Inter;color:#4A5266;margin-top:24px}
+.cap .brand{font:600 18px Inter;color:#6A7285;margin-top:48px;letter-spacing:.06em}
+body.video .shell{transform:scale(1.08);transform-origin:top center}
+</style></head><body>
+<template id="bandsvg"><svg width="390" height="44" viewBox="0 0 390 44"><g>
+  <rect width="390" height="44" fill="#0A4BD6"/>
+  <path d="M0 44 A44 44 0 0 1 44 0 V44Z" fill="#4D8DF7"/><path d="M44 0 A44 44 0 0 1 88 44 H44Z" fill="#8AB6FF"/>
+  <path d="M88 0 H132 A44 44 0 0 1 88 44Z" fill="#2E6FF0"/><path d="M132 44 A44 44 0 0 1 176 0 V44Z" fill="#8AB6FF"/>
+  <path d="M176 0 A44 44 0 0 1 220 44 H176Z" fill="#4D8DF7"/><path d="M220 0 H264 A44 44 0 0 1 220 44Z" fill="#8AB6FF"/>
+  <path d="M264 44 A44 44 0 0 1 308 0 V44Z" fill="#2E6FF0"/><path d="M308 0 A44 44 0 0 1 352 44 H308Z" fill="#8AB6FF"/>
+  <path d="M352 0 H396 A44 44 0 0 1 352 44Z" fill="#4D8DF7"/></g></svg></template>
+<div class="wrap">
+  <div class="cap"><div class="num"></div><h1></h1><p></p><div class="brand">MONIEPOINT CONCEPT · PROMISE OLAIFA</div></div>
+  <div class="chips"><button class="chip" data-j="update">Update in background</button><button class="chip" data-j="security">Security fix</button><button class="chip" data-j="face">Face check</button><button class="chip" data-j="fail">Face check fails</button><button class="chip" data-j="lock">Locked out</button></div>
+  <div class="shellbox"><div class="shell"><div class="screenarea"><div class="island"></div>
+<div class="scr pscr" data-s="home">
+  <div class="sb"><span>9:41</span><span class="r"><span class="sig"><b style="height:4px"></b><b style="height:6px"></b><b style="height:8px"></b><b style="height:10px"></b></span><span class="bat"></span></span></div>
+  <div class="head"><div class="who"><div class="av">TA</div><div><b>Hi, Tolu</b><span class="lvl">LVL 2</span></div></div><div style="display:flex;gap:8px"><div class="ib"><i class="fi fi-rr-headset"></i></div><div class="ib"><i class="fi fi-rr-bell"></i><span class="dot"></span></div></div></div>
+  <div class="card">
+    <div class="cl"><span>Available balance</span><span class="eye"><i class="fi fi-rr-eye"></i></span></div>
+    <div class="bal"><span class="cur">₦</span>184,250<small>.40</small></div>
+    <div class="acct">8204113419 · Moniepoint MFB <i class="fi fi-rr-copy" style="font-size:12px"></i></div>
+    <div class="band" data-band></div>
+  </div>
+  <div class="acts">
+    <div class="tile" id="goTransfer"><i class="fi fi-sr-paper-plane"></i>Transfer</div>
+    <div class="tile"><i class="fi fi-sr-smartphone"></i>Airtime</div>
+    <div class="tile"><i class="fi fi-sr-receipt"></i>Pay bills</div>
+    <div class="tile"><i class="fi fi-sr-qr-scan"></i>Scan QR</div>
+  </div>
+  <div class="note" id="upd"><img src="../images/stickers/update.png" style="width:44px;height:44px;flex-shrink:0"><div class="t"><span id="updTitle">New version ready</span><small id="updSub">Installs in the background. Keep using the app.</small><div class="mini" id="updBar"><b></b></div></div><span class="go" id="updGo">Update</span></div>
+  <div class="list">
+    <div class="lh">Recent<a>See all</a></div>
+    <div class="tx"><div class="ini">AO</div><div class="t">Adaeze Okafor<small>Received · 6:12 PM</small></div><em style="color:var(--green)">+₦25,000</em></div>
+    <div class="tx"><div class="ini">MR</div><div class="t">Mama Ronke Foods<small>Transfer · 1:40 PM</small></div><em>−₦4,500</em></div>
+  </div>
+  <div class="tabs"><div class="on"><i class="fi fi-sr-home"></i>Home</div><div><i class="fi fi-rr-credit-card"></i>Cards</div><div><i class="fi fi-rr-piggy-bank"></i>Save</div><div><i class="fi fi-rr-user"></i>Me</div></div>
+</div>
+<div class="scr pscr" data-s="sec">
+  <div class="sb"><span>9:41</span><span class="r"><span class="sig"><b style="height:4px"></b><b style="height:6px"></b><b style="height:8px"></b><b style="height:10px"></b></span><span class="bat"></span></span></div>
+  <div class="head"><div class="who"><div class="av">TA</div><div><b>Hi, Tolu</b><span class="lvl">LVL 2</span></div></div></div>
+  <div class="card"><div class="cl"><span>Available balance</span></div><div class="bal"><span class="cur">₦</span>184,250<small>.40</small></div><div class="band" data-band></div></div>
+  <div class="dim"></div>
+  <div class="sheet" style="padding:16px 20px 28px">
+    <div class="band2" style="height:178px">
+      <svg class="spark" style="left:58px;top:34px" viewBox="0 0 24 24"><path d="M12 0 C13 7 17 11 24 12 C17 13 13 17 12 24 C11 17 7 13 0 12 C7 11 11 7 12 0Z"/></svg><svg class="sparkam" style="right:64px;top:52px;width:12px;height:12px" viewBox="0 0 24 24"><path d="M12 0 C13 7 17 11 24 12 C17 13 13 17 12 24 C11 17 7 13 0 12 C7 11 11 7 12 0Z"/></svg><svg class="spark" style="right:92px;bottom:30px;width:14px;height:14px" viewBox="0 0 24 24"><path d="M12 0 C13 7 17 11 24 12 C17 13 13 17 12 24 C11 17 7 13 0 12 C7 11 11 7 12 0Z"/></svg>
+      <div class="xbtn" style="position:absolute;left:14px;top:14px"><i class="fi fi-rr-cross-small"></i></div>
+      <img src="../images/stickers/security.png" style="width:132px;height:132px">
+    </div>
+    <h2 style="margin-top:20px">A quick security update</h2>
+    <p class="lead">It fixes a security issue, so transfers pause until it's installed. Your money is safe the whole time.</p>
+    <p class="lbl">While it installs</p>
+    <div>
+      <div class="row2">Balance and history<em class="ok" style="font-style:normal;font-size:12.5px;font-weight:600;padding:4px 9px;border-radius:8px">Works</em></div>
+      <div class="row2">Receiving money and card payments<em class="ok" style="font-style:normal;font-size:12.5px;font-weight:600;padding:4px 9px;border-radius:8px">Works</em></div>
+      <div class="row2">Transfers and bills<em class="wait" style="font-style:normal;font-size:12.5px;font-weight:600;padding:4px 9px;border-radius:8px">About 1 min</em></div>
+    </div>
+    <div class="btn p prog-btn" id="install" style="margin-top:18px"><span class="fill"></span><span class="lbl2">Install now · 18 MB</span></div>
+    <div class="btn outline" style="margin-top:10px">Send urgent money with USSD</div>
+  </div>
+</div>
+<div class="scr cam pscr" data-s="face">
+  <div class="sb"><span>9:41</span><span class="r"><span class="sig"><b style="height:4px"></b><b style="height:6px"></b><b style="height:8px"></b><b style="height:10px"></b></span><span class="bat"></span></span></div>
+  <div class="camtop"><div class="round"><i class="fi fi-rr-cross-small"></i></div><span class="light" id="lightPill"><i class="fi fi-sr-sun"></i><span>Light is good</span></span><div class="round"><i class="fi fi-rr-interrogation"></i></div></div>
+  <div class="stage">
+    <svg viewBox="0 0 300 390">
+      <defs><radialGradient id="cg" cx="50%" cy="42%" r="65%"><stop offset="0" stop-color="#1B2234"/><stop offset="1" stop-color="#0B0F1A"/></radialGradient></defs>
+      <ellipse cx="150" cy="195" rx="118" ry="162" fill="url(#cg)"/>
+      <g fill="none" stroke="rgba(255,255,255,.55)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M106 150 v-14 a14 14 0 0 1 14 -14 h14"/><path d="M166 122 h14 a14 14 0 0 1 14 14 v14"/>
+        <path d="M194 240 v14 a14 14 0 0 1 -14 14 h-14"/><path d="M134 268 h-14 a14 14 0 0 1 -14 -14 v-14"/>
+        <path d="M134 172 v10"/><path d="M166 172 v10"/><path d="M150 176 v26 h-8"/><path d="M134 222 q16 12 32 0"/>
+      </g>
+      <ellipse cx="150" cy="195" rx="138" ry="182" fill="none" stroke="rgba(255,255,255,.16)" stroke-width="12" stroke-dasharray="2 5"/>
+    </svg>
+    <svg id="ring" viewBox="0 0 300 390" style="-webkit-mask:conic-gradient(from 0deg,#000 0 var(--p,0%),transparent var(--p,0%));mask:conic-gradient(from 0deg,#000 0 var(--p,0%),transparent var(--p,0%))"><ellipse cx="150" cy="195" rx="138" ry="182" fill="none" stroke="#34D399" stroke-width="12" stroke-dasharray="2 5"/></svg>
+    <div class="say" id="say"><i class="fi fi-sr-arrow-small-down"></i><span>Move a little closer</span></div>
+  </div>
+  <div class="checks"><span class="chk on" id="chkLight"><i class="fi fi-sr-check"></i>Light</span><span class="chk on"><i class="fi fi-sr-check"></i>Centred</span><span class="chk" id="chkDist">Distance</span></div>
+  <p class="camnote">Hold still. We take the photo ourselves once all three are green. No smiling, no poses.</p>
+  <div class="why"><i class="fi fi-rr-lock"></i><span>Nigerian banking rules ask us to confirm it's really you. Your photo is used only for this check.</span></div>
+  <div class="vsheet" id="verified"><img src="../images/stickers/identity.png" style="width:96px;height:96px"><h2 style="margin-top:10px">You're verified</h2><p class="lead">Thanks, Tolu. You can carry on.</p><div class="btn p" id="vDone" style="margin-top:18px;width:100%">Continue</div></div>
+</div>
+<div class="scr pscr" data-s="fail">
+  <div class="sb"><span>9:41</span><span class="r"><span class="sig"><b style="height:4px"></b><b style="height:6px"></b><b style="height:8px"></b><b style="height:10px"></b></span><span class="bat"></span></span></div>
+  <div class="px" style="padding-top:6px"><div class="back"><i class="fi fi-rr-angle-left"></i></div></div>
+  <div class="px" style="margin-top:14px"><div class="band2" style="height:170px">
+    <svg class="spark" style="left:60px;top:30px" viewBox="0 0 24 24"><path d="M12 0 C13 7 17 11 24 12 C17 13 13 17 12 24 C11 17 7 13 0 12 C7 11 11 7 12 0Z"/></svg><svg class="sparkam" style="right:70px;top:40px;width:12px;height:12px" viewBox="0 0 24 24"><path d="M12 0 C13 7 17 11 24 12 C17 13 13 17 12 24 C11 17 7 13 0 12 C7 11 11 7 12 0Z"/></svg>
+    <img src="../images/stickers/idea.png" style="width:122px;height:122px;margin-right:120px">
+    <div class="fl" style="right:18px;top:50%;transform:translateY(-50%)"><span class="k" style="background:var(--amber-bg);color:var(--amber)"><i class="fi fi-sr-sun"></i></span>Too dark<small style="margin-left:2px">Light 18%</small></div>
+  </div></div>
+  <div class="px" style="margin-top:18px">
+    <h2>Let's get you in another way</h2>
+    <p class="lead">The face check didn't work twice. That happens, and it's rarely you.</p>
+    <div class="opts">
+      <div class="opt hl" id="retry"><div class="k"><i class="fi fi-rr-sun"></i></div><div class="t">Try again with better light<span class="tag">Fastest</span><small>Face a window or lamp. We'll guide you.</small></div><i class="fi fi-rr-angle-small-right chev"></i></div>
+      <div class="opt"><div class="k"><i class="fi fi-rr-smartphone"></i></div><div class="t">Code to your BVN phone<small>We text 0803 ••• 4521, then you enter your PIN.</small></div><i class="fi fi-rr-angle-small-right chev"></i></div>
+      <div class="opt"><div class="k"><i class="fi fi-rr-video-camera"></i></div><div class="t">Video call with our team<small>Usually under 5 minutes, 7am to 10pm.</small></div><i class="fi fi-rr-angle-small-right chev"></i></div>
+      <div class="opt"><div class="k"><i class="fi fi-rr-marker"></i></div><div class="t">Visit an agent near you<small>3 agents within 1 km.</small></div><i class="fi fi-rr-angle-small-right chev"></i></div>
+    </div>
+  </div>
+  <div class="foot"><div class="safe"><i class="fi fi-sr-shield-check" style="font-size:17px"></i>Money sent to you still arrives meanwhile.</div></div>
+</div>
+<div class="scr pscr" data-s="lock">
+  <div class="sb"><span>9:41</span><span class="r"><span class="sig"><b style="height:4px"></b><b style="height:6px"></b><b style="height:8px"></b><b style="height:10px"></b></span><span class="bat"></span></span></div>
+  <div class="px" style="padding-top:6px"><div class="back"><i class="fi fi-rr-angle-left"></i></div></div>
+  <div class="px" style="margin-top:14px"><div class="band2" style="height:170px">
+    <svg class="spark" style="left:62px;top:32px" viewBox="0 0 24 24"><path d="M12 0 C13 7 17 11 24 12 C17 13 13 17 12 24 C11 17 7 13 0 12 C7 11 11 7 12 0Z"/></svg><svg class="sparkam" style="right:66px;bottom:34px;width:13px;height:13px" viewBox="0 0 24 24"><path d="M12 0 C13 7 17 11 24 12 C17 13 13 17 12 24 C11 17 7 13 0 12 C7 11 11 7 12 0Z"/></svg>
+    <img src="../images/stickers/lockout.png" style="width:124px;height:124px">
+  </div></div>
+  <div class="px" style="margin-top:18px">
+    <h2>Sign-in is paused, not your account</h2>
+    <p class="lead">Your PIN was entered wrongly 5 times, so we paused sign-in to protect you. It happens to everyone.</p>
+    <div style="display:flex;align-items:center;gap:14px;margin-top:16px"><div class="flip"><div class="dg sm" id="d0">2</div><div class="dg sm" id="d1">3</div><span class="colon" style="font-size:24px">:</span><div class="dg sm" id="d2">4</div><div class="dg sm" id="d3">1</div></div><p style="font-size:13px;color:var(--muted);line-height:1.4">Try again at<br><b style="color:var(--ink)">10:05 PM</b></p></div>
+    <div style="margin-top:14px">
+      <div class="kv"><span>Money sent to you</span><span style="color:var(--green)">Still arrives</span></div>
+      <div class="kv"><span>Card payments</span><span style="color:var(--green)">Still work</span></div>
+    </div>
+  </div>
+  <div class="foot">
+    <div class="btn p" id="reset">Reset PIN now</div>
+    <div class="btn outline">Chat with support</div>
+  </div>
+</div>
+<div class="scr pscr" data-s="send">
+  <div class="sb"><span>9:41</span><span class="r"><span class="sig"><b style="height:4px"></b><b style="height:6px"></b><b style="height:8px"></b><b style="height:10px"></b></span><span class="bat"></span></span></div>
+  <div class="head"><div class="who"><div class="av">TA</div><div><b>Hi, Tolu</b><span class="lvl">LVL 2</span></div></div></div>
+  <div class="card"><div class="cl"><span>Available balance</span></div><div class="bal"><span class="cur">₦</span>184,250<small>.40</small></div><div class="band" data-band></div></div>
+  <div class="dim"></div>
+  <div class="sheet">
+    <div class="grab" style="margin-bottom:18px"></div>
+    <p style="font-size:14px;color:var(--muted)">You're sending</p>
+    <div class="amt" style="margin-top:2px"><span class="cur">₦</span>25,000<span class="dec">.00</span></div>
+    <div class="peer"><div class="ini">CE</div><div style="flex:1"><div style="font-weight:600;font-size:15px">Chinedu Eze</div><div style="font-size:13px;color:var(--muted);margin-top:2px">GTBank · 0123456772</div><div class="match"><i class="fi fi-sr-badge-check"></i>Name matches the account</div></div></div>
+    <div style="margin-top:6px">
+      <div class="kv"><span>Fee</span><span>₦10</span></div>
+      <div class="kv"><span>Balance after</span><span>₦159,240.40</span></div>
+    </div>
+    <div style="display:grid;place-items:center;margin-top:14px"><img id="fp" src="../images/stickers/fingerprint.png" style="width:104px;height:104px;cursor:pointer"></div>
+    <p class="gs" id="fpText" style="text-align:center;font-weight:600;font-size:17px;margin-top:14px">Touch the sensor to send</p>
+    <p style="text-align:center;font-size:13px;color:var(--muted);margin-top:5px">No PIN on screen for anyone nearby to see.</p>
+    <div class="btn t" style="margin-top:4px">Use PIN instead</div>
+  </div>
+</div>
+<div class="scr pscr" data-s="receipt">
+  <div class="sb"><span>9:41</span><span class="r"><span class="sig"><b style="height:4px"></b><b style="height:6px"></b><b style="height:8px"></b><b style="height:10px"></b></span><span class="bat"></span></span></div>
+  <div class="px" style="padding-top:6px;display:flex;justify-content:space-between"><div class="back" id="rcClose"><i class="fi fi-rr-cross-small"></i></div><div class="back"><i class="fi fi-rr-interrogation"></i></div></div>
+  <div class="px" style="margin-top:10px"><div class="band2" style="height:150px">
+    <svg class="spark" style="left:70px;top:26px" viewBox="0 0 24 24"><path d="M12 0 C13 7 17 11 24 12 C17 13 13 17 12 24 C11 17 7 13 0 12 C7 11 11 7 12 0Z"/></svg><svg class="sparkam" style="right:78px;top:44px;width:12px;height:12px" viewBox="0 0 24 24"><path d="M12 0 C13 7 17 11 24 12 C17 13 13 17 12 24 C11 17 7 13 0 12 C7 11 11 7 12 0Z"/></svg><svg class="spark" style="left:96px;bottom:26px;width:12px;height:12px" viewBox="0 0 24 24"><path d="M12 0 C13 7 17 11 24 12 C17 13 13 17 12 24 C11 17 7 13 0 12 C7 11 11 7 12 0Z"/></svg>
+    <img src="../images/stickers/sent.png" style="width:112px;height:112px">
+  </div></div>
+  <div class="px" style="text-align:center;margin-top:14px">
+    <p style="font-size:14px;color:var(--muted)">Sent to Chinedu Eze</p>
+    <div class="amt" style="margin-top:2px"><span class="cur">₦</span>25,000<span class="dec">.00</span></div>
+    <span class="status" style="margin-top:8px"><i class="fi fi-sr-check"></i>Completed · 6:12 PM</span>
+  </div>
+  <div class="px" style="margin-top:14px">
+    <div style="background:#fff;border-radius:18px;padding:2px 16px;box-shadow:0 1px 2px rgba(3,11,29,.04)">
+      <div class="kv" style="border:0"><span>From</span><span>Tolu Adebayo · Moniepoint</span></div>
+      <div class="kv"><span>To</span><span>GTBank · 0123456772</span></div>
+      <div class="kv"><span>Narration</span><span>Rent part payment</span></div>
+      <div class="kv"><span>Reference</span><span style="display:flex;gap:8px;align-items:center">MP2610121812345 <i class="fi fi-rr-copy" style="color:var(--blue)"></i></span></div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;margin-top:10px;padding:12px 16px;border-radius:16px;background:#fff;box-shadow:0 1px 2px rgba(3,11,29,.04)"><div style="flex:1;font-size:14px;font-weight:600">Show balance on receipt<small style="display:block;font-weight:400;color:var(--muted);font-size:12.5px;margin-top:2px">Off by default. Your balance is private.</small></div><div class="toggle"></div></div>
+  </div>
+  <div class="foot row2">
+    <div class="btn outline">Send again</div>
+    <div class="btn p" id="rcDone">Done</div>
+  </div>
+</div>
+<div class="scr pscr" data-s="pin"><div class="sb"><span>9:41</span><span class="r"><span class="sig"><b style="height:4px"></b><b style="height:6px"></b><b style="height:8px"></b><b style="height:10px"></b></span><span class="bat"></span></span></div>
+  <div class="px" style="padding-top:6px"><div class="back" id="pinBack"><i class="fi fi-rr-angle-left"></i></div></div>
+  <div class="px" style="padding-top:20px;text-align:center"><h2>Create a new PIN</h2><p class="lead">Use 4 digits you haven't used before.</p>
+    <div class="dots" id="dots"><i></i><i></i><i></i><i></i></div></div>
+  <div class="pad" id="pad"><button>1</button><button>2</button><button>3</button><button>4</button><button>5</button><button>6</button><button>7</button><button>8</button><button>9</button><span></span><button>0</button><span></span></div>
+</div>
+<div class="scr pscr" data-s="backin"><div class="sb"><span>9:41</span><span class="r"><span class="sig"><b style="height:4px"></b><b style="height:6px"></b><b style="height:8px"></b><b style="height:10px"></b></span><span class="bat"></span></span></div>
+  <div class="px" style="margin-top:70px"><div class="band2" style="height:190px"><img src="../images/stickers/security.png" style="width:136px;height:136px"></div></div>
+  <div class="px" style="margin-top:22px;text-align:center"><h2>You're back in</h2><p class="lead">Your new PIN is set and sign-in works again. Nothing in your account changed.</p></div>
+  <div class="foot"><div class="btn p" id="goHome">Go to home</div></div>
+</div>
+<div class="toast2" id="toast2"><i class="fi fi-sr-check"></i><span></span></div>
+  </div></div></div>
+  <div class="hintline"></div>
+</div>
+<script>
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const area=$('.screenarea'); if(window===window.top && !/video=1/.test(location.search)){document.body.style.background='#F4F7FD';} const isVideo=/video=1/.test(location.search); if(isVideo) document.body.classList.add('video');
+document.querySelectorAll('[data-band]').forEach(el=>el.innerHTML=document.getElementById('bandsvg').innerHTML);
+let timers=[]; const later=(fn,ms)=>{const t=setTimeout(fn,ms);timers.push(t);return t};
+function clearT(){timers.forEach(clearTimeout);timers=[];clearInterval(window.__cd);}
+function show(s){$$('.pscr').forEach(x=>x.classList.toggle('show',x.dataset.s===s));}
+function hot(el,text){$$('.hot').forEach(x=>x.classList.remove('hot')); if(el){el.classList.add('hot');} $('.hintline').textContent=text||'';}
+function tapFx(el){ if(!el) return; const r=el.getBoundingClientRect(), a=area.getBoundingClientRect(); const s=area.offsetWidth/a.width; const d=document.createElement('div'); d.className='tap'; d.style.left=((r.left+r.width/2-a.left)*s)+'px'; d.style.top=((r.top+r.height/2-a.top)*s)+'px'; area.appendChild(d); setTimeout(()=>d.remove(),600);}
+function toast(msg){let t=$('#toast2'); t.querySelector('span').textContent=msg; t.classList.add('on'); later(()=>t.classList.remove('on'),2600);}
+function setCap(n,t,p){const c=$('.cap'); c.querySelector('.num').textContent=n; c.querySelector('h1').innerHTML=t; c.querySelector('p').textContent=p;}
+// state resets
+function resetHome(){ $('#upd').classList.remove('busy'); $('#updBar b').style.width='0'; $('#updTitle').textContent='New version ready'; $('#updSub').textContent='Installs in the background. Keep using the app.'; $('#updGo').style.display=''; }
+const J={};
+J.update=()=>{ resetHome(); show('home'); hot($('#updGo'),'Tap Update. It installs in the background.'); };
+$('#updGo').onclick=()=>{ tapFx($('#updGo')); $('#updGo').style.display='none'; $('#upd').classList.add('busy'); $('#updTitle').textContent='Updating in the background'; let p=0; const iv=setInterval(()=>{p+=4; $('#updBar b').style.width=p+'%'; $('#updSub').textContent=p+'% · you can keep using the app'; if(p>=100){clearInterval(iv); $('#updTitle').textContent='Updated'; $('#updSub').textContent='New version installed. Nothing was blocked.';}},260); timers.push(iv); hot($('#goTransfer'),'While it updates, send some money. Tap Transfer.'); };
+$('#goTransfer').onclick=()=>{ tapFx($('#goTransfer')); show('send'); $('#fpText').textContent='Touch the sensor to send'; hot($('#fp'),'Approve with your fingerprint. No PIN on screen.'); };
+$('#fp').onclick=()=>{ tapFx($('#fp')); $('#fpText').textContent='Sending…'; hot(null,''); later(()=>{show('receipt'); hot($('#rcDone'),'Sent. Your balance stays off the receipt.');},900); };
+$('#rcDone').onclick=$('#rcClose').onclick=()=>{ tapFx($('#rcDone')); show('home'); hot(null,'That journey is done. Pick another one above.'); };
+J.security=()=>{ show('sec'); const b=$('#install'); b.querySelector('.fill').style.width='0'; b.querySelector('.lbl2').textContent='Install now · 18 MB'; $('[data-s=sec] .dim').style.display=''; $('[data-s=sec] .sheet').style.display=''; hot(b,'A security fix is the only update that pauses transfers. Tap Install now.'); };
+$('#install').onclick=()=>{ const b=$('#install'); tapFx(b); hot(null,'Installing. Balance, receiving money and card payments keep working.'); let p=0; const iv=setInterval(()=>{p+=5; b.querySelector('.fill').style.width=p+'%'; b.querySelector('.lbl2').textContent='Installing… '+p+'%'; if(p>=100){clearInterval(iv); show('home'); resetHome(); $('#upd').style.display='none'; toast('Updated. Transfers are back on.'); later(()=>{$('#upd').style.display='';},3000); hot(null,'Done in about a minute, with nothing lost.');}},120); timers.push(iv); };
+J.face=(fail)=>{ show('face'); const ring=$('#ring'), say=$('#say'); $('#verified').classList.remove('up'); say.classList.remove('done'); ring.style.setProperty('--p','0%'); $('#chkDist').className='chk'; $('#chkDist').innerHTML='Distance'; $('#lightPill span').textContent=fail?'Too dark':'Light is good'; $('#lightPill').style.cssText=fail?'background:rgba(255,180,67,.16);color:#FFC46B':'';
+  say.querySelector('span').textContent=fail?'Find more light':'Move a little closer'; hot(null, fail?'Watch: the light is too low, so the check can\'t pass.':'Watch the coaching. No buttons to press.');
+  let p=0; const target=fail?38:100; const iv=setInterval(()=>{p+=2; if(p>target){clearInterval(iv); if(fail){ later(()=>{show('fail'); hot($('#retry'),'After two misses, you get other ways in, not a dead end.');},900);} return;} ring.style.setProperty('--p',p+'%');
+    if(!fail&&p===40){ say.querySelector('span').textContent='Hold still'; say.querySelector('i').className='fi fi-sr-pause'; $('#chkDist').className='chk on'; $('#chkDist').innerHTML='<i class="fi fi-sr-check"></i>Distance'; }
+    if(!fail&&p===100){ say.classList.add('done'); say.querySelector('span').textContent='Done'; say.querySelector('i').className='fi fi-sr-check'; later(()=>{$('#verified').classList.add('up'); hot($('#vDone'),'Verified in a few seconds.');},700);} },70); timers.push(iv); };
+$('#vDone').onclick=()=>{ tapFx($('#vDone')); $('#verified').classList.remove('up'); show('home'); resetHome(); hot(null,'Pick another journey above.'); };
+$('#retry').onclick=()=>{ tapFx($('#retry')); J.face(false); };
+J.lock=()=>{ show('lock'); let t=23*60+41; const draw=()=>{const m=String(Math.floor(t/60)).padStart(2,'0'), s=String(t%60).padStart(2,'0'); ['d0','d1','d2','d3'].forEach((id,i)=>$('#'+id).textContent=(m+s)[i]);}; draw(); window.__cd=setInterval(()=>{t--; draw();},1000); hot($('#reset'),'You don\'t have to wait. Tap Reset PIN now.'); };
+$('#reset').onclick=()=>{ tapFx($('#reset')); clearInterval(window.__cd); show('pin'); pin=''; $$('#dots i').forEach(i=>i.classList.remove('f')); hot($('#pad'),'Tap any 4 numbers.'); };
+let pin='';
+$$('#pad button').forEach(bn=>bn.onclick=()=>{ tapFx(bn); if(pin.length>=4) return; pin+=bn.textContent; $$('#dots i').forEach((d,i)=>d.classList.toggle('f',i<pin.length)); if(pin.length===4){ hot(null,''); later(()=>{show('backin'); hot($('#goHome'),'Back in, in under a minute.');},500);} });
+$('#goHome').onclick=$('#pinBack').onclick=()=>{ show('home'); resetHome(); hot(null,'Pick another journey above.'); };
+// chips
+const chips=$$('.chip'); chips.forEach(c=>c.onclick=()=>{ clearT(); chips.forEach(x=>x.classList.toggle('on',x===c)); const k=c.dataset.j; if(k==='update')J.update(); if(k==='security')J.security(); if(k==='face')J.face(false); if(k==='fail')J.face(true); if(k==='lock')J.lock(); });
+// fit to width
+function fit(){ if(isVideo) return; const sc=Math.min(1,(window.innerWidth-16)/390); const sh=$('.shell'); sh.style.transform='scale('+sc+')'; $('.shellbox').style.height=(844*sc)+'px'; $('.shellbox').style.width=(390*sc)+'px'; }
+addEventListener('resize',fit); fit();
+// autoplay for the video
+const wait=ms=>new Promise(r=>setTimeout(r,ms));
+async function auto(){
+  setCap('01 · UPDATES','Updates never lock you out of your money.','Most updates install in the background. Send money while it happens.');
+  J.update(); await wait(1600); $('#updGo').click(); await wait(2200); $('#goTransfer').click(); await wait(2000); $('#fp').click(); await wait(2600); $('#rcDone').click(); await wait(1200);
+  setCap('02 · SECURITY FIXES','Only a security fix can pause transfers.','And it says what still works, how long it takes, and offers USSD for urgent money.');
+  J.security(); await wait(3200); $('#install').click(); await wait(4200);
+  setCap('03 · FACE CHECK','A face check that coaches you.','Light, centring and distance turn green, then it takes the photo itself.');
+  J.face(false); await wait(6500); $('#vDone').click(); await wait(800);
+  setCap('04 · LOCKED OUT','A lockout that shows the way back.','An exact countdown, money still arrives, and a reset that skips the wait.');
+  J.lock(); await wait(3500); $('#reset').click(); await wait(900); for(const n of [4,7,2,9]){ $$('#pad button').find(b=>b.textContent==String(n)).click(); await wait(380);} await wait(2600);
+  document.body.dataset.done='1';
+}
+if(/auto=1/.test(location.search)||isVideo){ addEventListener('load',()=>setTimeout(auto,1200)); } else { addEventListener('load',()=>chips[0].click()); }
+</script></body></html>
