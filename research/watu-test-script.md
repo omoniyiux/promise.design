@@ -1,7 +1,7 @@
 # Watu concept: 5-person test script
 
 **What we're testing:** at each moment, do people know whether their payment landed, whether to pay again, and how to get their phone back on?
-**Prototype link:** sent with the preview link (after publishing: omoniyiux.vercel.app/proto/watu.html). Ask them to open it on their phone.
+**Prototype link:** https://omoniyiux-qbfc1waup-olaifapromise1-gmailcoms-projects.vercel.app/proto/watu.html for now (after publishing: omoniyiux.vercel.app/proto/watu.html). Ask them to open it on their phone.
 **Time:** about 10 minutes per person, on a video call with screen share. Record only with permission.
 
 ## Who to test with (5 people)
