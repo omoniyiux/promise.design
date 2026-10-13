@@ -1,3 +1,28 @@
+# VERIFIED on LinkedIn (13 Oct 2026), use this list
+
+Checked from FairMoney's company "People" page and each person's experience section.
+- **Left FairMoney:** Nifemi Ojo (now Head of Products at Pesa) and Oluwaseyi Ogunbanwo (left July 2025). They're alumni, so use them only for introductions.
+- **Not the design lead:** Ankit Gupta is listed as "Product at FairMoney Bank".
+
+**Wave 1, door-openers (current staff)**
+1. Ìbùkún Adelekan, Lead Product Designer (/in/artofibukun). 2nd degree, 29 mutual connections.
+2. Ernest Egbuna, Lead Product Researcher (/in/ernest-egbuna-b0b525b7)
+3. Adebayo Oyinloye, Senior Product Designer and PM, lending and underwriting (/in/loyoyinloye)
+4. Ebere Ahaotu, Senior Product Manager: payments, lending, savings, agents (/in/ebere-ahaotu)
+5. Mayowa Abidakun, Senior Product Manager, Bills and Payments (/in/mayowa-abidakun-5a212235)
+6. Promise Ambrose, Senior Recruiter (/in/promise-ambrose-415773123)
+
+**Wave 2, decision-makers**
+7. Henry Obiekea, Managing Director, FairMoney MFB (since May 2022) (/in/henryobiekea)
+8. Jitesh Bhoola, Chief Credit Officer: underwriting and decisioning (/in/jitesh-bhoola-121a795b)
+9. Debo Aderoju, Executive Director and Chief Risk Officer (since March 2026) (/in/debo-aderoju-mba-fcib-mcib-ab1a7638)
+10. Margaret Banasko, Head of Marketing (since August 2025) (/in/margaret-banasko-0783a573)
+11. Laurin Nabuko Hainy, CEO (/in/laurin-nabuko-hainy-03a5b862). Last.
+
+**Spares:** Ajibola Oluwagbemileke (Senior Product Designer), Stanley Chukwuma (Product Designer, lending and savings), Rotimi Oluwakolade (UX Researcher), Chibueze Okwu and Jumai Bakare (recruiters).
+
+---
+
 # FairMoney: who to message on LinkedIn, and what to say
 
 **Strategy:** door-openers first, decision-makers second.
