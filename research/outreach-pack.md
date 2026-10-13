@@ -249,3 +249,26 @@ There are about 25 named people above. Say "reveal emails" and I'll confirm the 
 `to-check` → `sent` → `follow-up-1` → `follow-up-2` → `replied` / `call` / `no-reply`.
 
 Every Friday, count the replies. If one message version gets more replies, use it for everything the next week.
+
+---
+
+## 9. The next 10 Nigerian companies (ranked 13 Oct 2026)
+
+Source: Nigerian App Store reviews, newest first, 15 July to 13 October 2026. "Negative" means 1–2 stars.
+Small samples are marked. The App Store skews toward iPhone users, so check the Play Store before writing a full pitch.
+
+| # | Company | Negative / recent | What's hurting | Design angle |
+|---|---|---|---|---|
+| 1 | FirstBank (FirstMobile) | 90 / 100, avg 1.38 | Login and session loops (39), the update (35), timeouts | Sign-in that survives updates, honest timeout recovery |
+| 2 | PalmPay | 71 / 250 | Money and transfers (35), Flexi loan pushed on users (21), "complete" sends you back to the payment | Loan consent and opt-out, payment completion |
+| 3 | Access Bank (Access More) | 46 / 150 | New-device face check fails, "terrible these past two weeks", must type the bank name by hand | Device switch, bank lookup from the account number |
+| 4 | MTN Nigeria (myMTN) | 44 / 50 | App won't open to buy data; "6GB left", then "finished" an hour later | Data balance you can trust, usage breakdown |
+| 5 | FairMoney | 35 / 79 | Can't borrow after moving from Android to iPhone, reminders before the due date (22 loan) | Account portability, respectful reminders. **Head of Design hired from July 2026** |
+| 6 | UBA | 31 / 50 | Liveness check on a new phone fails, blank screens, can't hold two accounts in one app | Device switch, multi-account |
+| 7 | Airtel (My Airtel Africa) | 30 / 69 | Redesign removed "buy data for others" and the airtime balance; data usage is blank | Restore lost features (same story as Kuda) |
+| 8 | Carbon | 19 / 33 | Loan application fee taken, then loan refused (13 loan) | Show the odds and the fee before charging |
+| 9 | Stanbic IBTC (Mobile 3.0) | 18 / 22 (small sample) | 3.0 logs people out and crashes; transfers pending for a week; OTP delays | Update and pending-transfer states |
+| 10 | Providus Bank | 18 / 23 (small sample) | **Unity Bank customers moved over after the merger can't register**; logs out on swipe back | Migration onboarding for merged customers |
+
+Bench: Glo (Glo Café, 43 / 50, the 3.0.3 update broke login, but hard to reach), Sterling, ALAT, Trove.
+Left out: SportyBet (179 negative, but betting; your call), GTWorld (only 3 negative, not hurting).
