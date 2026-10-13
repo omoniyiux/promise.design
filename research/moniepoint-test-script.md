@@ -1,7 +1,7 @@
 # Moniepoint concept: 5-person test script
 
 **What we're testing:** do people understand, at each blocking moment, that their money is safe, what still works, and what to do next?
-**Prototype link:** omoniyiux.vercel.app/proto/moniepoint.html (send it to them on WhatsApp, ask them to open it on their phone).
+**Prototype link:** https://omoniyiux-11yznyux6-olaifapromise1-gmailcoms-projects.vercel.app/proto/moniepoint.html for now (after publishing: omoniyiux.vercel.app/proto/moniepoint.html). Send it on WhatsApp and ask them to open it on their phone.
 **Time:** about 10 minutes per person. Video call (WhatsApp, Meet), they share their phone screen. Record only with permission.
 
 ## Who to test with (5 people)
