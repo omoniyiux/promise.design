@@ -1,0 +1,5 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="robots" content="noindex"><title>mock</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="pp-ui.css"><link rel="stylesheet" href="device.css">
+<style>html,body{margin:0;background:transparent}body{padding:30px}.iph .scr-wrap{background:#F6F5FC}</style></head>
+<body><div class="iph" id="ph"><span class="btn-l b1"></span><span class="btn-l b2"></span><span class="btn-l b3"></span><span class="btn-r b4"></span><span class="btn-r b5"></span><div class="bez"><div class="scr-wrap pp nohints" id="d"></div><div class="island"></div></div></div>
+<script src="pp-ui.js"></script><script>const q=new URLSearchParams(location.search);document.getElementById('d').innerHTML=PP.S[q.get('s')](JSON.parse(q.get('o')||'{}'));</script></body></html>

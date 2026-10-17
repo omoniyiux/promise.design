@@ -1,0 +1,134 @@
+/* PalmPay concept UI kit. Rebuilt from PalmPay's live iOS app (v7.17.0, Oct 2026). All classes scoped to .pp */
+.pp{--ink:#1C1B3A;--ink2:#4A4966;--mute:#8A89A0;--faint:#B7B6C8;--bg:#F6F5FC;--card:#FFFFFF;--line:#EEEDF6;
+  --pur:#6A35EF;--pur2:#5A26E0;--lav:#EBE9FF;--lav2:#F3F1FF;--green:#16B48C;--teal:#02A59C;--mint:#E3F7F2;
+  --amber:#B46A00;--amberbg:#FFF4E1;--red:#E5484D;--redbg:#FFECEC;--orange:#FF8A1F;
+  font-family:-apple-system,"SF Pro Text","SF Pro Display",Inter,system-ui,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;background:var(--bg)}
+.pp *{box-sizing:border-box;margin:0;padding:0}
+.pp .pscr{position:absolute;inset:0;display:flex;flex-direction:column;background:var(--bg);overflow:hidden}
+.pp .pbody{flex:1;overflow:hidden;padding:0 18px;display:flex;flex-direction:column;min-height:0}
+.pp svg{display:block}
+.pp .pic{display:inline-flex;width:22px;height:22px;flex:none}
+.pp .pic svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+/* iOS status bar */
+.pp .psb{height:54px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:4px 30px 0 52px;font:600 17px -apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,sans-serif;letter-spacing:-.02em;position:relative;z-index:45}
+.pp .psb .r{display:flex;align-items:center;gap:7px}
+.pp .phomebar{position:absolute;bottom:8px;left:50%;width:134px;height:5px;margin-left:-67px;border-radius:3px;background:#111;z-index:40}
+/* headers */
+.pp .phead{display:flex;align-items:center;gap:12px;padding:6px 18px 12px}
+.pp .pav{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#C9B8FF,#8F6BFF);color:#fff;display:grid;place-items:center;font:700 15px -apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,sans-serif}
+.pp .phi{font:700 20px/1 -apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,sans-serif;letter-spacing:-.02em}
+.pp .sp{flex:1}
+.pp .pibtn{width:30px;height:30px;color:var(--ink);display:grid;place-items:center;position:relative}
+.pp .pibtn svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.pp .pdot{position:absolute;top:-4px;right:-8px;background:var(--red);color:#fff;border-radius:9px;font:700 10px -apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,sans-serif;padding:2px 5px;border:1.5px solid #fff}
+.pp .pbar{display:flex;align-items:center;gap:12px;padding:8px 18px 14px}
+.pp .pbar .t{font:700 21px -apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,sans-serif;letter-spacing:-.02em}
+.pp .pbar .ib{width:28px;height:28px;color:var(--ink)}
+.pp .pbar .ib svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+/* cards */
+.pp .pcard{background:var(--card);border-radius:16px;padding:16px}
+.pp .pbal{background:var(--lav);border-radius:16px 16px 0 0;padding:16px 16px 14px}
+.pp .pbal small{display:flex;align-items:center;gap:6px;font:500 13.5px -apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,sans-serif;color:var(--ink2)}
+.pp .pbal b{display:block;font:700 30px -apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,sans-serif;letter-spacing:-.03em;margin-top:6px}
+.pp .pbtn{height:48px;border-radius:24px;border:0;background:var(--pur);color:#fff;font:600 16px -apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,sans-serif;display:flex;align-items:center;justify-content:center;gap:8px;width:100%;cursor:pointer}
+.pp .pbtn.sm{height:36px;width:auto;padding:0 18px;font-size:14.5px;border-radius:18px}
+.pp .pbtn.ghost{background:var(--lav2);color:var(--pur)}
+.pp .pbtn.line{background:#fff;color:var(--pur);box-shadow:inset 0 0 0 1.5px var(--pur)}
+.pp .pbtn.teal{background:var(--teal)}
+.pp .pbtn.off{background:#D9CFFB;color:#fff}
+.pp .ptiles{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}
+.pp .ptile{background:#fff;border-radius:14px;padding:14px 4px 12px;text-align:center;font:500 13px -apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,sans-serif;position:relative}
+.pp .ptile .g{width:40px;height:40px;margin:0 auto 8px;border-radius:12px;background:var(--pur);display:grid;place-items:center;color:#fff}
+.pp .ptile .g svg{width:24px;height:24px;fill:none;stroke:#fff;stroke-width:2}
+.pp .pfee{position:absolute;top:6px;right:6px;background:var(--orange);color:#fff;font:700 8.5px -apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,sans-serif;padding:2px 5px;border-radius:7px;font-style:italic}
+.pp .pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px 4px;padding:16px 4px}
+.pp .pgrid div{text-align:center;font:500 12.5px -apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,sans-serif;color:var(--ink2)}
+.pp .pgrid i{display:grid;place-items:center;width:34px;height:34px;margin:0 auto 6px;border-radius:10px;font-style:normal}
+.pp .pgrid i svg{width:22px;height:22px;fill:none;stroke:#fff;stroke-width:2}
+.pp .ptabs{height:84px;flex:none;display:flex;justify-content:space-around;align-items:flex-start;padding-top:10px;background:#fff;border-top:1px solid var(--line);position:relative;z-index:5}
+.pp .ptabs div{display:flex;flex-direction:column;align-items:center;gap:4px;font:500 12.5px -apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,sans-serif;color:var(--ink);width:20%}
+.pp .ptabs div svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.pp .ptabs div.on{color:var(--pur)}
+.pp .ptabs div.on svg{fill:var(--pur);stroke:var(--pur)}
+.pp .prow{display:flex;align-items:center;gap:12px}
+.pp .plist > div{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-top:1px solid var(--line);font:500 14.5px -apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,sans-serif}
+.pp .plist > div:first-child{border-top:0}
+.pp .plist span{color:var(--ink2);font-weight:400}
+.pp .plist b{font-weight:600}
+.pp .pkick{font:600 12px -apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--pur)}
+.pp .ph1{font:700 25px/1.18 -apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,sans-serif;letter-spacing:-.025em}
+.pp .ph2{font:700 18px/1.25 -apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,sans-serif;letter-spacing:-.02em}
+.pp .pp1{font:400 14.5px/1.45 -apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,sans-serif;color:var(--ink2)}
+.pp .pcap{font:400 12.5px/1.45 -apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,sans-serif;color:var(--mute)}
+.pp .pnote{display:flex;gap:10px;align-items:flex-start;border-radius:12px;padding:11px 12px;font:500 13px/1.45 -apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,sans-serif}
+.pp .pnote .pic{width:18px;height:18px;margin-top:1px}
+.pp .pnote.lav{background:var(--lav2);color:#3C2A93}
+.pp .pnote.green{background:#E6F8F2;color:#0B6E55}
+.pp .pnote.amber{background:var(--amberbg);color:#7A4A00}
+.pp .pamt{font:700 40px/1 -apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,sans-serif;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.pp .pchips{display:flex;gap:8px;flex-wrap:wrap}
+.pp .pchip{height:36px;padding:0 14px;border-radius:18px;background:#fff;box-shadow:inset 0 0 0 1.2px var(--line);font:600 14px/36px -apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,sans-serif;color:var(--ink)}
+.pp .pchip.on{background:var(--lav);box-shadow:inset 0 0 0 1.5px var(--pur);color:var(--pur)}
+.pp .pslider{position:relative;height:6px;border-radius:3px;background:#E4E1F4;margin:22px 4px 10px}
+.pp .pslider i{position:absolute;left:0;top:0;bottom:0;border-radius:3px;background:var(--pur)}
+.pp .pslider b{position:absolute;top:50%;width:24px;height:24px;margin:-12px 0 0 -12px;border-radius:50%;background:#fff;box-shadow:0 2px 6px rgba(40,20,120,.25),inset 0 0 0 6px var(--pur)}
+.pp .psteps{position:relative}
+.pp .pst{display:flex;gap:14px;position:relative;padding-bottom:18px}
+.pp .pst:last-child{padding-bottom:0}
+.pp .pst .d{width:24px;height:24px;border-radius:50%;flex:none;display:grid;place-items:center;border:2px solid #D7D4EA;background:#fff;position:relative;z-index:2}
+.pp .pst.done .d{background:var(--green);border-color:var(--green)}
+.pp .pst.done .d svg{width:13px;height:13px;stroke:#fff;stroke-width:3;fill:none}
+.pp .pst.now .d{border-color:var(--pur)}
+.pp .pst.now .d::after{content:"";width:9px;height:9px;border-radius:50%;background:var(--pur)}
+.pp .pst::before{content:"";position:absolute;left:11px;top:24px;bottom:0;width:2px;background:#E4E1F4}
+.pp .pst:last-child::before{display:none}
+.pp .pst.done::before{background:var(--green)}
+.pp .pst b{display:block;font:600 14.5px/1.3 -apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,sans-serif}
+.pp .pst small{display:block;font:400 12.5px/1.45 -apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,sans-serif;color:var(--mute)}
+.pp .ptimer{display:flex;align-items:center;gap:12px;border-radius:14px;padding:12px 14px;background:var(--lav2)}
+.pp .ptimer .ring{width:46px;height:46px;flex:none}
+.pp .ptag{display:inline-flex;align-items:center;height:22px;padding:0 8px;border-radius:6px;font:600 11px -apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,sans-serif}
+.pp .ptag.green{background:#E3F7F0;color:#0B7A5E}
+.pp .ptag.amber{background:var(--amberbg);color:#8A5300}
+.pp .ptag.lav{background:var(--lav);color:var(--pur)}
+.pp .pswitch{width:46px;height:28px;border-radius:14px;background:#34C759;position:relative;flex:none}
+.pp .pswitch::after{content:"";position:absolute;right:2px;top:2px;width:24px;height:24px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.pp .pswitch.off{background:#E3E2EE}.pp .pswitch.off::after{right:auto;left:2px}
+.pp .pcheck{width:22px;height:22px;border-radius:6px;background:var(--pur);display:grid;place-items:center;flex:none}
+.pp .pcheck svg{width:14px;height:14px;stroke:#fff;stroke-width:3;fill:none}
+.pp .ppin{display:flex;gap:12px;justify-content:center}
+.pp .ppin i{width:14px;height:14px;border-radius:50%;background:var(--pur)}
+.pp .ppin i.e{background:#E4E1F4}
+/* FlexiMFB partner screens (live look) */
+.pp .flexi{background:linear-gradient(180deg,#DFF7F2 0%,#F6F5FC 26%)}
+.pp .fxlogo{display:flex;align-items:center;gap:8px;font:800 24px -apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,sans-serif;letter-spacing:-.02em;color:#111}
+.pp .fxlogo i{width:26px;height:30px;position:relative;display:block}
+.pp .fxlogo i::before{content:"";position:absolute;left:2px;top:3px;width:20px;height:9px;background:var(--teal);transform:skewY(-16deg);border-radius:2px}
+.pp .fxlogo i::after{content:"";position:absolute;left:2px;top:15px;width:14px;height:8px;background:#F7C400;transform:skewY(-16deg);border-radius:2px}
+.pp .fxlogo span{font-weight:500}
+.pp .scrim{position:absolute;inset:0;background:rgba(20,20,30,.62);z-index:20}
+.pp .coach{position:absolute;left:18px;right:18px;z-index:22;background:var(--teal);color:#fff;border-radius:14px;padding:16px;font:500 18px/1.4 -apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,sans-serif}
+.pp .coach .n{display:inline-block;margin-top:12px;background:#fff;color:var(--teal);border-radius:16px;padding:6px 14px;font:600 14px -apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,sans-serif}
+.pp.nohints .hot::after{display:none}
+.pp .hot{position:relative}
+.pp .hot::after{content:"";position:absolute;inset:-5px;border-radius:18px;box-shadow:0 0 0 2.5px #FF6243;animation:pphot 1.6s ease-in-out infinite;pointer-events:none}
+@keyframes pphot{0%,100%{opacity:1}50%{opacity:.35}}
+.pp .pkb{flex:none;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:8px 6px 34px;background:#D1D3DA}
+.pp .pkb span{height:46px;border-radius:6px;background:#fff;display:grid;place-items:center;font:400 24px -apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,sans-serif;color:#111;box-shadow:0 1px 0 rgba(0,0,0,.25)}
+.pp .pkb span.e{background:transparent;box-shadow:none}
+.pp .pph{width:100%;height:110px;border-radius:12px;object-fit:cover}
+/* FlexiMFB fixes keep the partner's live look: teal accent, mint header, floating Loan | Repayment bar */
+.pp .flexi .pchip.on{background:#E3F7F2;box-shadow:inset 0 0 0 1.5px var(--teal);color:#027A73}
+.pp .flexi .pslider{background:#D6EFEA}
+.pp .flexi .pslider i{background:var(--teal)}
+.pp .flexi .pslider b{box-shadow:0 2px 6px rgba(0,80,70,.25),inset 0 0 0 6px var(--teal)}
+.pp .flexi .pcheck{background:var(--teal)}
+.pp .flexi .pnote.lav{background:#E3F7F2;color:#05645E}
+.pp .flexi .pst.now .d{border-color:var(--teal)}.pp .flexi .pst.now .d::after{background:var(--teal)}
+.pp .flexi .pst.done .d{background:var(--teal);border-color:var(--teal)}.pp .flexi .pst.done::before{background:var(--teal)}
+.pp .flexi .pbtn.ghost{background:#E3F7F2;color:#027A73}
+.pp .fxnav{position:absolute;left:50%;bottom:30px;transform:translateX(-50%);width:300px;height:66px;border-radius:33px;background:#fff;box-shadow:0 6px 24px rgba(20,40,40,.12);display:flex;padding:5px;z-index:6}
+.pp .fxnav div{flex:1;border-radius:28px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font:500 14px -apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,sans-serif;color:var(--ink)}
+.pp .fxnav div svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.7}
+.pp .fxnav div.on{background:#F2F2F5;color:var(--teal)}
+.pp .fxnav div.on svg{stroke:var(--teal)}

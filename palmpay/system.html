@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PalmPay design system, in code · Promise Olaifa</title>
+<meta name="description" content="PalmPay's live app, turned into tokens and components in code. A working sample by Promise Olaifa.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="img/pp-icon.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="pp-ui.css">
+<style>
+:root{--ink:#14122B;--ink2:#4A4966;--mute:#7E7C95;--line:#E6E3F2;--paper:#F7F6FB;--brand:#6A35EF}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Geist,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.top{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;padding:14px 32px;background:rgba(247,246,251,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top img{height:17px}.top b{font-weight:600}.top .sp{flex:1}
+.top a.pill{height:34px;display:inline-flex;align-items:center;padding:0 14px;border-radius:999px;font:600 13px Geist;text-decoration:none;box-shadow:inset 0 0 0 1.2px rgba(20,18,43,.2)}
+.wrap{max-width:1180px;margin:0 auto;padding:56px 32px 96px}
+h1{font:600 52px/1.04 Geist;letter-spacing:-.045em;margin:0}
+.lede{font:400 19px/1.55 Geist;color:var(--ink2);max-width:720px;margin:18px 0 0}
+.meta{display:flex;gap:28px;flex-wrap:wrap;margin-top:28px;font:500 13px Geist;color:var(--mute)}
+.meta b{display:block;color:var(--ink);font-size:15px;margin-top:3px}
+section{margin-top:72px}
+h2{font:600 28px/1.15 Geist;letter-spacing:-.03em;margin:0}
+h2 small{display:block;font:500 12px "Geist Mono",monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--brand);margin-bottom:10px}
+.sub{font:400 15.5px/1.55 Geist;color:var(--ink2);max-width:680px;margin:10px 0 0}
+.grid{display:grid;gap:16px;margin-top:26px}
+.g4{grid-template-columns:repeat(4,1fr)}.g3{grid-template-columns:repeat(3,1fr)}
+.sw{border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 0 0 1px var(--line)}
+.sw .c{height:96px}
+.sw .t{padding:12px 14px}
+.sw .t b{display:block;font:600 14px Geist}
+.sw .t code{font:500 12px "Geist Mono",monospace;color:var(--mute)}
+.sw .t span{display:block;font:400 12.5px/1.45 Geist;color:var(--ink2);margin-top:4px}
+.type{background:#fff;border-radius:14px;box-shadow:0 0 0 1px var(--line);padding:6px 22px}
+.type div{display:grid;grid-template-columns:150px 1fr 160px;gap:20px;align-items:baseline;padding:16px 0;border-top:1px solid var(--line)}
+.type div:first-child{border-top:0}
+.type code{font:500 12px "Geist Mono",monospace;color:var(--mute)}
+.type .k{font:600 13px Geist;color:var(--ink2)}
+.sf{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,sans-serif}
+.canvas{border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:14px;min-height:230px;background:#F6F5FC;box-shadow:0 0 0 1px var(--line)}
+.canvas .lbl{font:500 11px "Geist Mono",monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--brand)}
+.spec{font:400 13px/1.55 Geist;color:var(--ink2);margin-top:12px}
+.spec b{color:var(--ink)}
+.do{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
+.do div{background:#fff;border-radius:14px;box-shadow:0 0 0 1px var(--line);padding:18px 20px;font:400 14.5px/1.55 Geist;color:var(--ink2)}
+.do div b{display:block;font:600 12px "Geist Mono",monospace;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+.do .y b{color:#0B7A5E}.do .n b{color:#C2381E}
+pre{margin:22px 0 0;background:#14122B;color:#E2DEF7;border-radius:14px;padding:20px 22px;overflow:auto;font:400 13px/1.6 "Geist Mono",monospace}
+pre .c{color:#8C86AE}
+.foot{margin-top:80px;padding-top:24px;border-top:1px solid var(--line);font:400 13px/1.6 Geist;color:var(--mute)}
+@media (max-width:900px){.g4{grid-template-columns:repeat(2,1fr)}.g3,.do{grid-template-columns:1fr}h1{font-size:38px}.type div{grid-template-columns:1fr;gap:6px}.wrap{padding:36px 16px 72px}.top{padding:12px 16px}.top b{display:none}}
+</style>
+</head>
+<body>
+<div class="top"><b>Promise Olaifa</b><span style="color:var(--mute)">×</span><img src="img/logo.png" alt="PalmPay"><span class="sp"></span><a class="pill" href="index.html">Pitch deck</a><a class="pill" href="proto.html">Prototype</a></div>
+<div class="wrap">
+  <p style="font:500 12px 'Geist Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--brand);margin:0 0 14px">Design system · working sample</p>
+  <h1>PalmPay's app, as a system<br>you can build with.</h1>
+  <p class="lede">Every token and component here was taken from PalmPay's live iOS app (v7.17.0, October 2026) and written in code, including the FlexiMFB partner screens. The prototype, the film and the deck all render from this one file. This is what "a design system in one sprint" looks like on day three.</p>
+  <div class="meta"><div>Source of truth<b>pp-ui.css · pp-ui.js</b></div><div>Typeface<b>SF Pro (iOS system)</b></div><div>Surfaces<b>PalmPay + FlexiMFB</b></div><div>Built by<b>Promise Olaifa, with Claude Code</b></div></div>
+
+  <section>
+    <h2><small>01 · Colour</small>Taken from the app, named by job</h2>
+    <p class="sub">Names describe what a colour does, so the next designer knows when to use it. The partner's teal is a token too, so loan screens stay recognisable.</p>
+    <div class="grid g4">
+      <div class="sw"><div class="c" style="background:#6A35EF"></div><div class="t"><b>action</b><code>#6A35EF</code><span>Primary buttons, links, active tab.</span></div></div>
+      <div class="sw"><div class="c" style="background:#EBE9FF"></div><div class="t"><b>balance-surface</b><code>#EBE9FF</code><span>The balance card. Nothing else.</span></div></div>
+      <div class="sw"><div class="c" style="background:#F7F6FB"></div><div class="t"><b>canvas</b><code>#F7F6FB</code><span>App background behind white cards.</span></div></div>
+      <div class="sw"><div class="c" style="background:#1C1B3A"></div><div class="t"><b>ink</b><code>#1C1B3A</code><span>Names, amounts, titles.</span></div></div>
+      <div class="sw"><div class="c" style="background:#16B48C"></div><div class="t"><b>earn</b><code>#16B48C</code><span>Money coming in: earnings, refunds, success.</span></div></div>
+      <div class="sw"><div class="c" style="background:#02A59C"></div><div class="t"><b>partner-credit</b><code>#02A59C</code><span>FlexiMFB loan screens only.</span></div></div>
+      <div class="sw"><div class="c" style="background:#FF8A1F"></div><div class="t"><b>badge</b><code>#FF8A1F</code><span>"0 Fee", "Promo", "Hot". Small, rare.</span></div></div>
+      <div class="sw"><div class="c" style="background:#E5484D"></div><div class="t"><b>alert</b><code>#E5484D</code><span>Unread counts and real errors. Never for a customer who did nothing wrong.</span></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><small>02 · Type</small>SF Pro, as PalmPay ships it</h2>
+    <div class="type sf" style="margin-top:26px">
+      <div><span class="k" style="font-family:Geist">Amount</span><span style="font:700 38px/1.05 -apple-system,BlinkMacSystemFont,Inter,sans-serif;letter-spacing:-.03em">₦25,600</span><code>700 · 38/40</code></div>
+      <div><span class="k" style="font-family:Geist">Greeting</span><span style="font:700 21px/1.2 -apple-system,BlinkMacSystemFont,Inter,sans-serif">Hi, AMAKA</span><code>700 · 21/25</code></div>
+      <div><span class="k" style="font-family:Geist">Card title</span><span style="font:600 16px/1.3 -apple-system,BlinkMacSystemFont,Inter,sans-serif">Outstanding Amount</span><code>600 · 16/21</code></div>
+      <div><span class="k" style="font-family:Geist">Body</span><span style="font:400 14.5px/1.45 -apple-system,BlinkMacSystemFont,Inter,sans-serif">Pay any part, any time. Nothing is sent until you confirm.</span><code>400 · 14.5/21</code></div>
+      <div><span class="k" style="font-family:Geist">Caption</span><span style="font:400 12.5px/1.45 -apple-system,BlinkMacSystemFont,Inter,sans-serif;color:#8A89A0">Usually under 2 minutes</span><code>400 · 12.5/18</code></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><small>03 · Components</small>Built once, used everywhere</h2>
+    <p class="sub">Rendered live from the same CSS the prototype uses. Change a token and every screen follows.</p>
+    <div class="grid g3">
+      <div><div class="canvas pp"><span class="lbl">Buttons</span><button class="pbtn">Add Money</button><button class="pbtn teal">Review loan</button><button class="pbtn ghost">Tell us something's wrong</button></div><p class="spec"><b>Fully rounded, 48 high.</b> Purple for PalmPay, teal only inside partner credit screens.</p></div>
+      <div><div class="canvas pp flexi"><span class="lbl">Loan terms</span><div class="pcard" style="padding:2px 14px"><div class="plist"><div><span>You get today</span><b>₦20,000</b></div><div><span style="color:var(--ink);font-weight:600">You pay back</span><b style="font-size:18px">₦25,600</b></div><div><span>Due</span><b>Tue 10 Nov</b></div><div><span>If you're late</span><b>₦256 a day</b></div></div></div></div><p class="spec"><b>Always on the screen where people say yes.</b> Total, date, late fee, lender.</p></div>
+      <div><div class="canvas pp flexi"><span class="lbl">Day chips</span><div class="pchips"><span class="pchip">14 days</span><span class="pchip on">28 days</span></div><div class="pnote lav"><span class="pic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="16" x2="12" y2="11.5"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></span><span>Pay early or in parts, any time.</span></div></div><p class="spec"><b>Every choice shows its price</b> the moment it's tapped.</p></div>
+      <div><div class="canvas pp"><span class="lbl">Status tracker</span><div class="pcard"><div class="psteps"><div class="pst done"><span class="d"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><div><b>Paid from your balance</b><small>9:41 AM</small></div></div><div class="pst now"><span class="d"></span><div><b>Waiting for Ikeja Electric</b><small>Usually under 2 minutes</small></div></div></div></div></div><p class="spec"><b>Same three steps for every bill.</b> With a reference and a refund time.</p></div>
+      <div><div class="canvas pp"><span class="lbl">Notes</span><div class="pnote lav"><span class="pic"><svg viewBox="0 0 24 24"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 8.5-3 8.5h18S18 16 18 9"/></svg></span><span>Nothing renews without a reminder 3 days before.</span></div><div class="pnote green"><span class="pic"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>₦5,000 is back in your balance.</span></div><div class="pnote amber"><span class="pic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg></span><span>Due Tue 10 Nov.</span></div></div><p class="spec"><b>Lavender informs, green confirms, amber warns.</b></p></div>
+      <div><div class="canvas pp"><span class="lbl">Tags</span><div class="prow" style="gap:8px;flex-wrap:wrap"><span class="ptag green">Refunded</span><span class="ptag amber">Waiting</span><span class="ptag lav">Due in 28 days</span></div></div><p class="spec"><b>Status in one word.</b> The colour repeats the note it belongs to.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><small>04 · Content rules</small>How PalmPay talks about credit</h2>
+    <div class="do">
+      <div class="y"><b>Do</b>"You pay back ₦25,600 on Tue 10 Nov."<br>Amount, total and date in one sentence, before the button.</div>
+      <div class="n"><b>Don't</b>"Loanable Amount up to ₦2,000,000" when the limit is ₦2,000.<br>Show what this customer can actually get.</div>
+      <div class="y"><b>Do</b>"Nothing is sent until you confirm."<br>Say when money moves.</div>
+      <div class="n"><b>Don't</b>Start a paid plan from a "Free for 1st month" tap without a reminder before the first charge.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2><small>05 · In code</small>Tokens a developer can use today</h2>
+<pre><span class="c">/* pp-ui.css · tokens */</span>
+.pp {
+  --pur: #6A35EF;     <span class="c">/* action */</span>
+  --lav: #EBE9FF;     <span class="c">/* balance surface */</span>
+  --bg: #F6F5FC;      <span class="c">/* canvas */</span>
+  --ink: #1C1B3A;     <span class="c">/* ink */</span>
+  --green: #16B48C;   <span class="c">/* earn */</span>
+  --teal: #02A59C;    <span class="c">/* partner credit (FlexiMFB) */</span>
+  font-family: -apple-system, "SF Pro Text", Inter, sans-serif;
+}
+
+<span class="c">// pp-ui.js · screens are functions of state</span>
+S.offer({ d: 14 })        <span class="c">// ₦22,800 due Tue 27 Oct</span>
+S.offer({ d: 28 })        <span class="c">// ₦25,600 due Tue 10 Nov</span>
+S.track({ done: true })   <span class="c">// "₦5,000 is back in your balance"</span></pre>
+  </section>
+
+  <div class="foot">A working sample, not PalmPay's official system. Self-initiated by Promise Olaifa, not affiliated with PalmPay or FlexiMFB. Tokens taken from PalmPay's live app, October 2026. PalmPay's name and logo belong to PalmPay.</div>
+</div>
+</body>
+</html>

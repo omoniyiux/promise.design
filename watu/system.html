@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Watu design system, in code · Promise Olaifa</title>
+<meta name="description" content="Watu's live app, turned into tokens and components in code. A working sample by Promise Olaifa.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="img/wt-appicon.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500;600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="wt-ui.css">
+<style>
+:root{--ink:#0E0F12;--ink2:#4A4E55;--mute:#7C8087;--line:#E3E6E5;--paper:#F6F7F6;--brand:#0DA9A8}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Geist,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.top{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;padding:14px 32px;background:rgba(246,247,246,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top img{height:18px}.top b{font-weight:600}.top .sp{flex:1}
+.top a.pill{height:34px;display:inline-flex;align-items:center;padding:0 14px;border-radius:999px;font:600 13px Geist;text-decoration:none;box-shadow:inset 0 0 0 1.2px rgba(14,15,18,.2)}
+.wrap{max-width:1180px;margin:0 auto;padding:56px 32px 96px}
+h1{font:600 52px/1.04 Geist;letter-spacing:-.035em;margin:0}
+.lede{font:400 19px/1.55 Geist;color:var(--ink2);max-width:720px;margin:18px 0 0}
+.meta{display:flex;gap:28px;flex-wrap:wrap;margin-top:28px;font:500 13px Geist;color:var(--mute)}
+.meta b{display:block;color:var(--ink);font-size:15px;margin-top:3px}
+section{margin-top:72px}
+h2{font:600 28px/1.15 Geist;letter-spacing:-.02em;margin:0}
+h2 small{display:block;font:600 12px Geist;letter-spacing:.12em;text-transform:uppercase;color:var(--brand);margin-bottom:10px}
+.sub{font:400 15.5px/1.55 Geist;color:var(--ink2);max-width:680px;margin:10px 0 0}
+.grid{display:grid;gap:16px;margin-top:26px}
+.g4{grid-template-columns:repeat(4,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:repeat(2,1fr)}
+.sw{border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 0 0 1px var(--line)}
+.sw .c{height:96px}
+.sw .t{padding:12px 14px}
+.sw .t b{display:block;font:600 14px Geist}
+.sw .t code{font:500 12px "Geist Mono",monospace;color:var(--mute)}
+.sw .t span{display:block;font:400 12.5px/1.45 Geist;color:var(--ink2);margin-top:4px}
+.type{background:#fff;border-radius:14px;box-shadow:0 0 0 1px var(--line);padding:6px 22px}
+.type div{display:grid;grid-template-columns:150px 1fr 160px;gap:20px;align-items:baseline;padding:16px 0;border-top:1px solid var(--line)}
+.type div:first-child{border-top:0}
+.type code{font:500 12px "Geist Mono",monospace;color:var(--mute)}
+.type .k{font:600 13px Geist;color:var(--ink2)}
+.canvas{background:#000;border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:16px;color:#fff;min-height:236px}
+.canvas .lbl{font:600 11px Geist;letter-spacing:.12em;text-transform:uppercase;color:#7FD3D2}
+.spec{font:400 13px/1.55 Geist;color:var(--ink2);margin-top:12px}
+.spec b{color:var(--ink)}
+.do{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
+.do div{background:#fff;border-radius:14px;box-shadow:0 0 0 1px var(--line);padding:18px 20px;font:400 14.5px/1.55 Geist;color:var(--ink2)}
+.do div b{display:block;font:600 13px Geist;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+.do .y b{color:#0A8E8D}.do .n b{color:#C2381E}
+pre{margin:22px 0 0;background:#0E1012;color:#D7E3E3;border-radius:14px;padding:20px 22px;overflow:auto;font:400 13px/1.6 "Geist Mono",monospace}
+pre .c{color:#6C7B7B}
+.foot{margin-top:80px;padding-top:24px;border-top:1px solid var(--line);font:400 13px/1.6 Geist;color:var(--mute)}
+@media (max-width:900px){.g4{grid-template-columns:repeat(2,1fr)}.g3,.g2,.do{grid-template-columns:1fr}h1{font-size:38px}.type div{grid-template-columns:1fr;gap:6px}.wrap{padding:36px 16px 72px}.top{padding:12px 16px}.top b{display:none}}
+</style>
+</head>
+<body>
+<div class="top"><b>Promise Olaifa</b><span style="color:var(--mute)">×</span><img src="img/wt-logo.svg" alt="Watu"><span class="sp"></span><a class="pill" href="index.html">Pitch deck</a><a class="pill" href="proto.html">Prototype</a></div>
+<div class="wrap">
+  <p style="font:600 12px Geist;letter-spacing:.12em;text-transform:uppercase;color:var(--brand);margin:0 0 14px">Design system · working sample</p>
+  <h1>Watu's app, as a system<br>you can build with.</h1>
+  <p class="lede">Every token and component here was taken from Watu's live app (Kenya and Nigeria Play Store screenshots, October 2026) and written in code. The prototype, the film and the deck all render from this one file. This is what "a design system in one sprint" looks like on day three.</p>
+  <div class="meta"><div>Source of truth<b>wt-ui.css · wt-ui.js</b></div><div>Typeface<b>Poppins</b></div><div>Themes<b>Dark (as shipped)</b></div><div>Built by<b>Promise Olaifa, with Claude Code</b></div></div>
+
+  <section>
+    <h2><small>01 · Colour</small>Taken from the app, named by job</h2>
+    <p class="sub">Names describe what a colour does, not what it looks like, so the next designer knows when to use it.</p>
+    <div class="grid g4">
+      <div class="sw"><div class="c" style="background:#0DA9A8"></div><div class="t"><b>brand</b><code>#0DA9A8</code><span>Logo and brand moments only.</span></div></div>
+      <div class="sw"><div class="c" style="background:#37ADAF"></div><div class="t"><b>action</b><code>#37ADAF</code><span>Primary buttons, links, progress.</span></div></div>
+      <div class="sw"><div class="c" style="background:linear-gradient(100deg,#B2D00E,#E1CE12)"></div><div class="t"><b>money-card</b><code>#B2D00E to #E1CE12</code><span>Today's payment. One per screen.</span></div></div>
+      <div class="sw"><div class="c" style="background:#9CC43B"></div><div class="t"><b>asset</b><code>#9CC43B</code><span>The financed device chip and the Payments tab.</span></div></div>
+      <div class="sw"><div class="c" style="background:#000"></div><div class="t"><b>surface</b><code>#000000</code><span>App background.</span></div></div>
+      <div class="sw"><div class="c" style="background:#26252B"></div><div class="t"><b>surface-raised</b><code>#26252B</code><span>Cards and sheets.</span></div></div>
+      <div class="sw"><div class="c" style="background:#F4A866"></div><div class="t"><b>unlock</b><code>#F4A866</code><span>Temp Unlock and paused states.</span></div></div>
+      <div class="sw"><div class="c" style="background:#F06E5C"></div><div class="t"><b>owed</b><code>#F06E5C</code><span>Amount to unlock, overdue.</span></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><small>02 · Type</small>Poppins, four weights, one job each</h2>
+    <div class="type" style="margin-top:26px">
+      <div><span class="k">Display</span><span class="wt" style="background:none;color:var(--ink);font:600 34px/1.05 Poppins">It's yours, Halima.</span><code>600 · 34/36</code></div>
+      <div><span class="k">Title</span><span style="font:600 25px/1.2 Poppins">We've got your ₦1,375</span><code>600 · 25/30</code></div>
+      <div><span class="k">Section</span><span style="font:600 15px/1.3 Poppins">Payment progress</span><code>600 · 15/20</code></div>
+      <div><span class="k">Body</span><span style="font:400 13.5px/1.5 Poppins">Pay from your bank app, an agent or anyone's phone.</span><code>400 · 13.5/20</code></div>
+      <div><span class="k">Label</span><span style="font:500 11.5px/1.4 Poppins;color:var(--ink2)">Usually under 2 minutes</span><code>500 · 11.5/16</code></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><small>03 · Components</small>Built once, used everywhere</h2>
+    <p class="sub">Rendered live from the same CSS the prototype uses. Change a token and every screen follows.</p>
+    <div class="grid g3">
+      <div><div class="canvas wt"><span class="lbl">Buttons</span><button class="btn">Pay now</button><button class="btn orange">Unlock for 1 hour to pay</button><button class="btn dark">What's next with Watu</button></div><p class="spec"><b>Height 48.</b> One primary per screen. Orange only for unlocking.</p></div>
+      <div><div class="canvas wt"><span class="lbl">Money card</span><div class="daily"><div style="flex:1"><small>Today's payment</small><b>NGN 1,375</b><small style="font-size:10.5px;margin-top:2px;opacity:.8">Keeps you on until Thu, 9:00 AM</small></div><button class="btn" style="height:42px;width:auto;padding:0 16px;background:#111;color:#fff">Pay now</button></div></div><p class="spec"><b>Always says what the money buys.</b> An amount alone is not a decision.</p></div>
+      <div><div class="canvas wt"><span class="lbl">Day picker</span><div class="dchips"><div class="dchip"><b>1 day</b><small>₦1,375</small></div><div class="dchip on"><b>2 days</b><small>₦2,750</small></div><div class="dchip"><b>1 week</b><small>₦9,625</small></div><div class="dchip"><b>28 days</b><small>₦38,500</small></div></div><div class="card" style="text-align:center"><div class="sub" style="color:#ccc;font:400 12px Poppins;margin:0">Your phone stays on until</div><b style="font:600 18px Poppins;color:#B2D00E">Thu 15 Oct, 9:00 AM</b></div></div><p class="spec"><b>Names the date.</b> Replaces guessing with one look.</p></div>
+      <div><div class="canvas wt"><span class="lbl">Tracker</span><div class="card"><div class="steps"><div class="st done"><span class="dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><div><b>Received from your bank</b><small>9:41 AM · Ref WT-2610-0941</small></div></div><div class="st done"><span class="dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><div><b>Added to your plan</b><small>9:41 AM</small></div></div><div class="st now"><span class="dot"></span><div><b>Phone switches on</b><small>Usually under 2 minutes</small></div></div></div></div></div><p class="spec"><b>Every payment, the same three steps.</b> With a reference and an expected time.</p></div>
+      <div><div class="canvas wt"><span class="lbl">Notes</span><div class="note teal"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="16" x2="12" y2="11.5"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></span><span><b style="color:#fff">Please don't pay again.</b> It's on its way.</span></div><div class="note amber"><span class="ic"><svg viewBox="0 0 24 24"><path d="M7 3h10M7 21h10M8 3c0 5 8 5 8 9s-8 4-8 9M16 3c0 5-8 5-8 9s8 4 8 9"/></svg></span><span>Unlocked for 58 min to pay</span></div><div class="note green"><span class="ic"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>Your phone is on until Wed 14 Oct, 9:00 AM.</span></div></div><p class="spec"><b>Teal informs, amber warns, green confirms.</b> Never red for a customer who did nothing wrong.</p></div>
+      <div><div class="canvas wt"><span class="lbl">Status and chips</span><div class="row" style="gap:10px;flex-wrap:wrap"><span class="chip lime">Samsung A17</span><span class="chip">Boxer BM150</span><span class="tag teal">Counted</span><span class="tag amber">Paused</span></div><span class="live"><i></i>Last payment received 2 min ago</span><span class="rec"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 3 14.8 8.8 21 9.6 16.5 13.9 17.6 20 12 17 6.4 20 7.5 13.9 3 9.6 9.2 8.8"/></svg>Pay daily and it's yours on Sun 20 Dec</span></div><p class="spec"><b>Live beats Refresh.</b> Status updates itself, so no screen needs a Refresh button.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><small>04 · Content rules</small>How Watu talks about money and locks</h2>
+    <div class="do">
+      <div class="y"><b>Do</b>"Pay ₦1,375 and it switches back on until Wed 14 Oct, 9:00 AM."<br>Say the amount, what it buys, and the date.</div>
+      <div class="n"><b>Don't</b>"Your device was locked on 13 - 10 - 2026."<br>It says when it happened, not what to do next.</div>
+      <div class="y"><b>Do</b>"It's yours. Locks removed."<br>Say ownership out loud the moment it happens.</div>
+      <div class="n"><b>Don't</b>"Complete your payment to unlock new features" after the balance is zero.<br>Never ask a finished customer for money.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2><small>05 · In code</small>Tokens a developer can use today</h2>
+<pre><span class="c">/* wt-ui.css · tokens */</span>
+.wt {
+  --brand: #0DA9A8;   <span class="c">/* logo, brand moments */</span>
+  --teal: #37ADAF;    <span class="c">/* action */</span>
+  --lime1: #B2D00E; --lime2: #E1CE12;  <span class="c">/* money card */</span>
+  --chiplime: #9CC43B; <span class="c">/* asset */</span>
+  --bg: #000; --card: #26252B;  <span class="c">/* surfaces */</span>
+  --orange: #F4A866;  <span class="c">/* unlock */</span>
+  --coral: #F06E5C;   <span class="c">/* owed */</span>
+  font-family: Poppins, system-ui, sans-serif;
+}
+
+<span class="c">// wt-ui.js · screens are functions of state</span>
+S.track({ done: false })   <span class="c">// "Please don't pay again"</span>
+S.track({ done: true })    <span class="c">// "Your phone is on"</span>
+S.pay({ sel: 2 })          <span class="c">// 1 week, with the date it buys</span></pre>
+  </section>
+
+  <div class="foot">A working sample, not Watu's official system. Self-initiated by Promise Olaifa, not affiliated with Watu. Tokens taken from Watu's Play Store screenshots, October 2026. Watu's name and logo belong to Watu.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>PalmPay concept film</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Geist:wght@400..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="pp-ui.css">
+<link rel="stylesheet" href="device.css">
+<style>
+  html,body{margin:0;background:#000}
+  #stage{width:1920px;height:1080px;position:relative;overflow:hidden;background:radial-gradient(90% 80% at 80% 15%,#E7DEFF 0%,#F4F1FF 45%,#F7F6FB 100%);font-family:Geist,Inter,sans-serif;color:#14122B}
+  #stage *, #stage *::before, #stage *::after{animation:none!important;transition:none!important}
+  .sc{position:absolute;inset:0;opacity:0}
+  .flogo{position:absolute;left:140px;top:84px;height:30px}
+  .kick{font-size:20px;font-weight:600;color:#6A35EF;letter-spacing:.01em}
+  .hero{font-size:88px;line-height:96px;font-weight:800;letter-spacing:-.035em;margin:0}
+  .mid{font-size:56px;line-height:64px;font-weight:800;letter-spacing:-.03em;margin:0}
+  .lead{font-size:28px;line-height:40px;color:#4A4966;margin:0}
+  .t{color:#6A35EF}.l{color:#6A35EF}
+  .bars{position:absolute;left:140px;right:140px;top:360px}
+  .br{display:grid;grid-template-columns:520px 1fr 90px;align-items:center;gap:24px;height:74px}
+  .br .lb{font-size:27px;font-weight:600;color:#2A2845}
+  .br .tr{height:28px;border-radius:14px;background:#E6E1F7;overflow:hidden}
+  .br .f{height:100%;border-radius:14px;background:#C9C1E6}
+  .br.hi .f{background:linear-gradient(90deg,#6A35EF,#8A62FF)}
+  .br .n{font-size:32px;font-weight:800;text-align:right;font-variant-numeric:tabular-nums}
+  .br.hi .lb,.br.hi .n{color:#6A35EF}
+  #phoneWrap{position:absolute;left:1240px;top:100px;opacity:0}
+  .tap{position:absolute;width:58px;height:58px;margin:-29px 0 0 -29px;border-radius:50%;background:rgba(255,98,67,.3);box-shadow:0 0 0 3px #FF6243;z-index:60;opacity:0;pointer-events:none}
+  #cap{position:absolute;left:140px;top:260px;width:900px}
+  #cap .tag{display:inline-flex;height:36px;align-items:center;padding:0 16px;border-radius:999px;font-size:16px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+  .tag.b{background:#FFE6E1;color:#C2381E}.tag.a{background:#EEE8FF;color:#5A26E0}
+  #cap h2{font-size:64px;line-height:72px;font-weight:800;letter-spacing:-.03em;margin:26px 0 22px}
+  #cap p{font-size:29px;line-height:43px;color:#4A4966;margin:0}
+  #chap{position:absolute;left:140px;top:160px;font-size:20px;font-weight:600;color:#6A35EF;letter-spacing:.02em}
+  #prog{position:absolute;left:140px;right:140px;bottom:60px;height:4px;border-radius:2px;background:#E2DCF5}
+  #prog i{display:block;height:100%;border-radius:2px;background:#6A35EF;width:0}
+  .ffoot{position:absolute;left:140px;bottom:92px;font-size:18px;color:#8A88A0}
+  .trio{position:absolute;top:250px;left:0;right:0;display:flex;justify-content:center;gap:80px}
+  .mini{width:272px;text-align:left}
+  .mini .ph{width:272px;height:574px;border-radius:44px;background:linear-gradient(140deg,#e4e4e8,#9d9da3 14%,#f2f2f5 30%,#88888e 52%,#d4d4d8 72%,#7b7b81 88%,#c9c9ce);padding:3px;box-shadow:0 34px 64px -14px rgba(40,20,120,.3)}
+  .mini .ph>.bz{width:266px;height:568px;border-radius:41px;background:#030303;padding:7px}
+  .mini .sv{width:252px;height:554px;border-radius:35px;overflow:hidden;position:relative;background:#F6F5FC}
+  .mini .sv .lay{position:absolute;left:0;top:0;width:390px;height:858px;transform:scale(.6462);transform-origin:0 0}
+  .mini b{display:block;font-size:25px;font-weight:800;margin-top:24px;letter-spacing:-.02em}
+  .mini span{display:block;font-size:19px;line-height:27px;color:#6E6C86;margin-top:6px}
+  .mets{position:absolute;left:140px;right:140px;top:400px;display:grid;grid-template-columns:repeat(3,1fr);gap:56px}
+  .met{border-top:3px solid #6A35EF;padding-top:24px}
+  .met .k{font-size:22px;font-weight:700;color:#6A35EF}
+  .met .v{font-size:35px;line-height:43px;font-weight:800;letter-spacing:-.02em;margin-top:10px}
+  .met .d{font-size:21px;line-height:31px;color:#6E6C86;margin-top:10px}
+  .quote{position:absolute;left:140px;top:470px;width:1500px;border-left:6px solid #6A35EF;padding:6px 0 6px 36px}
+  .quote q{font-size:48px;line-height:60px;font-weight:700;letter-spacing:-.02em;quotes:"\201C" "\201D"}
+  .quote div{font-size:21px;color:#8A88A0;margin-top:20px}
+  .lay{position:absolute;inset:0}
+</style>
+</head>
+<body>
+<div id="stage">
+  <div class="sc" id="s0">
+    <img class="flogo" src="img/logo.png" alt="PalmPay">
+    <div style="position:absolute;left:140px;top:320px;width:1500px">
+      <div class="kick">A self-initiated product concept</div>
+      <p class="hero" style="margin-top:26px">Say yes to more.<br><span class="t">Know what you said yes to.</span></p>
+      <p class="lead" style="margin-top:38px">For PalmPay, by Promise Olaifa, product designer in Lagos.</p>
+    </div>
+    <div class="ffoot">Not affiliated with PalmPay. "Before" screens are my own PalmPay app (v7.17.0, Oct 2026) with my details replaced. Loan figures are illustrative.</div>
+  </div>
+  <div class="sc" id="s1">
+    <div style="position:absolute;left:140px;top:110px;width:1600px">
+      <div class="kick">What customers are saying</div>
+      <p class="mid" style="margin-top:20px">Free to send. <span class="t">Costly to borrow.</span><br>Almost 1 in 3 complaints is about a loan.</p>
+    </div>
+    <div class="bars" id="bars"></div>
+    <div class="ffoot">419 Google Play and App Store reviews with a clear complaint, January to October 2026, each read and tagged by hand.</div>
+  </div>
+  <div class="sc" id="s2">
+    <div style="position:absolute;left:140px;top:190px;width:1600px">
+      <div class="kick">The most deliberate tap in a banking app?</div>
+      <p class="mid" style="margin-top:20px"><span class="t">12 customers</span> got credit they say they never chose.</p>
+    </div>
+    <div class="quote"><q>I press the borrow button hoping to proceed to next page where I can input the amount I want to borrow.. Instead of the payment I put page I was credited #339,000</q><div>PalmPay customer, Google Play, August 2026. They wanted ₦30,000.</div></div>
+  </div>
+  <div class="sc" id="s6">
+    <div style="position:absolute;left:140px;top:84px;width:1640px"><div class="kick">Ready for Apple's foldable</div><p class="mid" style="margin-top:14px">One fold: the choice beside the full cost,<br>then the payment beside today's history.</p></div>
+    <img id="duoA" src="img/duoLoan.webp" style="position:absolute;left:494px;top:318px;width:932px;height:665px">
+    <img id="duoB" src="img/duoTrack.webp" style="position:absolute;left:494px;top:318px;width:932px;height:665px;opacity:0">
+  </div>
+  <div class="sc" id="s7">
+    <div style="position:absolute;left:140px;top:110px"><div class="kick">Quick wins</div><p class="mid" style="margin-top:14px">Small fixes. Loud reviews.</p></div>
+    <div class="trio" id="trio"></div>
+  </div>
+  <div class="sc" id="s8">
+    <div style="position:absolute;left:140px;top:150px;width:1600px"><div class="kick">How we'd know it worked</div><p class="mid" style="margin-top:20px">Half of first-time borrowers. Four weeks.<br>Numbers decide.</p></div>
+    <div class="mets">
+      <div class="met"><div class="k">Grow</div><div class="v">More borrowers who repay, and borrow again</div><div class="d">A borrower who understood the loan pays it back</div></div>
+      <div class="met"><div class="k">Calm</div><div class="v">Fewer loan and "failed but deduct" disputes</div><div class="d">And fewer 1-star reviews about loans</div></div>
+      <div class="met"><div class="k">Guardrail</div><div class="v">Approvals and defaults stay flat</div><div class="d">Design changes what people see, not who gets credit</div></div>
+    </div>
+  </div>
+  <div class="sc" id="s9">
+    <img class="flogo" src="img/logo.png" alt="PalmPay">
+    <div style="position:absolute;left:140px;top:340px;width:1500px">
+      <p class="hero">Promise Olaifa</p>
+      <p class="lead" style="margin-top:22px;font-size:34px">Product designer in Lagos. I design it, test it and build it in code.</p>
+      <p class="lead" style="margin-top:40px;font-size:34px;color:#6A35EF;font-weight:700">omoniyiux.vercel.app/palmpay</p>
+    </div>
+  </div>
+
+  <div id="chap"></div>
+  <div id="cap"><span class="tag" id="ctag"></span><h2 id="ct"></h2><p id="cb"></p></div>
+  <div id="phoneWrap"><div class="iph"><span class="btn-l b1"></span><span class="btn-l b2"></span><span class="btn-l b3"></span><span class="btn-r b4"></span><span class="btn-r b5"></span><div class="bez"><div class="scr-wrap pp nohints" id="scr" style="background:#F6F5FC"><div class="lay" id="L0"></div><div class="lay" id="L1"></div><div class="tap" id="tap"></div></div><div class="island"></div></div></div></div>
+  <div id="prog"><i></i></div>
+</div>
+<script src="pp-ui.js"></script>
+<script>
+const {S} = PP;
+const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const ease=x=>{x=clamp(x);return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2};
+const out=x=>1-Math.pow(1-clamp(x),3);
+const ph=(t,a,d)=>clamp((t-a)/d);
+
+const T_END = 100;
+const PHONE = {a:20.5, b:80};
+const SCENES = [{id:'s0',a:0,b:5.4},{id:'s1',a:5.4,b:14.5},{id:'s2',a:14.5,b:20.5},{id:'s6',a:80,b:89},{id:'s7',a:89,b:94.5},{id:'s8',a:94.5,b:97.5},{id:'s9',a:97.5,b:T_END+1}];
+const B = [
+  {at:20.5, s:'bhome', chap:'Today: borrowing', cap:['b','A customer taps Loan','PalmPay\'s live Home, from my own app. Loan sits one tap from free transfers.']},
+  {at:23.4, tap:'.spot'},
+  {at:23.8, s:'btour', cap:['b','"Up to ₦2,000,000"','FlexiMFB\'s tour, live in the app: up to ₦2,000,000 at "as low as 0.1%" a day.']},
+  {at:28.4, tap:'.spot'},
+  {at:28.8, s:'bflexi', cap:['b','₦2,000 and one Borrow button','My real limit. No amount to choose, no cost, no due date before the tap.']},
+  {at:33.4, tap:'.spot'},
+  {at:33.8, s:'offer', o:{d:28}, chap:'The fix: borrowing', cap:['a','Choose the amount. See the cost.','Same FlexiMFB screen. What you pay back, the due date, the late fee and the lender, before anything is sent.']},
+  {at:37.2, tap:'.pchip:nth-child(1)'},
+  {at:37.6, s:'offer', o:{d:14}, cap:['a','Every choice shows its price','14 days: pay back ₦22,800 on Tue 27 Oct. 28 days: ₦25,600 on Tue 10 Nov.']},
+  {at:40.6, tap:'.pchip:nth-child(2)'},
+  {at:41.0, s:'offer', o:{d:28}},
+  {at:43.0, tap:'.pbtn.teal'},
+  {at:43.4, s:'review', cap:['a','A yes you can undo','How the next 28 days go, in plain words. A PIN to confirm, and 24 hours to change your mind.']},
+  {at:48.4, tap:'.pbtn.teal'},
+  {at:48.8, s:'loan', cap:['a','What you owe, and why','The Repayment tab with the breakdown, part payments, "Need more time?" and "Report a rude call".']},
+  {at:54.6, s:'bcs', chap:'Today: money stuck', cap:['b','"Transaction failed but deduct"','On PalmPay\'s own Hot Issues list. 61 reviews this year: money left and never arrived.']},
+  {at:59.6, s:'track', chap:'The fix: money stuck', cap:['a','A countdown, not a dispute form','Where the payment is, and when the money comes back if the biller stays silent.']},
+  {at:65.4, s:'track', o:{done:1}, cap:['a','Refunded on its own','No email, no screenshots. The screen says the money is back.']},
+  {at:70.4, s:'subs', chap:'Quick wins', cap:['a','Nothing renews in silence','38 reviews on debits people never agreed to. A reminder 3 days before every charge, and one-tap cancel.']},
+  {at:75.2, s:'receipt', cap:['a','"Done" goes Home','No more landing back on the payment and paying the same person twice.']},
+];
+B.forEach((b,i)=>b.i=i);
+
+const BARS=[['Loans (Flexi)',132,1],['Money stuck after a debit',61],['Can\'t get in, app fails',59],['Debits they didn\'t agree to',38],['Frozen accounts, locked savings',35],['Customer service',29]];
+document.getElementById('bars').innerHTML=BARS.map(([l,n,h],i)=>`<div class="br ${h?'hi':''}"><div class="lb">${l}</div><div class="tr"><div class="f" id="bf${i}" style="width:0"></div></div><div class="n" id="bn${i}">0</div></div>`).join('');
+const TRIO=[['subs',{},'Nothing renews in silence','A reminder 3 days before each charge'],['receipt',{},'"Done" goes Home','No more paying the same person twice'],['track',{done:1},'Refunded on its own','When a biller stays silent']];
+document.getElementById('trio').innerHTML=TRIO.map(([s,o,b,d])=>`<div class="mini"><div class="ph"><div class="bz"><div class="sv"><div class="lay pp nohints">${S[s](o)}</div></div></div></div><b>${b}</b><span>${d}</span></div>`).join('');
+
+const L=[document.getElementById('L0'),document.getElementById('L1')]; const keys=['',''];
+const tapEl=document.getElementById('tap');
+function setLayer(i,html,key){ if(keys[i]!==key){ L[i].innerHTML=html; keys[i]=key; } }
+function screenAt(t){ let cur=null, prev=null; for(const b of B){ if(b.s && b.at<=t){ prev=cur; cur=b; } } return {cur,prev}; }
+function scrollAt(t,cur){ let y=0; for(const b of B){ if(b.scroll!==undefined && b.at>=cur.at && b.at<=t){ const p=ease((t-b.at)/b.dur); y=y+(b.scroll-y)*p; } } return y; }
+function renderPhone(t){
+  const {cur,prev}=screenAt(t); if(!cur) return;
+  const o=cur.o||{}; setLayer(0,S[cur.s](o),cur.i+'|'+JSON.stringify(o));
+  const lt=t-cur.at, sameScreen = prev && prev.s===cur.s;
+  const bd=L[0].querySelector('.body'); if(bd) bd.scrollTop=scrollAt(t,cur);
+  if(prev && lt<0.45){
+    setLayer(1,S[prev.s](prev.o||{}),prev.i+'|prev');
+    const p=ease(lt/0.45); L[1].style.display='block'; L[1].style.zIndex=2;
+    if(sameScreen){ L[1].style.opacity=1-p; L[0].style.transform='none'; L[0].style.opacity=1; }
+    else { L[1].style.opacity=1-p; L[0].style.transform=`translateX(${(1-p)*36}px)`; L[0].style.opacity=0.2+0.8*p; }
+  } else { L[1].style.display='none'; L[0].style.transform='none'; L[0].style.opacity=1; }
+  let tb=null; for(const b of B){ if(b.tap && b.at<=t && t-b.at<0.7) tb=b; }
+  if(tb){ const el=L[0].querySelector(tb.tap); if(el){ const r=el.getBoundingClientRect(), sr=document.getElementById('scr').getBoundingClientRect(); const p=(t-tb.at)/0.7;
+      tapEl.style.left=(r.left-sr.left+r.width/2)+'px'; tapEl.style.top=(r.top-sr.top+r.height/2)+'px'; tapEl.style.opacity=p<.15?p/.15:1-ph(p,.5,.5); tapEl.style.transform=`scale(${0.7+0.5*out(p)})`; } }
+  else tapEl.style.opacity=0;
+}
+let lastCap=null;
+function renderCaps(t){
+  let c=null, ch=null; for(const b of B){ if(b.at<=t){ if(b.cap) c=b; if(b.chap) ch=b; } }
+  const show = t>=PHONE.a && t<PHONE.b;
+  const capEl=document.getElementById('cap'), chEl=document.getElementById('chap');
+  if(!show||!c){ capEl.style.opacity=0; chEl.style.opacity=0; return; }
+  if(c!==lastCap){ lastCap=c; const [tg,h,p]=c.cap; const tag=document.getElementById('ctag'); tag.className='tag '+tg; tag.textContent=tg==='b'?'Before':'After'; document.getElementById('ct').textContent=h; document.getElementById('cb').textContent=p; }
+  if(ch) chEl.textContent=ch.chap;
+  const p=out((t-c.at)/0.5), fo=1-ph(t,PHONE.b-0.4,0.4);
+  capEl.style.opacity=Math.min(p,fo); capEl.style.transform=`translateY(${(1-p)*18}px)`;
+  chEl.style.opacity=Math.min(out((t-PHONE.a)/0.5),fo);
+}
+function renderAt(t){
+  for(const s of SCENES){ const el=document.getElementById(s.id); const o=Math.min(out((t-s.a)/0.5), 1-ph(t,s.b-0.4,0.4)); el.style.opacity=(t>=s.a&&t<s.b)?o:0; el.style.transform=`translateY(${(1-out((t-s.a)/0.6))*16}px)`; }
+  const bt=t-5.4; BARS.forEach(([l,n],i)=>{ const p=out((bt-0.9-i*0.18)/1.1); document.getElementById('bf'+i).style.width=(n/132*100*p)+'%'; document.getElementById('bn'+i).textContent=Math.round(n*p); });
+  const pw=document.getElementById('phoneWrap');
+  const po=Math.min(out((t-PHONE.a)/0.6),1-ph(t,PHONE.b-0.4,0.4)); pw.style.opacity=(t>=PHONE.a-0.01&&t<PHONE.b)?po:0;
+  pw.style.transform=`translateY(${(1-out((t-PHONE.a)/0.7))*40}px)`;
+  if(t>=PHONE.a-0.01 && t<PHONE.b) renderPhone(Math.max(t,PHONE.a));
+  renderCaps(t);
+  const dt=t-80; document.getElementById('duoB').style.opacity=clamp((dt-4.6)/0.6); document.getElementById('duoA').style.opacity=1-clamp((dt-4.6)/0.6);
+  document.querySelector('#prog i').style.width=(t/T_END*100)+'%';
+}
+window.renderAt=renderAt; window.T_END=T_END;
+const qs=new URLSearchParams(location.search);
+if(qs.has('t')) renderAt(+qs.get('t'));
+else if(!qs.has('capture')){ const t0=performance.now(); (function loop(){ const t=((performance.now()-t0)/1000)%T_END; renderAt(t); requestAnimationFrame(loop); })(); }
+</script>
+</body>
+</html>

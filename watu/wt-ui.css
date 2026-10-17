@@ -1,0 +1,173 @@
+/* Watu concept UI kit: rebuilt from Watu's live app (Play Store screenshots, Oct 2026). Poppins, black, teal, lime. */
+.wt{--bg:#000;--card:#26252B;--card2:#121212;--line:#34333A;--chip:#343434;--text:#FFFFFF;--mute:#A3A3AA;--dim:#6F6E76;
+  --teal:#37ADAF;--teal2:#2A9597;--brand:#0DA9A8;--lime1:#B2D00E;--lime2:#E1CE12;--chiplime:#9CC43B;--timer:#9BD13A;
+  --orange:#F4A866;--coral:#F06E5C;--green:#5BD08B;--pink:#E6007E;
+  font-family:Poppins,system-ui,sans-serif;color:var(--text);-webkit-font-smoothing:antialiased;background:var(--bg)}
+.wt *{box-sizing:border-box;margin:0;padding:0}
+.wt .scr{position:absolute;inset:0;display:flex;flex-direction:column;background:var(--bg);overflow:hidden}
+.wt .body{flex:1;overflow:hidden;padding:0 20px;display:flex;flex-direction:column;min-height:0}
+.wt svg{display:block}
+.wt .ic{display:inline-flex;width:22px;height:22px;flex:none}
+.wt .ic svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* Android status bar + 3-button nav (Samsung One UI) */
+.wt .asb{height:34px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:6px 22px 0 26px;font:500 13.5px/1 Roboto,"Google Sans",Poppins,sans-serif;letter-spacing:.01em;color:#fff;position:relative;z-index:30}
+.wt .asb .r{display:flex;align-items:center;gap:5px}
+.wt .asb .bat{display:inline-flex;align-items:center;justify-content:center;height:13px;min-width:24px;padding:0 3px;border-radius:7px;background:#fff;color:#000;font:700 9px/1 Roboto,sans-serif}
+.wt .anav{height:44px;flex:none;display:flex;align-items:center;justify-content:space-around;padding:0 60px;color:#cfcfd4;background:#000;position:relative;z-index:30}
+.wt .anav svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8}
+
+/* App chrome */
+.wt .top{display:flex;align-items:center;gap:12px;padding:14px 20px 6px}
+.wt .av{width:46px;height:46px;border-radius:50%;background:#fff;color:var(--teal);display:grid;place-items:center;font:600 15px Poppins}
+.wt .hello small{display:block;font:400 12.5px Poppins;color:#E7E7EA}
+.wt .hello b{display:block;font:600 15px/1.3 Poppins}
+.wt .top .sp{flex:1}
+.wt .top .bell{color:#fff;width:24px;height:24px}
+.wt .wmark{display:flex;align-items:center;justify-content:center;gap:10px;padding:10px 20px 4px;position:relative}
+.wt .wmark .burger{position:absolute;left:20px;top:12px;width:22px;height:22px;color:#fff}
+.wt .wmark svg.logo{height:15px;width:auto;fill:#fff}
+.wt .h2{font:600 15px/1.3 Poppins}
+.wt .sub{font:400 12.5px/1.45 Poppins;color:#D9D9DE}
+.wt .mute{color:var(--mute)}
+.wt .row{display:flex;align-items:center;gap:10px}
+.wt .sp{flex:1}
+.wt .refresh{width:62px;height:58px;border-radius:8px;background:#1B1A1F;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font:500 10.5px Poppins}
+.wt .refresh svg{width:16px;height:16px;stroke:var(--orange);fill:none;stroke-width:2.2}
+.wt .devs{display:flex;gap:18px;margin:14px 0 10px}
+.wt .dev{width:52px;height:52px;border-radius:50%;border:1.5px solid #6C6C72;display:grid;place-items:center;color:#d8d8dc}
+.wt .dev.on{border-color:var(--chiplime);box-shadow:inset 0 0 0 1px rgba(156,196,59,.35)}
+.wt .dev svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.wt .chips{display:flex;gap:8px;flex-wrap:wrap}
+.wt .chip{height:28px;padding:0 13px;border-radius:999px;background:var(--chip);color:#fff;font:500 11.5px/28px Poppins;white-space:nowrap}
+.wt .chip.lime{background:var(--chiplime);color:#16200A}
+.wt .card{background:var(--card);border-radius:12px;padding:14px}
+.wt .card2{background:var(--card2);border-radius:12px;padding:14px}
+.wt .timer{display:flex;justify-content:center;gap:4px;margin-top:8px;background:#1B1A1F;border-radius:8px;padding:8px 10px 6px}
+.wt .timer div{text-align:center;min-width:46px}
+.wt .timer b{display:block;font:500 28px/1 "Poppins";color:var(--timer);letter-spacing:.02em}
+.wt .timer i{display:block;font:500 7px/1.6 Poppins;color:#8A8A90;font-style:normal;letter-spacing:.06em}
+.wt .timer .c{font:500 26px/1 Poppins;color:var(--timer);min-width:8px;padding-top:0}
+.wt .daily{border-radius:12px;padding:16px 14px;background:linear-gradient(100deg,var(--lime1) 0%,#C9D012 45%,var(--lime2) 100%);color:#1B1C10;display:flex;align-items:center;gap:12px;position:relative}
+.wt .daily small{display:block;font:500 12.5px Poppins}
+.wt .daily b{display:block;font:600 17px/1.25 Poppins}
+.wt .daily .tip{position:absolute;right:12px;top:6px;font:400 8.5px Poppins;opacity:.75;display:flex;gap:4px;align-items:center}
+.wt .btn{height:48px;border-radius:9px;border:0;background:var(--teal);color:#fff;font:600 14.5px Poppins;display:flex;align-items:center;justify-content:center;gap:8px;width:100%;cursor:pointer}
+.wt .btn.sm{height:42px;width:auto;padding:0 18px;font-size:13.5px}
+.wt .btn.coral{background:var(--coral)}
+.wt .btn.orange{background:var(--orange);color:#3A1E05}
+.wt .btn.ghost{background:transparent;box-shadow:inset 0 0 0 1.5px var(--teal);color:var(--teal)}
+.wt .btn.dark{background:#1F1E24;color:#fff}
+.wt .btn.white{background:#fff;color:#000}
+.wt .btn .ic{width:18px;height:18px}
+.wt .prog{margin-top:16px}
+.wt .prog .pct{display:flex;justify-content:center;margin:10px 0 8px}
+.wt .prog .pct span{background:#103E3E;color:#fff;font:600 12px Poppins;border-radius:8px;padding:3px 9px}
+.wt .bar{height:9px;border-radius:9px;background:#5B5A60;overflow:hidden}
+.wt .bar i{display:block;height:100%;background:var(--teal);border-radius:9px}
+.wt .kv{display:flex;justify-content:space-between;margin-top:8px;font:600 11.5px/1.4 Poppins}
+.wt .kv span{display:block;color:var(--teal);font-weight:600}
+.wt .kv div:last-child{text-align:right}
+.wt .lp{display:flex;justify-content:space-between;font:400 11.5px/1.9 Poppins;color:#E2E2E6}
+.wt .outline{height:36px;border-radius:7px;border:1.3px solid #CFCFD4;display:flex;align-items:center;justify-content:center;gap:8px;font:400 12px Poppins;margin-top:8px}
+.wt .wtabs{height:62px;flex:none;display:flex;align-items:flex-end;justify-content:space-around;padding:0 6px 8px;background:#000;border-top:1px solid #151518;position:relative;z-index:5}
+.wt .wtabs div{display:flex;flex-direction:column;align-items:center;gap:3px;font:500 10px Poppins;color:#E5E5E9;width:20%}
+.wt .wtabs div svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.wt .wtabs div.on{color:var(--teal)}
+.wt .wtabs div.mid span.c{width:36px;height:36px;border-radius:50%;background:var(--chiplime);display:grid;place-items:center;color:#14200A;margin-top:-6px}
+.wt .wtabs div.mid span.c svg{width:20px;height:20px}
+.wt .wtabs div .dot{width:4px;height:4px;border-radius:50%;background:var(--teal)}
+.wt .appbar{display:flex;align-items:center;gap:12px;padding:12px 20px 10px}
+.wt .appbar .ib{width:26px;height:26px;color:var(--teal);display:grid;place-items:center}
+.wt .appbar .ib svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.wt .appbar .t{flex:1;text-align:center;font:600 15.5px Poppins;margin-right:38px}
+
+/* Concept components (same system) */
+.wt .eyebrow{font:600 11px/1 Poppins;letter-spacing:.08em;text-transform:uppercase;color:var(--teal)}
+.wt .h1{font:600 25px/1.18 Poppins;letter-spacing:-.01em}
+.wt .big{font:600 34px/1.05 Poppins;letter-spacing:-.02em}
+.wt .p{font:400 13.5px/1.5 Poppins;color:#D3D3D8}
+.wt .note{display:flex;gap:10px;align-items:flex-start;border-radius:10px;padding:11px 12px;font:500 12px/1.45 Poppins}
+.wt .note .ic{width:17px;height:17px;margin-top:1px}
+.wt .note.teal{background:rgba(55,173,175,.14);color:#BFEDEE}
+.wt .note.amber{background:rgba(244,168,102,.14);color:#F9D7B5}
+.wt .note.green{background:rgba(91,208,139,.13);color:#C4F1D5}
+.wt .live{display:inline-flex;align-items:center;gap:6px;font:500 11.5px Poppins;color:#C4F1D5}
+.wt .live i{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px rgba(91,208,139,.2)}
+.wt .until b{display:block;font:600 22px/1.15 Poppins;color:#fff}
+.wt .until small{display:block;font:400 12px Poppins;color:#C9C9CF;margin-bottom:4px}
+.wt .opt{display:flex;align-items:center;gap:12px;padding:13px 0;border-top:1px solid var(--line)}
+.wt .opt:first-child{border-top:0}
+.wt .opt .oi{width:38px;height:38px;border-radius:10px;background:#1F1E24;display:grid;place-items:center;color:var(--teal);flex:none}
+.wt .opt .oi svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.wt .opt b{display:block;font:600 13.5px/1.3 Poppins}
+.wt .opt small{display:block;font:400 11.5px/1.4 Poppins;color:var(--mute)}
+.wt .opt .chev{width:16px;height:16px;color:#77767E}
+.wt .acct{font:600 22px/1.2 "Poppins";letter-spacing:.06em;color:#fff}
+.wt .steps{position:relative;margin-top:6px}
+.wt .st{display:flex;gap:14px;position:relative;padding-bottom:20px}
+.wt .st:last-child{padding-bottom:0}
+.wt .st .dot{width:24px;height:24px;border-radius:50%;flex:none;display:grid;place-items:center;border:2px solid #4A4950;background:#000;position:relative;z-index:2}
+.wt .st.done .dot{background:var(--teal);border-color:var(--teal)}
+.wt .st.done .dot svg{width:13px;height:13px;stroke:#fff;stroke-width:3;fill:none}
+.wt .st.now .dot{border-color:var(--teal)}
+.wt .st.now .dot::after{content:"";width:9px;height:9px;border-radius:50%;background:var(--teal)}
+.wt .st::before{content:"";position:absolute;left:11px;top:24px;bottom:0;width:2px;background:#33323A}
+.wt .st:last-child::before{display:none}
+.wt .st.done::before{background:var(--teal)}
+.wt .st b{display:block;font:600 14px/1.3 Poppins}
+.wt .st small{display:block;font:400 11.5px/1.5 Poppins;color:var(--mute)}
+.wt .dchips{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.wt .dchip{border-radius:10px;background:#1F1E24;padding:10px 4px;text-align:center;box-shadow:inset 0 0 0 1.3px transparent}
+.wt .dchip b{display:block;font:600 12.5px Poppins}
+.wt .dchip small{display:block;font:400 10.5px Poppins;color:var(--mute)}
+.wt .dchip.on{box-shadow:inset 0 0 0 1.5px var(--teal);background:rgba(55,173,175,.1)}
+.wt .code{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.wt .code div{height:56px;border-radius:10px;background:#fff;color:#000;display:grid;place-items:center;font:600 22px Poppins}
+.wt .code div.on{box-shadow:0 0 0 2px var(--teal)}
+.wt .stat2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.wt .stat2 div{background:var(--card);border-radius:12px;padding:12px}
+.wt .stat2 small{display:block;font:400 11px Poppins;color:var(--mute)}
+.wt .stat2 b{display:block;font:600 16px/1.3 Poppins;margin-top:2px}
+.wt .ill{display:block;flex:none}
+.wt .ill svg{width:100%;height:100%}
+.wt .lockscr{position:absolute;inset:0;background:radial-gradient(120% 70% at 50% 0%,#0E3A3B 0%,#050808 55%,#000 100%)}
+.wt .lt{text-align:center;padding-top:26px}
+.wt .lt .clk{font:300 84px/1 Roboto,"Google Sans",Poppins,sans-serif;letter-spacing:-.01em}
+.wt .lt .dt{font:400 14px Roboto,Poppins,sans-serif;color:#D8D8DC;margin-top:6px}
+.wt .sheet{background:#151419;border-radius:18px;padding:16px}
+.wt .banner{border-radius:10px;padding:10px 12px;background:#2A2228;border:1px solid #4E2F33;color:#F7C2B9;font:500 12px/1.45 Poppins;display:flex;gap:9px;align-items:flex-start}
+.wt .banner .ic{width:16px;height:16px;color:var(--coral);margin-top:1px}
+.wt .confetti{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.wt .confetti i{position:absolute;width:6px;height:12px;border-radius:2px;opacity:.9}
+.wt .cert{border-radius:12px;background:linear-gradient(135deg,#0E2F30,#101014 70%);border:1px solid #23474A;padding:14px;display:flex;gap:12px;align-items:center}
+.wt .list2 > div{display:flex;justify-content:space-between;font:400 12.5px/2 Poppins;color:#D7D7DC}
+.wt .list2 > div b{font-weight:600;color:#fff}
+.wt .rec{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;border-radius:999px;background:rgba(155,209,58,.14);color:#D4EE9F;font:500 11px Poppins}
+.wt .offer{display:flex;gap:12px;align-items:center;padding:12px;border-radius:12px;background:var(--card)}
+.wt .offer img{width:56px;height:56px;border-radius:10px;object-fit:cover;background:#fff}
+.wt .offer b{display:block;font:600 13.5px/1.3 Poppins}
+.wt .offer small{display:block;font:400 11.5px/1.4 Poppins;color:var(--mute)}
+.wt .tag{display:inline-flex;height:20px;align-items:center;padding:0 8px;border-radius:6px;font:600 10px Poppins;letter-spacing:.02em}
+.wt .tag.teal{background:rgba(55,173,175,.18);color:#9EE3E4}
+.wt .tag.amber{background:rgba(244,168,102,.16);color:#F7C99D}
+.wt.nohints .hot{animation:none!important;box-shadow:none!important}
+.wt .hot{position:relative}
+.wt .hot::after{content:"";position:absolute;inset:-5px;border-radius:14px;box-shadow:0 0 0 2.5px #FF6243;animation:hot 1.6s ease-in-out infinite;pointer-events:none}
+.wt.nohints .hot::after{display:none}
+@keyframes hot{0%,100%{opacity:1}50%{opacity:.35}}
+
+/* Android phone frame: Samsung Galaxy A-series, black (Watu Nigeria sells the A17, A26, A36, A56) */
+.gal,.gal *{box-sizing:border-box}
+.gal{position:relative;width:440px;height:924px;border-radius:52px;padding:4px;
+  background:linear-gradient(145deg,#3a3b40 0%,#17181b 18%,#2c2d31 40%,#101113 62%,#2a2b2f 82%,#121315 100%);
+  box-shadow:0 60px 110px -22px rgba(10,20,20,.42),0 24px 40px -18px rgba(10,20,20,.32),inset 0 0 0 1px rgba(255,255,255,.12)}
+.gal .bez{width:432px;height:916px;border-radius:48px;background:#000;padding:10px;position:relative}
+.gal .scr-wrap{width:412px;height:896px;border-radius:38px;overflow:hidden;position:relative;background:#000;transform:translateZ(0)}
+.gal .cam{position:absolute;top:22px;left:50%;width:15px;height:15px;margin-left:-7.5px;border-radius:50%;background:radial-gradient(circle at 42% 40%,#2a3448 0,#0a0d14 55%,#000 100%);box-shadow:0 0 0 2px #050505;z-index:60}
+.gal .k1,.gal .k2,.gal .k3{position:absolute;right:-3px;width:4px;border-radius:2px;background:linear-gradient(90deg,#16171a,#4a4b50,#1d1e21)}
+.gal .k1{top:190px;height:92px}.gal .k2{top:300px;height:62px}.gal .k3{top:376px;height:34px;opacity:0}
+.wt .kb{flex:none;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:8px 6px 8px;background:#1B1B1F}
+.wt .kb span{height:50px;border-radius:8px;background:#2E2E33;display:grid;place-items:center;font:400 22px Roboto,Poppins,sans-serif;color:#fff}
+.wt .kb span.e{background:transparent}
+.wt .oi svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}

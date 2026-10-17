@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Watu concept prototype · Promise Olaifa</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="img/wt-appicon.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500;600&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="wt-ui.css">
+<style>
+  html,body{margin:0;background:#F1F3F2;font-family:Geist,sans-serif;color:#111316}
+  .wrap{min-height:100vh;display:grid;grid-template-columns:minmax(300px,420px) auto;gap:56px;align-items:center;justify-content:center;padding:32px 24px}
+  .side h1{font-size:15px;font-weight:600;margin:0;color:#61656C;letter-spacing:-.01em;line-height:1.45}
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 26px}
+  .tabs button{font:600 13.5px Geist,sans-serif;height:36px;padding:0 14px;border-radius:999px;border:0;background:#fff;color:#111316;box-shadow:inset 0 0 0 1px #DCDFE0;cursor:pointer}
+  .tabs button.on{background:#0DA9A8;color:#fff;box-shadow:none}
+  .tg{display:inline-flex;height:24px;align-items:center;padding:0 10px;border-radius:999px;font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+  .tg.before{background:#FFE6E1;color:#C2381E}.tg.after{background:#DDF4F3;color:#08807F}
+  .cap-t{font-size:26px;line-height:32px;font-weight:700;letter-spacing:-.025em;margin:12px 0 10px}
+  .cap-b{font-size:16px;line-height:25px;color:#41454C;margin:0;min-height:100px}
+  .nav{display:flex;gap:10px;align-items:center;margin-top:24px}
+  .nav button{font:600 14px Geist,sans-serif;height:42px;padding:0 18px;border-radius:999px;border:0;cursor:pointer}
+  .nav .n{background:#111316;color:#fff}.nav .b{background:#fff;color:#111316;box-shadow:inset 0 0 0 1px #DCDFE0}
+  .nav span{font-size:13px;color:#61656C;margin-left:6px}
+  .hint{font-size:13px;color:#61656C;margin-top:22px;display:flex;gap:8px;align-items:center}
+  .hint i{width:14px;height:14px;border-radius:50%;box-shadow:0 0 0 2px #FF6243;display:inline-block}
+  .wt [data-go]{cursor:pointer}
+  .credit{font-size:12px;color:#8E9298;margin-top:28px;line-height:18px}
+  @media (max-width:900px){.wrap{grid-template-columns:1fr;gap:24px;justify-items:center}.side{max-width:440px}.phone{transform:scale(.82);transform-origin:top center;margin-bottom:-166px}}
+  body.shot{background:#000}.shot .wrap{display:block;padding:0}.shot .side{display:none}.shot .phone{width:412px;height:896px;padding:0;border-radius:0;box-shadow:none;background:none;transform:none!important;margin:0!important}.shot .k1,.shot .k2,.shot .cam{display:none}.shot .bez{width:412px;height:896px;padding:0;border-radius:0}.shot .scr-wrap{border-radius:0}
+  body.embed{background:transparent}.embed .wrap{display:flex;flex-direction:column;align-items:center;padding:0;gap:14px;min-height:0}.embed .side{display:none}.embed .phone{margin:0}
+  .ebar{display:none}.embed .ebar{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;max-width:440px}
+  .ebar button{font:600 11.5px Geist,sans-serif;height:28px;padding:0 10px;border-radius:999px;border:0;background:#fff;color:#111316;box-shadow:inset 0 0 0 1px #DCDFE0;cursor:pointer}
+  .ebar button.on{background:#0DA9A8;color:#fff;box-shadow:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="side">
+    <h1>Watu concept · a self-initiated pitch by Promise Olaifa, not affiliated with Watu</h1>
+    <div class="tabs" id="tabs"></div>
+    <span class="tg" id="tag"></span>
+    <h2 class="cap-t" id="ct"></h2>
+    <p class="cap-b" id="cb"></p>
+    <div class="nav"><button class="b" id="prev">Back</button><button class="n" id="next">Next</button><span id="cnt"></span></div>
+    <div class="hint"><i></i>The coral ring shows what to tap. You can also use the arrow keys.</div>
+    <p class="credit">Screens rebuilt in Watu's current visual language from its Play Store screenshots (Kenya and Nigeria apps, October 2026) and watu.com. "Before" screens are the live design; the finished-but-still-owing screen is rebuilt from customer reviews. Customer, account and amounts are made up and illustrative. Product photos: watu.com.</p>
+  </div>
+  <div>
+    <div class="gal phone"><span class="k1"></span><span class="k2"></span><div class="bez"><div class="scr-wrap wt" id="screen"></div><span class="cam"></span></div></div>
+    <div class="ebar" id="ebar"></div>
+  </div>
+</div>
+<script src="wt-ui.js"></script>
+<script>
+const {S} = WT;
+const J = [
+  {id:'locked', name:'Phone paused', steps:[
+    {s:'blocked', o:{hot:'temp'}, b:1, t:'Locked, and the way out is in the app', c:'This is Watu\'s live design. The amount and "Temp Unlock" sit inside the Watu app, but customers write that the app won\'t open while the phone is locked. 28 reviews since January 2025 are about paying and unlocking.'},
+    {s:'lock', o:{hot:'temp'}, t:'The lock screen becomes the payment screen', c:'What is owed, what it buys, and three ways back that work while the phone is paused. Watu\'s own Temp Unlock, which one 5-star reviewer thanks Watu for by name, moves to the front.'},
+    {s:'pay', o:{hot:1}, t:'One hour to pay, with the date named', c:'Pick the days and see exactly when the phone stays on until. The account number is the customer\'s own, so they can pay from a bank app, an agent or a friend\'s phone.'},
+    {s:'track', o:{hot:1}, t:'"Please don\'t pay again"', c:'Reviewers describe paying twice because nothing confirmed the first payment, and money taking over 24 hours to show. One tracker answers it: received, added, switching on, with a reference and a way to report.'},
+    {s:'track', o:{done:1}, t:'Done, without a Refresh button', c:'The phone switches on by itself and the screen says so. The customer never has to guess.'},
+    {s:'home', o:{hot:'until'}, t:'Home answers one question first', c:'"Until when is my phone on?" A real date instead of a countdown, live payment status instead of "Refresh", and the day the phone becomes theirs.'},
+  ]},
+  {id:'finish', name:'The finish line', steps:[
+    {s:'bdone', o:{hot:1}, b:1, t:'Paid in full. The app still asks for payment.', c:'The #1 theme in 2025–26 reviews: 39 are about what comes after the phone, 25 of them from Nigeria, and 20 say they\'ve already paid in full. "Why did watu keep displaying complete your payment to unlock new features after completing it already" (Google Play, May 2026). Rebuilt from reviews.'},
+    {s:'done', o:{hot:1}, t:'It\'s yours', c:'The finish line, said out loud: what they paid, how long it took, locks removed, a certificate, and permission to delete the app. Eight reviewers couldn\'t uninstall the app or reset the phone they had paid off.'},
+    {s:'next', t:'An honest "what\'s next"', c:'31 reviewers ask what comes next, usually a cash loan. Watu has told customers it doesn\'t offer cash loans, so the screen says that plainly and shows what Watu does offer: the next device, a tablet for work.'},
+  ]},
+  {id:'wins', name:'Quick wins', steps:[
+    {s:'bhome', o:{hot:'refresh'}, b:1, t:'"Refresh" to see if a payment landed', c:'The live home has a manual Refresh button and a countdown. "Sometimes you\'re very slowly on refreshing after payment is done" (85 people found that helpful).'},
+    {s:'home', t:'Payments appear on their own', c:'"Last payment received 2 min ago", and every recent payment marked as counted.'},
+    {s:'pay', o:{sel:2}, t:'Show what the payment buys', c:'Watu already lets customers slide to pick days. Naming the date turns it into a decision people can make in one look: ₦9,625 keeps the phone on until Tue 20 Oct.'},
+    {s:'code', o:{hot:1}, t:'A login code that always arrives', c:'21 reviews are about getting in, many of them codes that never come. After the SMS timer, offer a voice call that reads the code out, or WhatsApp.'},
+  ]},
+];
+const qs = new URLSearchParams(location.search);
+const el = document.getElementById('screen');
+if (qs.has('shot')) { document.body.classList.add('shot'); el.classList.add('nohints'); el.innerHTML = S[qs.get('shot')](JSON.parse(qs.get('o')||'{}')); }
+else {
+  if (qs.has('embed')) { document.body.classList.add('embed');
+    const fit=()=>{ const ph=document.querySelector('.phone'); const s=Math.min(1,(innerHeight-56)/928,(innerWidth-16)/444); ph.style.transform=`scale(${s})`; ph.style.transformOrigin='top center'; ph.style.marginBottom=`${-(1-s)*928}px`; };
+    addEventListener('resize',fit); addEventListener('load',fit); setTimeout(fit,0); setTimeout(fit,400); }
+  let ji = Math.max(0, J.findIndex(j=>j.id===qs.get('j'))), si = 0;
+  const tabs = document.getElementById('tabs'), ebar = document.getElementById('ebar');
+  [tabs, ebar].forEach(box => J.forEach((j,i)=>{ const b=document.createElement('button'); b.textContent=j.name; b.onclick=()=>{ji=i;si=0;draw()}; box.appendChild(b); }));
+  function draw(){
+    const j=J[ji], st=j.steps[si];
+    el.innerHTML = S[st.s](st.o||{});
+    [tabs,ebar].forEach(b=>[...b.children].forEach((x,i)=>x.classList.toggle('on',i===ji)));
+    const tag=document.getElementById('tag'); tag.className='tg '+(st.b?'before':'after'); tag.textContent=st.b?'Before':'After';
+    document.getElementById('ct').textContent=st.t; document.getElementById('cb').textContent=st.c;
+    document.getElementById('cnt').textContent=(si+1)+' of '+j.steps.length;
+    document.getElementById('next').textContent = si===j.steps.length-1 ? (ji<J.length-1?'Next journey':'Start again') : 'Next';
+  }
+  function next(){ const j=J[ji]; if(si<j.steps.length-1) si++; else { ji=(ji+1)%J.length; si=0; } draw(); }
+  function prev(){ if(si>0) si--; else if(ji>0){ ji--; si=J[ji].steps.length-1; } draw(); }
+  document.getElementById('next').onclick=next; document.getElementById('prev').onclick=prev;
+  el.addEventListener('click', e=>{ if(e.target.closest('.hot,[data-go]')) next(); });
+  addEventListener('keydown', e=>{ if(e.key==='ArrowRight') next(); if(e.key==='ArrowLeft') prev(); });
+  draw();
+}
+</script>
+</body>
+</html>

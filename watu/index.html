@@ -1,0 +1,638 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Watu pitch · Promise Olaifa</title>
+<meta name="description" content="Pay. Unlock. Own it. Then what? A product pitch for Watu by Promise Olaifa, product designer in Lagos.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Pay. Unlock. Own it. Then what?">
+<meta property="og:description" content="A product pitch for Watu by Promise Olaifa.">
+<meta property="og:image" content="https://omoniyiux.vercel.app/watu/img/og.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://omoniyiux.vercel.app/watu/">
+<meta property="og:site_name" content="Promise Olaifa">
+<meta property="og:image:secure_url" content="https://omoniyiux.vercel.app/watu/img/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Watu pitch by Promise Olaifa">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pay. Unlock. Own it. Then what?">
+<meta name="twitter:description" content="A product pitch for Watu by Promise Olaifa.">
+<meta name="twitter:image" content="https://omoniyiux.vercel.app/watu/img/og.jpg">
+<link rel="canonical" href="https://omoniyiux.vercel.app/watu/">
+<link rel="icon" href="img/wt-appicon.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="wt-ui.css">
+<style>
+:root{--ink:#0E0F12;--ink2:#3B3E46;--mute:#7A7D85;--paper:#EDEFEE;--green:#0A9E9D;--deep:#062B2B;--mint:#E6F5F4;--coral:#E2513A;--black:#0A0B0B}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Geist,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{display:block;max-width:100%}
+.bar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:14px;padding:14px 32px;background:rgba(237,239,238,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.bar b{font-weight:600;letter-spacing:-.01em}
+.bar .x{color:var(--mute)}
+.bar img{height:19px}
+.bar .sp{flex:1}
+.bar .n{font-size:13px;color:var(--mute);font-variant-numeric:tabular-nums}
+.pill{display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 18px;border-radius:999px;background:var(--ink);color:#fff;font:600 13.5px Geist;text-decoration:none;border:0;cursor:pointer}
+.pill.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.2px rgba(14,15,18,.25)}
+.deck{display:flex;flex-direction:column;align-items:center;gap:28px;padding:20px 24px 80px}
+.sl{width:min(1500px,100%);aspect-ratio:16/9;position:relative;overflow:hidden;background:#fff;color:var(--ink);container-type:inline-size;box-shadow:0 1px 2px rgba(0,0,0,.06),0 10px 30px -12px rgba(0,0,0,.12)}
+.sl.black{background:var(--black);color:#fff}
+.sl.green{background:var(--green);color:#fff}
+.sl.deep{background:var(--deep);color:#fff}
+.sl.mintbg{background:#F0F8F7}
+.in{position:absolute;inset:0;padding:6.8cqw 6.2cqw 6.6cqw}
+.sl .p,.sl .cap,.sl .lead{color:inherit}
+.sl .mute{color:var(--mute)}
+.sl.black .mute,.sl.deep .mute{color:rgba(255,255,255,.6)}
+.sl .panel{border-radius:0;padding:0;box-shadow:none}
+.mh,.mf{position:absolute;left:4.2cqw;right:4.2cqw;display:grid;grid-template-columns:14cqw 14cqw 1fr auto;font:500 max(8px,.62cqw)/1.2 Geist;letter-spacing:.01em;opacity:.62;z-index:3}
+.mh{top:2.2cqw}.mf{bottom:2cqw}
+.sm{position:absolute;top:50%;font:600 max(9px,.85cqw) Geist;transform:translateY(-50%);z-index:3}
+.sm.l{left:1.5cqw}.sm.r{right:1.5cqw}
+.serif{font-family:Geist,system-ui,sans-serif;font-weight:400;letter-spacing:-.012em}
+.t1{font-size:max(30px,8.2cqw);line-height:.94}
+.t2{font-size:max(26px,5.2cqw);line-height:1}
+.t3{font-size:max(22px,3.5cqw);line-height:1.06}
+.t4{font-size:max(19px,2.3cqw);line-height:1.12}
+.big{font:500 max(32px,9.4cqw)/.92 Geist;letter-spacing:-.045em}
+.lead{font:400 max(15px,1.62cqw)/1.42 Geist;letter-spacing:-.005em}
+.p{font:400 max(13px,1.04cqw)/1.5 Geist}
+.cap{font:500 max(11px,.78cqw)/1.45 Geist;letter-spacing:.005em}
+.kick{font:600 max(10px,.72cqw)/1 Geist;letter-spacing:.14em;text-transform:uppercase}
+.mute{color:var(--mute)}
+.dim{opacity:.72}
+.it{font-style:italic}
+.g{color:var(--green)}
+.rule{height:1px;background:currentColor;opacity:.16}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:4cqw;height:100%}
+.col{display:flex;flex-direction:column}
+.btw{justify-content:space-between}
+.photo{position:absolute;inset:0;background-size:cover;background-position:center}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6cqw}
+.grid3 .im{aspect-ratio:4/3.1;background-size:cover;background-position:center 20%}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:2.4cqw}
+.stat b{display:block;font:500 max(26px,4.4cqw)/1 Geist;letter-spacing:-.04em}
+.stat span{display:block;margin-top:.7cqw}
+.bars .b{display:grid;grid-template-columns:19cqw 1fr 3cqw;gap:1.2cqw;align-items:center;padding:.62cqw 0}
+.bars .tr{height:.9cqw;min-height:7px;border-radius:1cqw;background:#ECEDEA;overflow:hidden}
+.bars .f{height:100%;border-radius:1cqw;background:#C9CCC6}
+.bars .hi .f{background:var(--green)}
+.bars .hi{color:var(--deep);font-weight:600}
+.bars .n{text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
+.phones{display:flex;gap:2.4cqw;align-items:flex-end;justify-content:center;height:100%}
+.phones figure{margin:0;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:flex-end}
+.phones img{height:36cqw;width:auto;max-width:none;filter:drop-shadow(0 2cqw 2.4cqw rgba(15,20,30,.18))}
+.phones.one img{height:40cqw}
+.phones.three img{height:32cqw}
+.phones figcaption{margin-top:1cqw}
+.lbl-b{color:var(--coral)}.lbl-a{color:var(--deep)}
+.panel{position:absolute;top:0;bottom:0;right:0;width:52%;background:#F2F3F0}
+.tbl{width:100%;border-collapse:collapse}
+.tbl th{text-align:left;padding:0 1.6cqw 1cqw 0;border-bottom:1.5px solid var(--ink)}
+.tbl td{padding:1.15cqw 1.6cqw 1.15cqw 0;border-bottom:1px solid rgba(14,15,18,.12);vertical-align:top}
+.tbl td:first-child{font-weight:600;width:21%}
+.tbl td:last-child{color:var(--deep)}
+.logo-w{filter:brightness(0) invert(1)}
+.vid{position:absolute;left:6.2cqw;right:6.2cqw;top:13cqw;bottom:5.2cqw;border-radius:1.2cqw;overflow:hidden;background:#000}
+.vid video{width:100%;height:100%;object-fit:contain;background:#000}
+.frame{position:absolute;top:2cqw;right:6cqw;width:32cqw;height:52cqw;border:0;background:transparent}
+.duoimg{position:absolute;left:50%;transform:translateX(-50%);bottom:4.2cqw;width:54cqw;filter:drop-shadow(0 2.6cqw 3cqw rgba(15,30,25,.2))}
+.claims{display:grid;grid-template-columns:1fr 1fr;gap:0 3cqw}
+.claims div{padding:1.2cqw 0;border-top:1px solid rgba(255,255,255,.16)}
+.claims b{display:block;font:600 max(14px,1.2cqw)/1.25 Geist;letter-spacing:-.01em}
+.claims span{display:block;margin-top:.45cqw;opacity:.7}
+.met{border-top:1.5px solid var(--ink);padding-top:1.2cqw}
+.met li{display:flex;justify-content:space-between;gap:1cqw;padding:.55cqw 0;border-top:1px solid rgba(14,15,18,.1)}
+.met ul{list-style:none;margin:1cqw 0 0;padding:0}
+.sw{display:grid;grid-template-columns:repeat(4,1fr);gap:.7cqw}
+.sw div{aspect-ratio:1.5;border-radius:.8cqw;position:relative}
+.sw span{position:absolute;left:.6cqw;bottom:.5cqw;font:500 max(8px,.6cqw) ui-monospace,Menlo,monospace;color:#fff}
+.sw .lt span{color:#111}
+.wk{display:grid;grid-template-columns:9cqw 17cqw 1fr;gap:2cqw;padding:1.15cqw 0;border-top:1px solid rgba(14,15,18,.12);align-items:baseline}
+.cta{display:inline-flex;align-items:center;height:max(40px,3.4cqw);padding:0 max(16px,1.8cqw);border-radius:999px;background:#fff;color:var(--ink);font:600 max(13px,1cqw) Geist;text-decoration:none;margin:0 .8cqw .8cqw 0}
+.cta.o{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.2px rgba(255,255,255,.4)}
+body.present{background:#000;overflow:hidden}
+body.present .bar{display:none}
+body.present .deck{padding:0}
+body.present .sl{display:none}
+body.present .sl.cur{display:block;position:fixed;top:50%;left:50%;width:min(100vw,177.78vh);transform:translate(-50%,-50%);box-shadow:none}
+.exit{display:none;position:fixed;right:18px;bottom:16px;z-index:99;color:#fff;opacity:.5;font:500 12px Geist}
+body.present .exit{display:block}
+@media (max-width:1024px){
+  .bar{padding:12px 16px}.bar .x,.bar .n{display:none}
+  .deck{padding:12px 10px 60px;gap:14px}
+  .sl{aspect-ratio:auto;width:min(720px,100%)}
+  .in{position:relative;inset:auto!important;padding:48px 24px 40px;gap:26px}
+  .in.col,.in .col{gap:26px}
+  .row2,.grid3,.grid4,.claims{grid-template-columns:1fr!important;gap:26px!important;height:auto!important}
+  .grid4{grid-template-columns:1fr 1fr!important}
+  .sl [style*="max-width"]{max-width:none!important}
+  .sl .in[style*="padding-left"]{padding-left:24px!important}
+  .mh{grid-template-columns:1fr auto}.mh span:nth-child(2),.mh span:nth-child(3){display:none}
+  .mf{position:relative;left:auto;right:auto;bottom:auto;padding:0 24px 20px;grid-template-columns:1fr}.mf span:empty{display:none}
+  .sm{display:none}
+  .panel{display:none}
+  .t1{font-size:44px;line-height:1}.t2{font-size:36px;line-height:1.04}.t3{font-size:30px}.big{font-size:52px}
+  .phones{height:auto!important;flex-wrap:wrap;gap:14px}.phones figure{height:auto}
+  .phones img,.phones.one img,.phones.three img{height:auto!important;width:min(42vw,260px)!important;max-width:none}
+  .phones.one img{width:min(60vw,300px)!important}
+  .phones.three img{width:min(28vw,200px)!important}
+  .frame{position:relative;inset:auto;width:100%;height:780px;margin-bottom:12px}
+  .vid{position:relative;inset:auto;aspect-ratio:16/9;margin:0 16px 20px}
+  .duoimg{position:relative;left:auto;transform:none;width:calc(100% - 32px);margin:0 16px 28px;bottom:auto}
+  .photo.hero{position:relative;height:min(78vw,520px)}
+  .ph-abs{position:relative!important;inset:auto!important;left:auto!important;height:min(86vw,560px)!important}
+  .sl.deep>.in[style*="right"]{right:auto!important}
+  .bars .b{grid-template-columns:1fr 34px;padding:6px 0}.bars .b>span:first-child{grid-column:1/-1}
+  .wk{grid-template-columns:1fr;gap:4px}
+  .tbl td{display:block;width:auto!important;padding:4px 0;border:0}.tbl tr{display:block;padding:12px 0;border-bottom:1px solid rgba(14,15,18,.12)}.tbl thead{display:none}
+  .stat b{font-size:34px}
+}
+@media (max-width:480px){
+  .bar b,.bar .x,.bar .pill.ghost{display:none}
+  .phones.three{flex-wrap:nowrap}.phones.three img{width:28vw!important}
+  .grid4{grid-template-columns:1fr!important}
+  .t1{font-size:40px}.t2{font-size:32px}.big{font-size:46px}
+  .in{padding:44px 20px 36px}
+}
+
+.logo-t{height:19px}
+.chips2{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+
+/* Geist type system (Oct 2026) */
+body,.bar{font-family:Geist,system-ui,sans-serif}
+.serif{font-family:Geist,system-ui,sans-serif;font-weight:600;letter-spacing:-.045em}
+.t1{font-size:max(30px,6.9cqw);line-height:.98}
+.t2{font-size:max(26px,4.35cqw);line-height:1.02}
+.t3{font-size:max(22px,2.95cqw);line-height:1.06}
+.t4{font-size:max(18px,1.85cqw);line-height:1.15;letter-spacing:-.03em}
+.it{font-style:normal;color:#8E949B}
+.sl.black .it,.sl.deep .it,.sl.green .it{color:rgba(255,255,255,.55)}
+.it.g,.sl .it.g{color:var(--green)}
+.big{font-family:Geist,system-ui,sans-serif;font-weight:600;letter-spacing:-.055em}
+.kick{font-family:"Geist Mono",ui-monospace,monospace;font-weight:500;letter-spacing:.08em}
+.mh,.mf{font-family:"Geist Mono",ui-monospace,monospace;letter-spacing:0}
+.stat b{font-family:Geist,system-ui,sans-serif;font-weight:600;letter-spacing:-.05em}
+.lead{letter-spacing:-.012em}
+@media (max-width:1024px){.t1{font-size:40px;line-height:1}.t2{font-size:32px;line-height:1.05}.t3{font-size:27px}.big{font-size:48px}}
+@media (max-width:480px){.t1{font-size:36px}.t2{font-size:29px}.big{font-size:42px}}
+</style>
+</head>
+<body>
+<div class="bar">
+  <b>Promise Olaifa</b><span class="x">×</span><img class="logo-t" src="img/wt-logo.svg" alt="Watu">
+  <span class="sp"></span><span class="n" id="n">slides</span>
+  <a class="pill ghost" href="watu-pitch-promise-olaifa.pdf" target="_blank" rel="noopener">One-pager</a>
+  <a class="pill ghost" href="proto.html" target="_blank" rel="noopener">Prototype</a>
+  <button class="pill" id="present"><svg class="ic" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" style="vertical-align:-0.125em"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></svg>&nbsp;Present</button>
+</div>
+
+<main class="deck" id="deck">
+
+<section class="sl black">
+  <div class="photo hero" style="background-image:url(img/ph/friends.webp);background-position:60% 40%"></div>
+  <div class="photo" style="background:linear-gradient(90deg,rgba(4,10,10,.88) 0%,rgba(4,10,10,.6) 40%,rgba(4,10,10,0) 68%)"></div>
+  <div class="in col btw" style="z-index:2">
+    <div class="p" style="font-weight:600">Promise Olaifa <span class="dim">× Watu</span></div>
+    <div><h1 class="serif t1" style="margin:0">Pay. Unlock. Own it.<br><span class="it">Then what?</span></h1></div>
+    <div class="cap dim">A product pitch · Lagos · October 2026</div>
+  </div>
+</section>
+
+<section class="sl black">
+  <div class="mh"><span>Watu pitch</span><span>Introduction</span><span></span><span>02</span></div>
+  <div class="sm l">P</div><div class="sm r">O</div>
+  <div class="in"><p class="lead" style="max-width:64cqw;margin:0;font-size:max(17px,2.15cqw);line-height:1.32">Watu finances the phones, bikes and tuk tuks people earn with. The whole model runs on one loop: <span class="g">pay, stay unlocked, own it.</span><br><br>Customers tell Watu where that loop breaks. Right after the last payment, when the app still treats them as owing. And on the days a paused phone waits for a payment to land. This deck is about both moments, and how design can make each one feel like progress.</p></div>
+  <div class="mf"><span>Self-initiated · not affiliated with Watu</span><span></span><span></span><span>© 2026 Promise Olaifa</span></div>
+</section>
+
+<section class="sl">
+  <div class="mh"><span>Watu pitch</span><span>01 · Why Watu</span><span></span><span>03</span></div>
+  <div class="sm l">P</div><div class="sm r">O</div>
+  <div class="in col btw">
+    <h2 class="serif t3" style="margin:0">Why I want to work with <span class="it">Watu</span></h2>
+    <div class="grid3">
+      <div><div class="im" style="background-image:url(img/ph/shop.webp)"></div><p class="p" style="margin:1.1cqw 0 0;font-weight:600">You finance the tools people earn with</p><p class="cap mute" style="margin:.4cqw 0 0">Delivery riders, hairdressers, mechanics. The Lagos customers on Watu's Nigeria page are the people I design for every day at ConnectNigeria.</p></div>
+      <div><div class="im" style="background-image:url(img/ph/rider-phone.webp);background-position:center 30%"></div><p class="p" style="margin:1.1cqw 0 0;font-weight:600">The pause only works if people trust it</p><p class="cap mute" style="margin:.4cqw 0 0">A phone that locks when a payment is late is a promise on both sides. Making that promise feel fair is design work, and it's the work I love.</p></div>
+      <div><div class="im" style="background-image:url(img/ph/galaxy.webp);background-position:center 35%"></div><p class="p" style="margin:1.1cqw 0 0;font-weight:600">You ship every few weeks</p><p class="cap mute" style="margin:.4cqw 0 0">The Kenya app updated today, 13 October, with interactive home cards and notifications that open the right screen. I want to be shipping with you.</p></div>
+    </div>
+  </div>
+  <div class="mf"><span>Photography: Watu</span><span></span><span></span><span>© 2026 Promise Olaifa</span></div>
+</section>
+
+<section class="sl green">
+  <div class="in col btw"><h2 class="big" style="margin:0">Watu,<br>and me</h2><div style="display:flex;justify-content:space-between;align-items:flex-end"><span class="cap dim">02</span><img src="img/wt-logo-w.svg" alt="" style="height:max(16px,2.2cqw)"></div></div>
+</section>
+
+<section class="sl">
+  <div class="mh"><span>Watu pitch</span><span>02 · The company</span><span></span><span>05</span></div>
+  <div class="sm l">P</div><div class="sm r">O</div>
+  <div class="in col btw">
+    <div class="row2" style="height:auto;grid-template-columns:1.1fr .9fr;align-items:end">
+      <h2 class="serif t2" style="margin:0">Connectivity. Mobility.<br><span class="it">Opportunity.</span></h2>
+      <p class="p" style="margin:0;color:var(--ink2)">Watu turns a small down payment into a phone, a bike or a tuk tuk that earns. Customers pay daily, the asset pauses if they don't, and one day it's theirs. Every daily payment is a small test of trust, on both sides.</p>
+    </div>
+    <div class="grid4">
+      <div class="stat"><div class="rule" style="opacity:1;background:var(--ink);margin-bottom:1.2cqw"></div><b>$1B+</b><span class="cap mute">credit unlocked</span></div>
+      <div class="stat"><div class="rule" style="opacity:1;background:var(--ink);margin-bottom:1.2cqw"></div><b>18M+</b><span class="cap mute">lives impacted</span></div>
+      <div class="stat"><div class="rule" style="opacity:1;background:var(--ink);margin-bottom:1.2cqw"></div><b>6M+</b><span class="cap mute">loans disbursed</span></div>
+      <div class="stat"><div class="rule" style="opacity:1;background:var(--ink);margin-bottom:1.2cqw"></div><b>10</b><span class="cap mute">markets, Nigeria and Kenya among them</span></div>
+    </div>
+  </div>
+  <div class="mf"><span>Source: watu.com (Oct 2026). "Connectivity. Mobility. Opportunity." is Watu's own line.</span><span></span><span></span><span>© 2026 Promise Olaifa</span></div>
+</section>
+
+<section class="sl mintbg">
+  <div class="mh"><span>Watu pitch</span><span>02 · Where we meet</span><span></span><span>06</span></div>
+  <div class="sm l">P</div><div class="sm r">O</div>
+  <div class="in col btw">
+    <h2 class="serif t3" style="margin:0;max-width:60cqw">Where my work already<br><span class="it">rhymes with yours</span></h2>
+    <div class="grid4">
+      <div><div class="rule" style="opacity:1;background:var(--ink);margin-bottom:1.2cqw"></div><p class="kick g" style="margin:0">Live · ConnectNigeria</p><p class="t4 serif" style="margin:.8cqw 0 0">Quote Request</p><p class="cap" style="margin:.6cqw 0 0;color:var(--ink2)">Sole designer on a marketplace live since November 2025. Getting strangers to trust each other with money.</p><a class="cap" href="../project-5.html" style="display:inline-block;margin-top:.8cqw;font-weight:600">Case study ›</a></div>
+      <div><div class="rule" style="opacity:1;background:var(--ink);margin-bottom:1.2cqw"></div><p class="kick g" style="margin:0">Pitch · lending</p><p class="t4 serif" style="margin:.8cqw 0 0">FairMoney</p><p class="cap" style="margin:.6cqw 0 0;color:var(--ink2)">Customers who repay and can't borrow again. The same moment as your finish line: a customer who kept their word, waiting to hear what's next.</p><a class="cap" href="../fairmoney/" style="display:inline-block;margin-top:.8cqw;font-weight:600">Pitch deck ›</a></div>
+      <div><div class="rule" style="opacity:1;background:var(--ink);margin-bottom:1.2cqw"></div><p class="kick g" style="margin:0">Concept · fintech</p><p class="t4 serif" style="margin:.8cqw 0 0">Moniepoint</p><p class="cap" style="margin:.6cqw 0 0;color:var(--ink2)">Getting locked-out customers back to their money. A paused phone is the same family of problem.</p><a class="cap" href="../project-8.html" style="display:inline-block;margin-top:.8cqw;font-weight:600">Case study ›</a></div>
+      <div><div class="rule" style="opacity:1;background:var(--ink);margin-bottom:1.2cqw"></div><p class="kick g" style="margin:0">Insurance · field agents</p><p class="t4 serif" style="margin:.8cqw 0 0">Tangerine Africa</p><p class="cap" style="margin:.6cqw 0 0;color:var(--ink2)">ID capture and sign-up for field agents in low-connectivity areas. Watu sells through dealers and agents too.</p></div>
+    </div>
+  </div>
+  <div class="mf"><span>Portfolio · omoniyiux.vercel.app</span><span></span><span></span><span>© 2026 Promise Olaifa</span></div>
+</section>
+
+<section class="sl green">
+  <div class="in col btw"><h2 class="big" style="margin:0">The problem</h2><div style="display:flex;justify-content:space-between;align-items:flex-end"><span class="cap dim">03</span><img src="img/wt-logo-w.svg" alt="" style="height:max(16px,2.2cqw)"></div></div>
+</section>
+
+<section class="sl black">
+  <div class="mh"><span>Watu pitch</span><span>03 · In customers' words</span><span></span><span>08</span></div>
+  <div class="sm l">P</div><div class="sm r">O</div>
+  <div class="in col" style="justify-content:center;padding-left:12cqw">
+    <p class="serif t2" style="margin:0;max-width:70cqw">“why did watu keep displaying <span class="it g">complete your payment to unlock new features</span> after completing it already”</p>
+    <p class="cap dim" style="margin:2.4cqw 0 0">Watu customer, Nigeria, Google Play, May 2026</p>
+    <p class="p" style="margin:4cqw 0 0;max-width:46cqw;opacity:.82">They paid every naira. The app still treats them as owing. And the moment Watu could sell them their next phone is the moment the app goes quiet.</p>
+  </div>
+  <div class="mf"><span>Quoted as written</span><span></span><span></span><span>© 2026 Promise Olaifa</span></div>
+</section>
+
+<section class="sl">
+  <div class="mh"><span>Watu pitch</span><span>03 · The evidence</span><span></span><span>09</span></div>
+  <div class="sm l">P</div><div class="sm r">O</div>
+  <div class="in"><div class="row2" style="grid-template-columns:.85fr 1.15fr;gap:5cqw">
+    <div class="col btw">
+      <div><h2 class="serif t2" style="margin:0">Paid off.<br><span class="it">Then nothing.</span></h2>
+      <p class="p" style="margin:2cqw 0 0;color:var(--ink2)">I read 1,176 Play Store reviews from Kenya and Nigeria since January 2025 and tagged every low rating with a clear complaint by hand. The loudest theme isn't price. It's what happens after the phone.</p></div>
+      <div class="row2" style="height:auto;gap:2cqw">
+        <div class="stat"><b class="g">20</b><span class="cap mute">of those 39 say they've already paid in full</span></div>
+        <div class="stat"><b>25 of 39</b><span class="cap mute">come from Watu Nigeria customers</span></div>
+      </div>
+    </div>
+    <div class="col" style="justify-content:center">
+      <p class="kick mute" style="margin:0 0 1.4cqw">109 reviews with a clear complaint, Jan 2025 to Oct 2026, by main theme</p>
+      <div class="bars p">
+        <div class="b hi"><span>What comes after the phone</span><span class="tr"><span class="f" style="display:block;width:100%"></span></span><span class="n">39</span></div>
+        <div class="b"><span>Paying and unlocking</span><span class="tr"><span class="f" style="display:block;width:71.8%"></span></span><span class="n">28</span></div>
+        <div class="b"><span>Getting in (codes, crashes, updates)</span><span class="tr"><span class="f" style="display:block;width:53.8%"></span></span><span class="n">21</span></div>
+        <div class="b"><span>Lost phone, ID misuse, warranty</span><span class="tr"><span class="f" style="display:block;width:20.5%"></span></span><span class="n">8</span></div>
+        <div class="b"><span>Price</span><span class="tr"><span class="f" style="display:block;width:17.9%"></span></span><span class="n">7</span></div>
+        <div class="b"><span>Support and agents</span><span class="tr"><span class="f" style="display:block;width:15.4%"></span></span><span class="n">6</span></div>
+      </div>
+    </div>
+  </div></div>
+  <div class="mf"><span>Google Play, Watu Kenya and Watu Nigeria · 327 rated 1 to 3 stars, most of them one word · one main theme per review</span><span></span><span></span><span>© 2026 Promise Olaifa</span></div>
+</section>
+
+<section class="sl mintbg">
+  <div class="mh"><span>Watu pitch</span><span>03 · Field note</span><span></span><span>10</span></div>
+  <div class="sm l">P</div><div class="sm r">O</div>
+  <div class="in"><div class="row2" style="grid-template-columns:.9fr 1.1fr">
+    <div class="col" style="justify-content:center">
+      <p class="kick" style="margin:0;color:var(--coral)">Field note · the live app</p>
+      <h2 class="serif t2" style="margin:1.4cqw 0 0">The design today,<br><span class="it">rebuilt screen by screen.</span></h2>
+      <p class="p" style="margin:2cqw 0 0;max-width:40cqw;color:var(--ink2)">Watu's own store screenshots show a Refresh button to check whether a payment landed, a countdown, and the unlock controls inside an app customers say won't open while the phone is locked. I don't own a Watu phone, so I rebuilt the live app from those screenshots and designed inside it.</p>
+    </div>
+    <div class="phones"><figure><img src="img/mk/bhome.webp" alt="Watu home today, with a Refresh button and a countdown"><figcaption class="kick lbl-b">Home today</figcaption></figure><figure><img src="img/mk/blocked.webp" alt="Watu locked state today, with Temp Unlock and Pay inside the app"><figcaption class="kick lbl-b">Locked today</figcaption></figure></div>
+  </div></div>
+  <div class="mf"><span>Rebuilt from Watu's Play Store screenshots, Kenya and Nigeria apps · amounts made up</span><span></span><span></span><span>© 2026 Promise Olaifa</span></div>
+</section>
+
+<section class="sl">
+  <div class="mh"><span>Watu pitch</span><span>03 · Scope</span><span></span><span>11</span></div>
+  <div class="sm l">P</div><div class="sm r">O</div>
+  <div class="in col btw">
+    <div class="row2" style="height:auto;align-items:end"><h2 class="serif t2" style="margin:0">Whose job <span class="it">is it?</span></h2><p class="p" style="margin:0;color:var(--ink2)">Design can't decide who gets a second phone or when a device unlocks. It can decide what people understand at every step. Here's the line.</p></div>
+    <table class="tbl p">
+      <thead><tr><th class="kick">Problem</th><th class="kick">Product, risk and engineering own</th><th class="kick">Design owns</th></tr></thead>
+      <tbody>
+        <tr><td>"What's next?"</td><td>What finishers are offered: a next device, better terms, or nothing</td><td>An honest finish line, and only the offers that exist</td></tr>
+        <tr><td>Paid off, still "owing"</td><td>Releasing the lock and the app when the balance hits zero</td><td>Saying "released" on screen, with how to remove the app</td></tr>
+        <tr><td>Paid, still paused</td><td>Payment matching and unlock speed</td><td>One tracker: reference, expected time, "please don't pay again"</td></tr>
+        <tr><td>Can't pay while paused</td><td>What the lock platform allows: calls, a 1-hour unlock</td><td>The lock screen as a payment screen</td></tr>
+        <tr><td>Codes that never come</td><td>SMS delivery</td><td>A voice-call or WhatsApp code after the timer</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="mf"><span>Design scope</span><span></span><span></span><span>© 2026 Promise Olaifa</span></div>
+</section>
+
+<section class="sl green">
+  <div class="in col btw"><h2 class="big" style="margin:0">The fix</h2><div style="display:flex;justify-content:space-between;align-items:flex-end"><span class="cap dim">03</span><img src="img/wt-logo-w.svg" alt="" style="height:max(16px,2.2cqw)"></div></div>
+</section>
+
+<section class="sl">
+  <div class="panel"></div>
+  <div class="mh"><span>Watu pitch</span><span>03 · Fix 1 of 3</span><span></span><span>13</span></div>
+  <div class="sm l">P</div><div class="sm r">O</div>
+  <div class="in"><div class="row2" style="grid-template-columns:.9fr 1.1fr">
+    <div class="col btw">
+      <div><p class="kick g" style="margin:0">The finish line</p><h2 class="serif t2" style="margin:1.2cqw 0 0">It's yours.<br><span class="it">Say it out loud.</span></h2></div>
+      <div class="p" style="color:var(--ink2)">
+        <p style="margin:0"><b style="color:var(--ink)">Evidence.</b> 39 reviews are about what comes after the phone. 8 people couldn't uninstall the app, reset the phone, or stop the payment prompts after paying in full.</p>
+        <p style="margin:1cqw 0 0"><b style="color:var(--ink)">Decision.</b> The last payment ends on a celebration with the facts: total paid, how long it took, locks removed, a certificate, and permission to delete the app.</p>
+        <p style="margin:1cqw 0 0"><b style="color:var(--ink)">Depends on.</b> Engineering releasing the device on the final payment, not days later.</p>
+      </div>
+    </div>
+    <div class="phones"><figure><img src="img/mk/bdone.webp" alt="Before: paid in full, still asked to complete payment"><figcaption class="kick lbl-b">Today</figcaption></figure><figure><img src="img/mk/done.webp" alt="After: it's yours"><figcaption class="kick lbl-a">The fix</figcaption></figure></div>
+  </div></div>
+  <div class="mf"><span>"Today" rebuilt from reviews · Refs: Wise, Monzo, Afterpay (Mobbin)</span><span></span><span></span><span>© 2026 Promise Olaifa</span></div>
+</section>
+
+<section class="sl">
+  <div class="panel"></div>
+  <div class="mh"><span>Watu pitch</span><span>03 · Fix 1, continued</span><span></span><span>14</span></div>
+  <div class="sm l">P</div><div class="sm r">O</div>
+  <div class="in"><div class="row2" style="grid-template-columns:.9fr 1.1fr">
+    <div class="col btw">
+      <div><p class="kick g" style="margin:0">What's next</p><h2 class="serif t2" style="margin:1.2cqw 0 0">Your best lead<br><span class="it">just paid you off.</span></h2></div>
+      <div class="p" style="color:var(--ink2)">
+        <p style="margin:0"><b style="color:var(--ink)">Evidence.</b> 31 reviewers ask what comes next, usually a cash loan. Watu has replied that it doesn't offer cash loans, while one customer saw the option in the menu.</p>
+        <p style="margin:1cqw 0 0"><b style="color:var(--ink)">Decision.</b> An honest "what's next": the record they built, the products Watu does finance, and a plain answer on cash loans instead of silence.</p>
+        <p style="margin:1cqw 0 0"><b style="color:var(--ink)">Depends on.</b> Product deciding what finishers are offered. The screen only shows what exists.</p>
+      </div>
+    </div>
+    <div class="phones"><figure><img src="img/mk/next.webp" alt="What's next with Watu"><figcaption class="kick lbl-a">What's next</figcaption></figure><figure><img src="img/mk/home.webp" alt="Home showing the day the phone becomes theirs"><figcaption class="kick lbl-a">The date it's yours</figcaption></figure></div>
+  </div></div>
+  <div class="mf"><span>Watu's reply on Google Play, 24 Sep 2026 · product photos: watu.com</span><span></span><span></span><span>© 2026 Promise Olaifa</span></div>
+</section>
+
+<section class="sl">
+  <div class="panel"></div>
+  <div class="mh"><span>Watu pitch</span><span>03 · Fix 2 of 3</span><span></span><span>15</span></div>
+  <div class="sm l">P</div><div class="sm r">O</div>
+  <div class="in"><div class="row2" style="grid-template-columns:.9fr 1.1fr">
+    <div class="col btw">
+      <div><p class="kick g" style="margin:0">Phone paused</p><h2 class="serif t2" style="margin:1.2cqw 0 0">The lock screen<br><span class="it">is the payment screen.</span></h2></div>
+      <div class="p" style="color:var(--ink2)">
+        <p style="margin:0"><b style="color:var(--ink)">Evidence.</b> 28 reviews on paying and unlocking. "the m-pesa app is not there at all till i keep my sim card in another phone" (Kenya, April 2026).</p>
+        <p style="margin:1cqw 0 0"><b style="color:var(--ink)">Decision.</b> What's owed and what it buys, Watu's own Temp Unlock up front, the customer's account number for any bank or agent, and why it paused if nothing is owed.</p>
+        <p style="margin:1cqw 0 0"><b style="color:var(--ink)">Depends on.</b> What the device-lock platform lets this screen show and allow.</p>
+      </div>
+    </div>
+    <div class="phones"><figure><img src="img/mk/blocked.webp" alt="Before: unlock controls inside the app"><figcaption class="kick lbl-b">Today</figcaption></figure><figure><img src="img/mk/lock.webp" alt="After: the lock screen as the payment screen"><figcaption class="kick lbl-a">The fix</figcaption></figure></div>
+  </div></div>
+  <div class="mf"><span>Refs: Givingli, Garmin Connect, Cash App (Mobbin)</span><span></span><span></span><span>© 2026 Promise Olaifa</span></div>
+</section>
+
+<section class="sl">
+  <div class="panel"></div>
+  <div class="mh"><span>Watu pitch</span><span>03 · Fix 3 of 3</span><span></span><span>16</span></div>
+  <div class="sm l">P</div><div class="sm r">O</div>
+  <div class="in"><div class="row2" style="grid-template-columns:.9fr 1.1fr">
+    <div class="col btw">
+      <div><p class="kick g" style="margin:0">After paying</p><h2 class="serif t2" style="margin:1.2cqw 0 0">Got it.<br><span class="it">Please don't pay again.</span></h2></div>
+      <div class="p" style="color:var(--ink2)">
+        <p style="margin:0"><b style="color:var(--ink)">Evidence.</b> "you can pay more than once" (88 found it helpful). Payments that take 24 hours to show. A Refresh button to check.</p>
+        <p style="margin:1cqw 0 0"><b style="color:var(--ink)">Decision.</b> One tracker after every payment: received, added, switching on. The reference, an expected time, and a report button after 15 minutes.</p>
+        <p style="margin:1cqw 0 0"><b style="color:var(--ink)">Depends on.</b> Real payment-to-unlock times by hour. An expected time is a promise.</p>
+      </div>
+    </div>
+    <div class="phones"><figure><img src="img/mk/track.webp" alt="Payment received, switching on"><figcaption class="kick lbl-a">Received</figcaption></figure><figure><img src="img/mk/trackdone.webp" alt="Phone on"><figcaption class="kick lbl-a">On</figcaption></figure></div>
+  </div></div>
+  <div class="mf"><span>Refs: MoonPay, Too Good To Go (Mobbin)</span><span></span><span></span><span>© 2026 Promise Olaifa</span></div>
+</section>
+
+<section class="sl black">
+  <div class="mh"><span>Watu pitch</span><span>03 · The film</span><span></span><span>17</span></div>
+  <div class="in" style="padding-top:5.4cqw"><h2 class="serif t3" style="margin:0">Watch it work. <span class="it dim">Under two minutes.</span></h2></div>
+  <div class="vid"><video poster="img/film-poster.jpg" controls playsinline preload="metadata"><source src="film.mp4" type="video/mp4"><a href="film.mp4">Download the film</a></video></div>
+</section>
+
+<section class="sl">
+  <div class="mh"><span>Watu pitch</span><span>03 · Prototype</span><span></span><span>18</span></div>
+  <div class="sm l">P</div>
+  <div class="in"><div class="col btw" style="height:100%;max-width:44cqw">
+    <div><p class="kick g" style="margin:0">Try it yourself</p><h2 class="serif t2" style="margin:1.2cqw 0 0">Tap through<br><span class="it">the real thing.</span></h2>
+    <p class="p" style="margin:2cqw 0 0;color:var(--ink2)">Three journeys, before and after: a paused phone, the finish line, and three quick wins. The coral ring shows what to tap.</p></div>
+    <a class="cap" href="proto.html" target="_blank" rel="noopener" style="font-weight:600">Open full screen ›</a>
+  </div></div>
+  <iframe class="frame" src="proto.html?embed=1" title="Watu concept prototype" loading="lazy"></iframe>
+  <div class="mf"><span></span><span></span><span></span><span>© 2026 Promise Olaifa</span></div>
+</section>
+
+<section class="sl mintbg">
+  <div class="mh"><span>Watu pitch</span><span>03 · iPhone Duo</span><span></span><span>19</span></div>
+  <div class="in" style="text-align:center"><p class="kick g" style="margin:0">For riders on their own phones</p><h2 class="serif t2" style="margin:1cqw 0 0">One fold. <span class="it">The whole ride.</span></h2></div>
+  <img class="duoimg" src="img/duoBike.webp" alt="Watu bike account on iPhone Duo: payment tracker beside pay ahead">
+  <div class="mf"><span>Watu's app is Android only today. Bike customers pay from whatever phone they own. iPhone Duo inner display, 7.6"</span><span></span><span></span><span>© 2026 Promise Olaifa</span></div>
+</section>
+
+<section class="sl">
+  <div class="mh"><span>Watu pitch</span><span>03 · Quick wins</span><span></span><span>20</span></div>
+  <div class="sm l">P</div><div class="sm r">O</div>
+  <div class="in"><div class="row2" style="grid-template-columns:.62fr 1.38fr">
+    <div class="col btw"><h2 class="serif t2" style="margin:0">Small fixes.<br><span class="it">Loud reviews.</span></h2>
+      <div class="cap" style="color:var(--ink2)"><p style="margin:0"><b style="color:var(--ink)">No more Refresh.</b> "very slowly on refreshing after payment is done" (85 found it helpful).</p><p style="margin:.9cqw 0 0"><b style="color:var(--ink)">Name the date.</b> Watu's day slider, with the day and time the phone stays on until.</p><p style="margin:.9cqw 0 0"><b style="color:var(--ink)">A code that arrives.</b> 21 reviews about getting in. A call or WhatsApp after the SMS timer.</p></div></div>
+    <div class="phones three"><figure><img src="img/mk/home.webp" alt="Live payment status"></figure><figure><img src="img/mk/days.webp" alt="Pay for days with the date named"></figure><figure><img src="img/mk/code.webp" alt="Login code by call or WhatsApp"></figure></div>
+  </div></div>
+  <div class="mf"><span></span><span></span><span></span><span>© 2026 Promise Olaifa</span></div>
+</section>
+
+<section class="sl">
+  <div class="mh"><span>Watu pitch</span><span>03 · Judgment</span><span></span><span>21</span></div>
+  <div class="sm l">P</div><div class="sm r">O</div>
+  <div class="in col btw">
+    <div class="row2" style="height:auto;align-items:end"><h2 class="serif t2" style="margin:0">What I chose<br><span class="it">not to do.</span></h2><p class="p" style="margin:0;color:var(--ink2)">The decisions that didn't make the screens matter as much as the ones that did. Each of these was on the table.</p></div>
+    <table class="tbl p">
+      <thead><tr><th class="kick">I didn't</th><th class="kick">Because</th></tr></thead>
+      <tbody>
+        <tr><td>Design a cash loan offer</td><td>Watu has said it doesn't offer them. A screen can't promise what product and risk haven't approved.</td></tr>
+        <tr><td>Weaken the lock</td><td>The pause protects the business and keeps prices low. I made it understandable, not easier to get around.</td></tr>
+        <tr><td>Build a new way to pay on the lock screen</td><td>Watu's Temp Unlock already exists, and a 5-star reviewer thanks Watu for it. Reusing it ships faster than a new payment flow.</td></tr>
+        <tr><td>Replace the day slider</td><td>Customers already know it. I added the date it buys, not a new control.</td></tr>
+        <tr><td>Lead with login codes</td><td>21 reviews, but mostly SMS delivery, an engineering fix. Design adds a fallback, not a redesign.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="mf"><span>Design judgment</span><span></span><span></span><span>© 2026 Promise Olaifa</span></div>
+</section>
+
+<section class="sl mintbg">
+  <div class="mh"><span>Watu pitch</span><span>03 · Sequencing</span><span></span><span>22</span></div>
+  <div class="sm l">P</div><div class="sm r">O</div>
+  <div class="in col btw">
+    <div class="row2" style="height:auto;align-items:end"><h2 class="serif t2" style="margin:0">If I joined,<br><span class="it">I'd ship these first.</span></h2><p class="p" style="margin:0;color:var(--ink2)">Smallest and most certain first, so customers feel a change in week two while the bigger pieces wait on engineering.</p></div>
+    <table class="tbl p">
+      <thead><tr><th class="kick">Fix</th><th class="kick">Size</th><th class="kick">Needs from others</th></tr></thead>
+      <tbody>
+        <tr><td>Name the date on the day slider</td><td>Small</td><td>Nothing. Copy and layout only.</td></tr>
+        <tr><td>What's next, with a plain answer on cash loans</td><td>Small</td><td>Product confirming what finishers can be offered</td></tr>
+        <tr><td>"Please don't pay again" tracker</td><td>Medium</td><td>Payment status events from engineering</td></tr>
+        <tr><td>Finish line, certificate and "remove the app"</td><td>Medium</td><td>Releasing the device lock on the final payment</td></tr>
+        <tr><td>Lock screen as the payment screen</td><td>Large</td><td>What the lock platform allows</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="mf"><span>Sizes are my estimate, to check with engineering</span><span></span><span></span><span>© 2026 Promise Olaifa</span></div>
+</section>
+
+<section class="sl">
+  <div class="mh"><span>Watu pitch</span><span>03 · Testing</span><span></span><span>23</span></div>
+  <div class="sm l">P</div><div class="sm r">O</div>
+  <div class="in col btw">
+    <div class="row2" style="height:auto;align-items:end"><h2 class="serif t2" style="margin:0">Not tested yet.<br><span class="it">Here's how I'd know in a week.</span></h2><p class="p" style="margin:0;color:var(--ink2)">Five Watu Nigeria customers, ten minutes each, on the prototype. One question per moment, and a clear line for what counts as understood. Results replace this slide.</p></div>
+    <table class="tbl p">
+      <thead><tr><th class="kick">Moment</th><th class="kick">We ask</th><th class="kick">Counts as understood if they say</th></tr></thead>
+      <tbody>
+        <tr><td>Phone paused</td><td>"How would you get your phone back on?"</td><td>Pay from this screen, or transfer to their own account number. No app needed.</td></tr>
+        <tr><td>After paying</td><td>"Has your payment landed? Should you pay again?"</td><td>It landed. Don't pay again. The phone switches on by itself.</td></tr>
+        <tr><td>Paying ahead</td><td>"If you pay for a week, until when is your phone on?"</td><td>They read the exact date.</td></tr>
+        <tr><td>Final payment</td><td>"What has changed for you now?"</td><td>The phone is theirs, the locks are gone, they can remove the app.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="mf"><span>Plus: "From 1 to 7, how clear was that?" after each moment</span><span></span><span></span><span>© 2026 Promise Olaifa</span></div>
+</section>
+
+<section class="sl deep">
+  <div class="in col btw"><h2 class="big" style="margin:0">Why me</h2><div style="display:flex;justify-content:space-between;align-items:flex-end"><span class="cap dim">04</span><img src="img/wt-logo-w.svg" alt="" style="height:max(16px,2.2cqw)"></div></div>
+</section>
+
+<section class="sl deep">
+  <div class="mh"><span>Watu pitch</span><span>04 · Why me</span><span></span><span>25</span></div>
+  <div class="sm l">P</div><div class="sm r">O</div>
+  <div class="in"><div class="row2" style="grid-template-columns:.9fr 1.1fr;gap:5cqw">
+    <div class="col btw">
+      <h2 class="serif t2" style="margin:0">Hire the designer who already <span class="it" style="color:#8FE3E2">did the homework.</span></h2>
+      <p class="p" style="margin:0;opacity:.8">You'll find designers with more years. You won't find many who walk in with the research done, the screens in your language, a working prototype and the code.</p>
+    </div>
+    <div class="claims cap" style="align-content:center">
+      <div><b>Evidence, not opinions</b><span>1,176 reviews across two markets, read by hand. Your replies, your release notes, your website.</span></div>
+      <div><b>Inside your system</b><span>Watu's black, teal and lime, Poppins, and the five-tab app. Shippable without a rebrand.</span></div>
+      <div><b>Shipped for real users</b><span>Quote Request: designed in two weeks, live since November 2025. 1K+ downloads, 4.6 stars on Google Play.</span></div>
+      <div><b>I build what I design</b><span>React and Next.js. Handoff is a pull request, not a PDF.</span></div>
+      <div><b>I know where design stops</b><span>Product owns offers. Engineering owns the lock. I say so out loud.</span></div>
+      <div><b>A Lagos designer for Lagos customers</b><span>Watu Nigeria's customers are my neighbours. I can test with them this week.</span></div>
+    </div>
+  </div></div>
+  <div class="mf"><span></span><span></span><span></span><span>© 2026 Promise Olaifa</span></div>
+</section>
+
+<section class="sl">
+  <div class="mh"><span>Watu pitch</span><span>05 · Impact</span><span></span><span>26</span></div>
+  <div class="sm l">P</div><div class="sm r">O</div>
+  <div class="in col btw">
+    <h2 class="serif t3" style="margin:0;max-width:72cqw">The cheapest next sale is the customer<br><span class="it">who just finished paying.</span></h2>
+    <div class="grid3 cap" style="gap:3cqw">
+      <div class="met"><p class="kick g" style="margin:0">Grow</p><p class="p" style="margin:.6cqw 0 0;font-weight:600">More second assets</p><ul><li><span>Finishers buying again within 90 days</span><span><svg class="ic" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-0.125em"><path d="M12 19V5M5 12l7-7 7 7"/></svg></span></li><li><span>Days paid ahead</span><span><svg class="ic" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-0.125em"><path d="M12 19V5M5 12l7-7 7 7"/></svg></span></li><li><span>Taps on "What's next"</span><span><svg class="ic" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-0.125em"><path d="M12 19V5M5 12l7-7 7 7"/></svg></span></li></ul></div>
+      <div class="met"><p class="kick g" style="margin:0">Calm</p><p class="p" style="margin:.6cqw 0 0;font-weight:600">Fewer "I paid, now what?"</p><ul><li><span>Duplicate payments within an hour</span><span><svg class="ic" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-0.125em"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></span></li><li><span>Support contacts about paused phones</span><span><svg class="ic" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-0.125em"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></span></li><li><span>1-star reviews after the last payment</span><span><svg class="ic" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-0.125em"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></span></li></ul></div>
+      <div class="met"><p class="kick g" style="margin:0">Protect</p><p class="p" style="margin:.6cqw 0 0;font-weight:600">Guardrails stay flat</p><ul><li><span>On-time payment rate</span><span>Flat</span></li><li><span>Misuse of the 1-hour unlock</span><span>Flat</span></li><li><span>Collections workload</span><span>Flat</span></li></ul></div>
+    </div>
+    <p class="cap mute" style="margin:0">Test: start with the finish line in Nigeria, the market with the most finish-line reviews. Four weeks, half of finishers. No forecast numbers here: the first job is to measure.</p>
+  </div>
+  <div class="mf"><span></span><span></span><span></span><span>© 2026 Promise Olaifa</span></div>
+</section>
+
+<section class="sl black">
+  <div class="mh"><span>Watu pitch</span><span>06 · Design system</span><span></span><span>27</span></div>
+  <div class="sm l">P</div><div class="sm r">O</div>
+  <div class="in"><div class="row2" style="grid-template-columns:.95fr 1.05fr;gap:5cqw">
+    <div class="col btw">
+      <div><p class="kick" style="margin:0;color:#8FE3E2">AI-assisted designer-developer</p><h2 class="serif t2" style="margin:1.2cqw 0 0">Your design system, live in code, <span class="it">in one sprint.</span></h2></div>
+      <div class="cap" style="opacity:.82">
+        <p style="margin:0"><b>Days 1–2 · Foundations.</b> Audit both apps. Tokens in Figma variables and code.</p>
+        <p style="margin:.7cqw 0 0"><b>Days 3–6 · Components.</b> Amount cards, day pickers, trackers, chips, the lock screen. Figma variants, built in code.</p>
+        <p style="margin:.7cqw 0 0"><b>Days 7–8 · Usage.</b> When to use what, content rules for money and locks, accessibility.</p>
+        <p style="margin:.7cqw 0 0"><b>Days 9–10 · Ship.</b> A docs site, and the first screens rebuilt on it for Kenya and Nigeria.</p>
+        <p style="margin:1.4cqw 0 0;opacity:.7">Figma plus Claude Code. I review every line.</p>
+        <a class="cta" href="system.html" target="_blank" rel="noopener" style="margin-top:1.6cqw">See Watu's system, live in code ›</a>
+      </div>
+    </div>
+    <div class="col" style="justify-content:center;gap:2.2cqw">
+      <p class="kick" style="margin:0;opacity:.6">Tokens taken from the live app</p>
+      <div class="sw">
+        <div style="background:#0DA9A8"><span>brand</span></div><div style="background:#37ADAF"><span>teal</span></div><div class="lt" style="background:#B2D00E"><span>lime</span></div><div class="lt" style="background:#E1CE12"><span>yellow</span></div>
+        <div style="background:#000;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)"><span>black</span></div><div style="background:#26252B;box-shadow:inset 0 0 0 1px rgba(255,255,255,.1)"><span>card</span></div><div class="lt" style="background:#F4A866"><span>unlock</span></div><div style="background:#F06E5C"><span>pay</span></div>
+      </div>
+      <div style="display:flex;gap:1.6cqw;align-items:baseline;border-top:1px solid rgba(255,255,255,.16);padding-top:1.4cqw;flex-wrap:wrap"><span style="font:600 max(18px,2.4cqw) Poppins">Poppins</span><span class="cap" style="opacity:.6">600 titles · 500 labels · 400 body</span></div>
+      <div class="wt chips2" style="background:transparent"><button class="btn" style="height:42px;width:auto;padding:0 18px;font-size:13.5px">Pay now</button><button class="btn orange" style="height:42px;width:auto;padding:0 18px;font-size:13.5px">Unlock for 1 hour</button><span class="chip lime">Samsung A17</span><span class="live"><i></i>Payment received</span></div>
+    </div>
+  </div></div>
+  <div class="mf"><span></span><span></span><span></span><span>© 2026 Promise Olaifa</span></div>
+</section>
+
+<section class="sl">
+  <div class="mh"><span>Watu pitch</span><span>07 · First week</span><span></span><span>28</span></div>
+  <div class="sm l">P</div><div class="sm r">O</div>
+  <div class="in col btw">
+    <h2 class="serif t2" style="margin:0">Day one, I listen.<br><span class="it">Day five, we have a plan.</span></h2>
+    <div class="p">
+      <div class="wk"><span class="kick g">Monday</span><b>Listen</b><span style="color:var(--ink2)">Meet product, engineering, risk and customer care in both markets. Read 90 days of tickets, reviews and the payment-to-unlock data.</span></div>
+      <div class="wk"><span class="kick g">Tuesday</span><b>In the field</b><span style="color:var(--ink2)">A day at a Watu partner store in Lagos. Watch a sign-up, a paused phone, a final payment.</span></div>
+      <div class="wk"><span class="kick g">Wednesday</span><b>System foundations</b><span style="color:var(--ink2)">Tokens in Figma and code. A component inventory across the Kenya and Nigeria apps.</span></div>
+      <div class="wk"><span class="kick g">Thursday</span><b>Frame the P1s</b><span style="color:var(--ink2)">The finish line and the paused phone, sized with real data. Metrics agreed with product and risk.</span></div>
+      <div class="wk" style="border-bottom:1px solid rgba(14,15,18,.12)"><span class="kick g">Friday</span><b>Test and reply</b><span style="color:var(--ink2)">Five customer calls on the prototype. A plan to answer Nigerian reviews the way the Kenya team already does.</span></div>
+    </div>
+  </div>
+  <div class="mf"><span>Output: ranked P1 list, token foundation, test plan</span><span></span><span></span><span>© 2026 Promise Olaifa</span></div>
+</section>
+
+<section class="sl">
+  <div class="mh"><span>Watu pitch</span><span>08 · The ask</span><span></span><span>29</span></div>
+  <div class="sm l">P</div><div class="sm r">O</div>
+  <div class="in"><div class="row2" style="grid-template-columns:1fr 1fr;gap:6cqw">
+    <div class="col btw">
+      <h2 class="serif t2" style="margin:0">What I'm<br><span class="it">asking for.</span></h2>
+      <p class="p" style="margin:0;color:var(--ink2)">A product designer on Watu's team, starting with Nigeria. I'd bring the research habit, the screens and the code, and I'd start with the two moments in this deck.</p>
+    </div>
+    <div class="col" style="justify-content:center">
+      <div class="wk" style="grid-template-columns:12cqw 1fr"><span class="kick g">Role</span><span>Product designer, Watu product team</span></div>
+      <div class="wk" style="grid-template-columns:12cqw 1fr"><span class="kick g">Based</span><span>Lagos. On-site, hybrid or remote.</span></div>
+      <div class="wk" style="grid-template-columns:12cqw 1fr"><span class="kick g">First step</span><span>A 20-minute call to walk through this deck</span></div>
+      <div class="wk" style="grid-template-columns:12cqw 1fr;border-bottom:1px solid rgba(14,15,18,.12)"><span class="kick g">See more</span><span><a href="../index.html" style="font-weight:600">Portfolio</a> · <a href="proto.html" style="font-weight:600">Prototype</a> · <a href="system.html" style="font-weight:600">Design system</a> · <a href="../fairmoney/" style="font-weight:600">FairMoney pitch</a></span></div>
+    </div>
+  </div></div>
+  <div class="mf"><span>olaifapromise1@gmail.com</span><span></span><span></span><span>© 2026 Promise Olaifa</span></div>
+</section>
+
+<section class="sl deep">
+  <div class="photo ph-abs" style="left:56%;background-image:url(img/ph/yard.webp);background-position:62% 25%"></div>
+  <div class="in" style="right:44%"><div class="col btw" style="height:100%">
+    <div class="p" style="font-weight:600">Promise Olaifa <span class="dim">× Watu</span></div>
+    <div><h2 class="serif t2" style="margin:0">They paid it off.<br><span class="it" style="color:#8FE3E2">Let's tell them it's theirs.</span></h2>
+      <p class="p" style="margin:2cqw 0 2.4cqw;opacity:.8">I'd love 20 minutes to walk you through this. Or give me a problem, and I'll come back with research, screens and code.</p>
+      <a class="cta" href="mailto:olaifapromise1@gmail.com?subject=Watu%20pitch">Email Promise</a><a class="cta o" href="../index.html">Portfolio</a></div>
+    <p class="cap" style="margin:0;opacity:.55">Self-initiated, not affiliated with Watu. Watu's name, logo and photography belong to Watu and are used to identify the company. Screens rebuilt from Watu's store screenshots; customers, accounts and amounts made up.</p>
+  </div></div>
+</section>
+
+</main>
+<div class="exit"><svg class="ic" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-0.125em"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>&nbsp;<svg class="ic" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-0.125em"><path d="M5 12h14M12 5l7 7-7 7"/></svg>&nbsp;to move · Esc to exit</div>
+
+<script>
+const slides=[...document.querySelectorAll('.sl')];
+document.getElementById('n').textContent=slides.length+' slides';
+let cur=0;
+const show=i=>{ cur=Math.max(0,Math.min(slides.length-1,i)); slides.forEach((s,j)=>s.classList.toggle('cur',j===cur)); };
+const present=()=>{ const y=scrollY+innerHeight/3; let i=slides.findIndex(s=>s.offsetTop+s.offsetHeight>y); document.body.classList.add('present'); show(i<0?0:i); document.documentElement.requestFullscreen?.().catch(()=>{}); };
+const exit=()=>{ document.body.classList.remove('present'); slides[cur].scrollIntoView({block:'center'}); if(document.fullscreenElement) document.exitFullscreen().catch(()=>{}); };
+document.getElementById('present').onclick=present;
+addEventListener('keydown',e=>{ if(!document.body.classList.contains('present')) return; if(['ArrowRight','ArrowDown',' ','PageDown'].includes(e.key)){e.preventDefault();show(cur+1);} if(['ArrowLeft','ArrowUp','PageUp'].includes(e.key)){e.preventDefault();show(cur-1);} if(e.key==='Escape') exit(); });
+document.addEventListener('fullscreenchange',()=>{ if(!document.fullscreenElement && document.body.classList.contains('present')) exit(); });
+document.getElementById('deck').addEventListener('click',e=>{ if(!document.body.classList.contains('present')||e.target.closest('a,button,video,iframe')) return; show(cur+(e.clientX>innerWidth/3?1:-1)); });
+</script>
+</body>
+</html>

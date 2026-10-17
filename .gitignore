@@ -7,3 +7,6 @@ package-lock.json
 images/*.mp4
 !images/*-card.mp4
 !images/qr-*.mp4
+
+# 1440p film masters stay local (deck uses film.mp4)
+*/film-master.mp4
